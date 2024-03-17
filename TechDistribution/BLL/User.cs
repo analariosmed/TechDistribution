@@ -74,11 +74,11 @@ namespace TechDistribution.BLL
 
         public static void ModifyUser(User user)
         {
-            UserDB.modifyEmployee(user);
+            UserDB.ModifyUser(user);
         }
         public static void DeleteUser(int userId)
         {
-            UserDB.DeleteEmployee(userId);
+            UserDB.DeleteUser(userId);
         }
 
         public static void UpdateUser(User user)

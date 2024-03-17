@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace TechDistribution.GUI
 {
-    public partial class CreateCostumerAccount : Form
+    public partial class UserAccountManagment : Form
     {
-        public CreateCostumerAccount()
+        public UserAccountManagment()
         {
             InitializeComponent();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

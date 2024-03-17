@@ -100,7 +100,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(0, -5);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(7);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(2180, 1309);
@@ -110,9 +110,9 @@
             // 
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(12, 58);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(7);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(7);
             this.tabPage1.Size = new System.Drawing.Size(2156, 1239);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add";
@@ -134,9 +134,9 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(19, 14);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(7);
             this.groupBox1.Size = new System.Drawing.Size(948, 814);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -150,7 +150,7 @@
             "Part-Time",
             "Contracted"});
             this.comboBoxStatus.Location = new System.Drawing.Point(347, 516);
-            this.comboBoxStatus.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.comboBoxStatus.Margin = new System.Windows.Forms.Padding(7);
             this.comboBoxStatus.Name = "comboBoxStatus";
             this.comboBoxStatus.Size = new System.Drawing.Size(401, 45);
             this.comboBoxStatus.TabIndex = 13;
@@ -158,7 +158,7 @@
             // buttonAdd
             // 
             this.buttonAdd.Location = new System.Drawing.Point(694, 717);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(7);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(240, 81);
             this.buttonAdd.TabIndex = 12;
@@ -175,7 +175,7 @@
             "Inventory Controller",
             "Order Clerk"});
             this.comboBoxJobTitle.Location = new System.Drawing.Point(347, 610);
-            this.comboBoxJobTitle.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.comboBoxJobTitle.Margin = new System.Windows.Forms.Padding(7);
             this.comboBoxJobTitle.Name = "comboBoxJobTitle";
             this.comboBoxJobTitle.Size = new System.Drawing.Size(401, 45);
             this.comboBoxJobTitle.TabIndex = 11;
@@ -183,7 +183,7 @@
             // textBoxPhoneNumber
             // 
             this.textBoxPhoneNumber.Location = new System.Drawing.Point(347, 412);
-            this.textBoxPhoneNumber.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.textBoxPhoneNumber.Margin = new System.Windows.Forms.Padding(7);
             this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
             this.textBoxPhoneNumber.Size = new System.Drawing.Size(401, 44);
             this.textBoxPhoneNumber.TabIndex = 9;
@@ -191,7 +191,7 @@
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(347, 305);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(7);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(401, 44);
             this.textBoxEmail.TabIndex = 8;
@@ -199,7 +199,7 @@
             // textBoxLastName
             // 
             this.textBoxLastName.Location = new System.Drawing.Point(347, 187);
-            this.textBoxLastName.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.textBoxLastName.Margin = new System.Windows.Forms.Padding(7);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(401, 44);
             this.textBoxLastName.TabIndex = 7;
@@ -207,7 +207,7 @@
             // textBoxFirstName
             // 
             this.textBoxFirstName.Location = new System.Drawing.Point(347, 81);
-            this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(7);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(401, 44);
             this.textBoxFirstName.TabIndex = 6;
@@ -278,9 +278,9 @@
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.listViewSearch);
             this.tabPage2.Location = new System.Drawing.Point(12, 58);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(7);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(7);
             this.tabPage2.Size = new System.Drawing.Size(2156, 1239);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Search/Update/Delete";
@@ -305,9 +305,9 @@
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Location = new System.Drawing.Point(19, 321);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(7);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(7);
             this.groupBox3.Size = new System.Drawing.Size(2107, 472);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
@@ -316,7 +316,7 @@
             // buttonDelete
             // 
             this.buttonDelete.Location = new System.Drawing.Point(1798, 206);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(7);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(240, 81);
             this.buttonDelete.TabIndex = 16;
@@ -327,7 +327,7 @@
             // textBoxSearchEmployeeID
             // 
             this.textBoxSearchEmployeeID.Location = new System.Drawing.Point(366, 83);
-            this.textBoxSearchEmployeeID.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.textBoxSearchEmployeeID.Margin = new System.Windows.Forms.Padding(7);
             this.textBoxSearchEmployeeID.Name = "textBoxSearchEmployeeID";
             this.textBoxSearchEmployeeID.ReadOnly = true;
             this.textBoxSearchEmployeeID.Size = new System.Drawing.Size(401, 44);
@@ -351,7 +351,7 @@
             "PART-TIME",
             "CONTRACTED"});
             this.comboBoxSearchStatus.Location = new System.Drawing.Point(1176, 166);
-            this.comboBoxSearchStatus.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.comboBoxSearchStatus.Margin = new System.Windows.Forms.Padding(7);
             this.comboBoxSearchStatus.Name = "comboBoxSearchStatus";
             this.comboBoxSearchStatus.Size = new System.Drawing.Size(401, 45);
             this.comboBoxSearchStatus.TabIndex = 13;
@@ -359,7 +359,7 @@
             // buttonUpdate
             // 
             this.buttonUpdate.Location = new System.Drawing.Point(1798, 79);
-            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(7);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(240, 81);
             this.buttonUpdate.TabIndex = 12;
@@ -376,7 +376,7 @@
             "Inventory Controller",
             "Order Clerk"});
             this.comboBoxSearchJobTitle.Location = new System.Drawing.Point(1176, 252);
-            this.comboBoxSearchJobTitle.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.comboBoxSearchJobTitle.Margin = new System.Windows.Forms.Padding(7);
             this.comboBoxSearchJobTitle.Name = "comboBoxSearchJobTitle";
             this.comboBoxSearchJobTitle.Size = new System.Drawing.Size(401, 45);
             this.comboBoxSearchJobTitle.TabIndex = 11;
@@ -384,7 +384,7 @@
             // textBoxSearchPhoneNumber
             // 
             this.textBoxSearchPhoneNumber.Location = new System.Drawing.Point(1176, 83);
-            this.textBoxSearchPhoneNumber.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.textBoxSearchPhoneNumber.Margin = new System.Windows.Forms.Padding(7);
             this.textBoxSearchPhoneNumber.Name = "textBoxSearchPhoneNumber";
             this.textBoxSearchPhoneNumber.Size = new System.Drawing.Size(401, 44);
             this.textBoxSearchPhoneNumber.TabIndex = 9;
@@ -392,7 +392,7 @@
             // textBoxSearchEmail
             // 
             this.textBoxSearchEmail.Location = new System.Drawing.Point(366, 349);
-            this.textBoxSearchEmail.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.textBoxSearchEmail.Margin = new System.Windows.Forms.Padding(7);
             this.textBoxSearchEmail.Name = "textBoxSearchEmail";
             this.textBoxSearchEmail.Size = new System.Drawing.Size(401, 44);
             this.textBoxSearchEmail.TabIndex = 8;
@@ -400,7 +400,7 @@
             // textBoxSearchLastName
             // 
             this.textBoxSearchLastName.Location = new System.Drawing.Point(366, 257);
-            this.textBoxSearchLastName.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.textBoxSearchLastName.Margin = new System.Windows.Forms.Padding(7);
             this.textBoxSearchLastName.Name = "textBoxSearchLastName";
             this.textBoxSearchLastName.Size = new System.Drawing.Size(401, 44);
             this.textBoxSearchLastName.TabIndex = 7;
@@ -408,7 +408,7 @@
             // textBoxSearchFirstName
             // 
             this.textBoxSearchFirstName.Location = new System.Drawing.Point(366, 171);
-            this.textBoxSearchFirstName.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.textBoxSearchFirstName.Margin = new System.Windows.Forms.Padding(7);
             this.textBoxSearchFirstName.Name = "textBoxSearchFirstName";
             this.textBoxSearchFirstName.Size = new System.Drawing.Size(401, 44);
             this.textBoxSearchFirstName.TabIndex = 6;
@@ -480,9 +480,9 @@
             this.groupBox2.Controls.Add(this.textBoxSearchBy);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(19, 14);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(7);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(7);
             this.groupBox2.Size = new System.Drawing.Size(2107, 294);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
@@ -498,7 +498,7 @@
             "Email",
             "Phone Number"});
             this.comboBoxSearchBy.Location = new System.Drawing.Point(817, 86);
-            this.comboBoxSearchBy.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.comboBoxSearchBy.Margin = new System.Windows.Forms.Padding(7);
             this.comboBoxSearchBy.Name = "comboBoxSearchBy";
             this.comboBoxSearchBy.Size = new System.Drawing.Size(386, 45);
             this.comboBoxSearchBy.TabIndex = 9;
@@ -507,7 +507,7 @@
             // ButtonSearch
             // 
             this.ButtonSearch.Location = new System.Drawing.Point(1358, 160);
-            this.ButtonSearch.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.ButtonSearch.Margin = new System.Windows.Forms.Padding(7);
             this.ButtonSearch.Name = "ButtonSearch";
             this.ButtonSearch.Size = new System.Drawing.Size(223, 74);
             this.ButtonSearch.TabIndex = 8;
@@ -518,7 +518,7 @@
             // textBoxSearchBy
             // 
             this.textBoxSearchBy.Location = new System.Drawing.Point(817, 183);
-            this.textBoxSearchBy.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.textBoxSearchBy.Margin = new System.Windows.Forms.Padding(7);
             this.textBoxSearchBy.Name = "textBoxSearchBy";
             this.textBoxSearchBy.Size = new System.Drawing.Size(386, 44);
             this.textBoxSearchBy.TabIndex = 7;
@@ -546,7 +546,7 @@
             this.columnHeader7});
             this.listViewSearch.HideSelection = false;
             this.listViewSearch.Location = new System.Drawing.Point(14, 807);
-            this.listViewSearch.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.listViewSearch.Margin = new System.Windows.Forms.Padding(7);
             this.listViewSearch.Name = "listViewSearch";
             this.listViewSearch.Size = new System.Drawing.Size(2134, 416);
             this.listViewSearch.TabIndex = 3;
@@ -593,9 +593,9 @@
             this.tabPage3.Controls.Add(this.buttonListAll);
             this.tabPage3.Controls.Add(this.listViewAllEmployees);
             this.tabPage3.Location = new System.Drawing.Point(12, 58);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(7);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(7);
             this.tabPage3.Size = new System.Drawing.Size(2156, 1239);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Employee List";
@@ -604,7 +604,7 @@
             // buttonListAll
             // 
             this.buttonListAll.Location = new System.Drawing.Point(1805, 56);
-            this.buttonListAll.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.buttonListAll.Margin = new System.Windows.Forms.Padding(7);
             this.buttonListAll.Name = "buttonListAll";
             this.buttonListAll.Size = new System.Drawing.Size(342, 99);
             this.buttonListAll.TabIndex = 2;
@@ -624,7 +624,7 @@
             this.Job});
             this.listViewAllEmployees.HideSelection = false;
             this.listViewAllEmployees.Location = new System.Drawing.Point(14, 197);
-            this.listViewAllEmployees.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.listViewAllEmployees.Margin = new System.Windows.Forms.Padding(7);
             this.listViewAllEmployees.Name = "listViewAllEmployees";
             this.listViewAllEmployees.Size = new System.Drawing.Size(2122, 1026);
             this.listViewAllEmployees.TabIndex = 1;
@@ -672,7 +672,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2187, 1320);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.Margin = new System.Windows.Forms.Padding(7);
             this.Name = "EmployeeManagament";
             this.Text = "EmployeeManagament";
             this.tabControl1.ResumeLayout(false);
