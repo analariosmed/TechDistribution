@@ -17,7 +17,7 @@ namespace TechDistribution
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EmployeeManagament());
+            Application.Run(new UserAccountManagment());
         }
     }
 }

@@ -69,21 +69,16 @@ namespace TechDistribution.BLL
         }
         public void CreateUseAccount(User user)
         {
-            UserDB.SaveUser(user);
-        }
-
-        public static void ModifyUser(User user)
-        {
-            UserDB.ModifyUser(user);
-        }
-        public static void DeleteUser(int userId)
-        {
-            UserDB.DeleteUser(userId);
+            UserDB.CreateUserAccount(user);
         }
 
         public static void UpdateUser(User user)
         {
             UserDB.UpdateUser(user);
+        }
+        public static void DeleteUser(int userId)
+        {
+            UserDB.DeleteUser(userId);
         }
 
     }

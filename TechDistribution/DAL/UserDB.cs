@@ -20,7 +20,7 @@ namespace TechDistribution.DAL
         }
 
 
-        public static bool createUserAccount(User user)
+        public static bool CreateUserAccount(User user)
         {
             SqlConnection conn = UtilityDB.GetDBConnection();
 
