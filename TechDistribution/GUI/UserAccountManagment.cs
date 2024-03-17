@@ -85,6 +85,59 @@ namespace TechDistribution.GUI
 
         private void buttonListAll_Click(object sender, EventArgs e)
         {
+            List<User> users = new List<User>();
+
+            users = User.GetUsers();
+
+            listViewAllUsers.Items.Clear();
+
+            foreach (User user in users)
+            {
+                ListViewItem row = new ListViewItem(user.UserId.ToString());
+                row.SubItems.Add(user.FirstName);
+                row.SubItems.Add(user.LastName);
+                row.SubItems.Add(user.DateCreated);
+                row.SubItems.Add(user.DateModified);        
+                row.SubItems.Add(user.JobTitle);
+                row.SubItems.Add(user.StatusDesc);
+
+                listViewAllUsers.Items.Add(row);
+            }
+        }
+
+
+
+        private void buttonSearchEmployee_Click(object sender, EventArgs e)
+        {
+
+            string text = textBoxEmployeeId.Text;
+            if (String.IsNullOrEmpty(text))
+            {
+                MessageBox.Show("Insert a valid Employee Id");
+                return;
+            }
+
+            Employee newEmp = new Employee();
+
+            try
+            {
+                Employee employee = Employee.SearchEmployee(text);
+                ListViewItem item = new ListViewItem(employee.EmployeeId.ToString());
+                item.SubItems.Add(employee.FirstName.ToString());
+                item.SubItems.Add(employee.LastName.ToString());
+ 
+
+                listView1.Items.Add(item);
+            }
+            catch
+            {
+                MessageBox.Show("Sorry! Employee don't found");
+            }
+
+        }
+
+        private void buttonCreateAccount_Click(object sender, EventArgs e)
+        {
 
         }
     }
