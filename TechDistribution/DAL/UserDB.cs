@@ -105,7 +105,7 @@ namespace TechDistribution.DAL
             SqlConnection conn = UtilityDB.GetDBConnection();
 
             SqlCommand cmd = new SqlCommand("SELECT UA.UserId, E.FirstName, E.LastName, UA.DateCreated, UA.DateModified, UA.StatusId, S.StatusDescription, E.JobId, J.JobTitle " +
-                                 "FROM UserAccount UA " +
+                                 "FROM UserAccounts UA " +
                                  "INNER JOIN Employees E ON UA.EmployeeId = E.EmployeeId " +
                                  "INNER JOIN Status S ON UA.StatusId = S.StatusId " +
                                  "INNER JOIN Jobs J ON E.JobId = J.JobId " +
@@ -147,6 +147,48 @@ namespace TechDistribution.DAL
             return null;
 
         }
+
+        public static User SearchUserByEmployeeId(int employeeId) {
+
+                SqlConnection conn = UtilityDB.GetDBConnection();
+
+                SqlCommand cmd = new SqlCommand("SELECT UA.UserId, E.FirstName, E.LastName, UA.DateCreated " +
+                                 "FROM UserAccounts UA " +
+                                 "INNER JOIN Employees E ON UA.EmployeeId = E.EmployeeId " +
+                                 "INNER JOIN Status S ON UA.StatusId = S.StatusId " +
+                                 "INNER JOIN Jobs J ON E.JobId = J.JobId " +
+                                 "WHERE UA.EmployeeId = @EmployeeId;", conn);
+
+                cmd.Parameters.AddWithValue("@EmployeeId", employeeId);
+
+                try
+                {
+                    conn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        User user = new User
+                        {
+                            UserId = Convert.ToInt32(reader["UserId"]),
+                            FirstName = reader["FirstName"].ToString(),
+                            LastName = reader["LastName"].ToString(),
+                            DateCreated = reader["DateCreated"].ToString(),
+                        };
+
+                        return user;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+                return null;
+            }
 
         public static void UpdateUser(User user)
         {

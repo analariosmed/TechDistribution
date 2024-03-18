@@ -67,7 +67,7 @@ namespace TechDistribution.BLL
         {
             return UserDB.GetAllUsers();
         }
-        public void CreateUseAccount(User user)
+        public void CreateUserAccount(User user)
         {
             UserDB.CreateUserAccount(user);
         }
@@ -75,6 +75,11 @@ namespace TechDistribution.BLL
         public static void UpdateUser(User user)
         {
             UserDB.UpdateUser(user);
+        }
+
+        public User SearchUserByEmployeeId(int employeeId) 
+        {
+            return UserDB.SearchUserByEmployeeId(employeeId);
         }
         public static void DeleteUser(int userId)
         {

@@ -35,7 +35,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
-            this.textBoxFistName = new System.Windows.Forms.TextBox();
+            this.textBoxFirstName = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -84,8 +84,10 @@
             this.JobTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.StatusDesc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.labelInfo = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -133,6 +135,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.labelInfo);
             this.groupBox4.Location = new System.Drawing.Point(1076, 79);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(1098, 1107);
@@ -144,7 +147,7 @@
             // 
             this.groupBox1.Controls.Add(this.textBoxEmail);
             this.groupBox1.Controls.Add(this.textBoxLastName);
-            this.groupBox1.Controls.Add(this.textBoxFistName);
+            this.groupBox1.Controls.Add(this.textBoxFirstName);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label7);
@@ -184,13 +187,13 @@
             this.textBoxLastName.Size = new System.Drawing.Size(401, 44);
             this.textBoxLastName.TabIndex = 21;
             // 
-            // textBoxFistName
+            // textBoxFirstName
             // 
-            this.textBoxFistName.Location = new System.Drawing.Point(382, 350);
-            this.textBoxFistName.Margin = new System.Windows.Forms.Padding(7);
-            this.textBoxFistName.Name = "textBoxFistName";
-            this.textBoxFistName.Size = new System.Drawing.Size(401, 44);
-            this.textBoxFistName.TabIndex = 20;
+            this.textBoxFirstName.Location = new System.Drawing.Point(382, 350);
+            this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(7);
+            this.textBoxFirstName.Name = "textBoxFirstName";
+            this.textBoxFirstName.Size = new System.Drawing.Size(401, 44);
+            this.textBoxFirstName.TabIndex = 20;
             // 
             // label11
             // 
@@ -632,6 +635,17 @@
             this.StatusDesc.Text = "Status Description";
             this.StatusDesc.Width = 460;
             // 
+            // labelInfo
+            // 
+            this.labelInfo.AutoSize = true;
+            this.labelInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInfo.Location = new System.Drawing.Point(52, 101);
+            this.labelInfo.Name = "labelInfo";
+            this.labelInfo.Size = new System.Drawing.Size(96, 138);
+            this.labelInfo.TabIndex = 14;
+            this.labelInfo.Text = ".";
+
+            // 
             // UserAccountManagment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
@@ -642,6 +656,8 @@
             this.Text = "UserAccountManagment";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -709,8 +725,9 @@
         private System.Windows.Forms.Button buttonSearchEmployee;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.TextBox textBoxLastName;
-        private System.Windows.Forms.TextBox textBoxFistName;
+        private System.Windows.Forms.TextBox textBoxFirstName;
         private System.Windows.Forms.Button buttonEx;
         private System.Windows.Forms.Button buttonExit2;
+        private System.Windows.Forms.Label labelInfo;
     }
 }

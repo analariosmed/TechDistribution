@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using TechDistribution.BLL;
 using TechDistribution.DAL;
+using TechDistribution.VALIDATION;
 
 namespace TechDistribution.GUI
 {
@@ -97,7 +99,7 @@ namespace TechDistribution.GUI
                 row.SubItems.Add(user.FirstName);
                 row.SubItems.Add(user.LastName);
                 row.SubItems.Add(user.DateCreated);
-                row.SubItems.Add(user.DateModified);        
+                row.SubItems.Add(user.DateModified);
                 row.SubItems.Add(user.JobTitle);
                 row.SubItems.Add(user.StatusDesc);
 
@@ -110,36 +112,79 @@ namespace TechDistribution.GUI
         private void buttonSearchEmployee_Click(object sender, EventArgs e)
         {
 
-            string text = textBoxEmployeeId.Text;
-            if (String.IsNullOrEmpty(text))
-            {
-                MessageBox.Show("Insert a valid Employee Id");
-                return;
-            }
+            int employeeId = Convert.ToInt32(textBoxEmployeeId.Text);
 
-            Employee newEmp = new Employee();
 
             try
             {
-                Employee employee = Employee.SearchEmployee(text);
-                ListViewItem item = new ListViewItem(employee.EmployeeId.ToString());
-                item.SubItems.Add(employee.FirstName.ToString());
-                item.SubItems.Add(employee.LastName.ToString());
- 
+                Employee employee = new Employee();
+                employee = employee.SearchEmployee(employeeId);
+                textBoxFirstName.Text = employee.FirstName;
+                textBoxLastName.Text = employee.LastName;
+                textBoxEmail.Text = employee.Email;
 
-                listView1.Items.Add(item);
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Sorry! Employee don't found");
-            }
+                MessageBox.Show("Sorry, we didn't find an employee with that ID.");
 
+            }
         }
 
         private void buttonCreateAccount_Click(object sender, EventArgs e)
         {
+            User user = new User();
+            user.Password = textBoxPassword.Text.Trim();
+            user.StatusId = 0;
+            user.EmployeeId = Convert.ToInt32(textBoxEmployeeId.Text);
 
+            try
+            {
+                user.CreateUserAccount(user);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error to Create the User Account");
+                return;
+            }
+
+            textBoxPassword.Clear();
+            textBoxPassword2.Clear();
+           
+
+            MessageBox.Show("The User Account was created Sucessfully");
+
+            int employeeId = Convert.ToInt32(textBoxEmployeeId.Text);
+
+            try
+            {
+                User user1 = new User();
+                user1 = user.SearchUserByEmployeeId(employeeId);
+                if (user1 == null) 
+                {
+                    MessageBox.Show("Sorry, something was wrong getting your Information.");
+
+
+
+
+                }
+                string firstName = user1.FirstName;
+                string lastName = user1.LastName;
+                int userId = user1.UserId;
+                string dateCreated = user.DateCreated;  
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sorry, something was wrong getting your information.");
+
+            }
+
+            labelInfo.Text = user.FirstName + " " + user.LastName + "\n"+
+                            "Your Account was created successfully!!\n" +
+                             "Your User Id is " + user.UserId.ToString();
         }
+
+  
     }
-    
 }
