@@ -46,8 +46,9 @@ namespace TechDistribution.DAL
                 MessageBox.Show(en.ToString());
                 return false;
             }
-
-            conn.Close();
+            finally { 
+                conn.Close();
+            }
             return true;
         }
 
@@ -104,17 +105,18 @@ namespace TechDistribution.DAL
 
             SqlConnection conn = UtilityDB.GetDBConnection();
 
-            SqlCommand cmd = new SqlCommand("SELECT UA.UserId, E.FirstName, E.LastName, UA.DateCreated, UA.DateModified, UA.StatusId, S.StatusDescription, E.JobId, J.JobTitle " +
+            SqlCommand cmd = new SqlCommand("SELECT UA.UserId, E.FirstName, E.LastName, UA.DateCreated, UA.DateModified, UA.StatusId, S.StatusDesc, E.JobId, J.JobTitle " +
                                  "FROM UserAccounts UA " +
                                  "INNER JOIN Employees E ON UA.EmployeeId = E.EmployeeId " +
-                                 "INNER JOIN Status S ON UA.StatusId = S.StatusId " +
-                                 "INNER JOIN Jobs J ON E.JobId = J.JobId " +
+                                 "LEFT OUTER JOIN  Status S ON UA.StatusId = S.StatusId " +
+                                 "LEFT OUTER JOIN  Jobs J ON E.JobId = J.JobId " +
                                  "WHERE UA.UserId = @UserId;", conn);
 
             cmd.Parameters.AddWithValue("@UserId", userId); // Add UserId parameter
 
             try
             {
+                conn.Close();
                 conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -128,7 +130,7 @@ namespace TechDistribution.DAL
                         DateCreated = reader["DateCreated"].ToString(),
                         DateModified = reader["DateModified"].ToString(),
                         StatusId = Convert.ToInt32(reader["StatusId"]),
-                        StatusDesc = reader["StatusDescription"].ToString(),
+                        StatusDesc = reader["StatusDesc"].ToString(),
                         JobId = Convert.ToInt32(reader["JobId"]),
                         JobTitle = reader["JobTitle"].ToString()
                     };
@@ -155,14 +157,15 @@ namespace TechDistribution.DAL
                 SqlCommand cmd = new SqlCommand("SELECT UA.UserId, E.FirstName, E.LastName, UA.DateCreated " +
                                  "FROM UserAccounts UA " +
                                  "INNER JOIN Employees E ON UA.EmployeeId = E.EmployeeId " +
-                                 "INNER JOIN Status S ON UA.StatusId = S.StatusId " +
-                                 "INNER JOIN Jobs J ON E.JobId = J.JobId " +
+                                 "LEFT OUTER JOIN Status S ON UA.StatusId = S.StatusId " +
+                                 "LEFT OUTER JOIN Jobs J ON E.JobId = J.JobId " +
                                  "WHERE UA.EmployeeId = @EmployeeId;", conn);
 
                 cmd.Parameters.AddWithValue("@EmployeeId", employeeId);
 
                 try
                 {
+                    conn.Close();
                     conn.Open();
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -190,7 +193,7 @@ namespace TechDistribution.DAL
                 return null;
             }
 
-        public static void UpdateUser(User user)
+        public static bool UpdateUser(User user)
         {
             using (SqlConnection conn = UtilityDB.GetDBConnection())
             {
@@ -199,20 +202,23 @@ namespace TechDistribution.DAL
                 cmd.Connection = conn;
 
                 cmd.CommandText = "UPDATE UserAccounts " +
-                                  "SET Password = @Password, " +
+                                  "SET Password = @Password " +
                                   "WHERE UserId = @UserId;";
 
+                cmd.Parameters.AddWithValue("@UserId", user.UserId);
                 cmd.Parameters.AddWithValue("@Password", user.Password);
-                
+
 
                 try
                 {
                     cmd.ExecuteNonQuery();
+                    return true;
                 }
                 catch (Exception e)
                 {
                     MessageBox.Show(e.ToString());
-                    return;
+                    Console.WriteLine("Error we find an error your password was not save!" + e.Message);
+                    return false;
                 }
             }
         }

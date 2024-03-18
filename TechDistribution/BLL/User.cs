@@ -72,9 +72,9 @@ namespace TechDistribution.BLL
             UserDB.CreateUserAccount(user);
         }
 
-        public static void UpdateUser(User user)
+        public static bool UpdateUser(User user)
         {
-            UserDB.UpdateUser(user);
+            return UserDB.UpdateUser(user);
         }
 
         public User SearchUserByEmployeeId(int employeeId) 

@@ -81,8 +81,12 @@ namespace TechDistribution.GUI
             User user = new User();
             user.UserId = Convert.ToInt32(textBoxUserId.Text);
             user.Password = textBoxEmployeeId.Text;
-            User.UpdateUser(user);
-            MessageBox.Show("Password has been update sucessfully!");
+            bool value=User.UpdateUser(user);
+            if (value==true)
+            {
+                MessageBox.Show("Password has been update sucessfully!");
+            }
+            
         }
 
         private void buttonListAll_Click(object sender, EventArgs e)
@@ -155,18 +159,15 @@ namespace TechDistribution.GUI
             MessageBox.Show("The User Account was created Sucessfully");
 
             int employeeId = Convert.ToInt32(textBoxEmployeeId.Text);
+            User user1 = new User();
 
             try
             {
-                User user1 = new User();
                 user1 = user.SearchUserByEmployeeId(employeeId);
                 if (user1 == null) 
                 {
                     MessageBox.Show("Sorry, something was wrong getting your Information.");
-
-
-
-
+                    
                 }
                 string firstName = user1.FirstName;
                 string lastName = user1.LastName;
@@ -180,9 +181,9 @@ namespace TechDistribution.GUI
 
             }
 
-            labelInfo.Text = user.FirstName + " " + user.LastName + "\n"+
+            labelInfo.Text = user1.FirstName + " " + user1.LastName + "\n"+
                             "Your Account was created successfully!!\n" +
-                             "Your User Id is " + user.UserId.ToString();
+                             "Your User Id is " + user1.UserId.ToString();
         }
 
   
