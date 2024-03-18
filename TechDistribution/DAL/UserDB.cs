@@ -55,17 +55,19 @@ namespace TechDistribution.DAL
 
         public static List<User> GetAllUsers()
         {
+            
             List<User> listU = new List<User>();
             SqlConnection conn = UtilityDB.GetDBConnection();
 
-            SqlCommand cmd = new SqlCommand("SELECT UA.UserId, E.FirstName, E.LastName, UA.DateCreated, UA.DateModified, UA.StatusId, S.StatusDescription, E.JobId, J.JobTitle " +
-                                "FROM UserAccount UA " +
+            SqlCommand cmd = new SqlCommand("SELECT UA.UserId, E.FirstName, E.LastName, UA.DateCreated, UA.DateModified, UA.StatusId, S.StatusDesc, E.JobId, J.JobTitle " +
+                                "FROM UserAccounts UA " +
                                 "INNER JOIN Employees E ON UA.EmployeeId = E.EmployeeId " +
-                                "INNER JOIN Status S ON UA.StatusId = S.StatusId " +
-                                "INNER JOIN Jobs J ON E.JobId = J.JobId;", conn);
+                                "LEFT OUTER JOIN Status S ON UA.StatusId = S.StatusId " +
+                                "LEFT OUTER JOIN Jobs J ON E.JobId = J.JobId;", conn);
 
             try
             {
+                conn.Close();
                 conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -79,7 +81,7 @@ namespace TechDistribution.DAL
                         DateCreated = reader["DateCreated"].ToString(),
                         DateModified = reader["DateModified"].ToString(),
                         StatusId = Convert.ToInt32(reader["StatusId"]),
-                        StatusDesc = reader["StatusDescription"].ToString(),
+                        StatusDesc = reader["StatusDesc"].ToString(),
                         JobId = Convert.ToInt32(reader["JobId"]),
                         JobTitle = reader["JobTitle"].ToString()
                     };

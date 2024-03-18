@@ -80,7 +80,7 @@ namespace TechDistribution.GUI
         {
             User user = new User();
             user.UserId = Convert.ToInt32(textBoxUserId.Text);
-            user.Password = textBoxEmployeeId.Text;
+            user.Password = textBoxNewPassword.Text;
             bool value=User.UpdateUser(user);
             if (value==true)
             {

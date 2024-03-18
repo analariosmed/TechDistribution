@@ -32,6 +32,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.buttonExit = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.labelInfo = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
@@ -53,9 +54,9 @@
             this.buttonEx = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.buttonUpdate = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxOldPassword = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxNewPassword = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.labelPassword = new System.Windows.Forms.Label();
@@ -84,7 +85,6 @@
             this.JobTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.StatusDesc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.labelInfo = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -142,6 +142,16 @@
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "User Information :";
+            // 
+            // labelInfo
+            // 
+            this.labelInfo.AutoSize = true;
+            this.labelInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInfo.Location = new System.Drawing.Point(52, 101);
+            this.labelInfo.Name = "labelInfo";
+            this.labelInfo.Size = new System.Drawing.Size(32, 46);
+            this.labelInfo.TabIndex = 14;
+            this.labelInfo.Text = ".";
             // 
             // groupBox1
             // 
@@ -352,9 +362,9 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.buttonUpdate);
-            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Controls.Add(this.textBoxOldPassword);
             this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.textBoxNewPassword);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.labelPassword);
@@ -379,12 +389,12 @@
             this.buttonUpdate.UseVisualStyleBackColor = false;
             this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
-            // textBox3
+            // textBoxOldPassword
             // 
-            this.textBox3.Location = new System.Drawing.Point(418, 156);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(455, 44);
-            this.textBox3.TabIndex = 20;
+            this.textBoxOldPassword.Location = new System.Drawing.Point(418, 156);
+            this.textBoxOldPassword.Name = "textBoxOldPassword";
+            this.textBoxOldPassword.Size = new System.Drawing.Size(455, 44);
+            this.textBoxOldPassword.TabIndex = 20;
             // 
             // textBox2
             // 
@@ -393,12 +403,12 @@
             this.textBox2.Size = new System.Drawing.Size(455, 44);
             this.textBox2.TabIndex = 19;
             // 
-            // textBox1
+            // textBoxNewPassword
             // 
-            this.textBox1.Location = new System.Drawing.Point(432, 264);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(455, 44);
-            this.textBox1.TabIndex = 18;
+            this.textBoxNewPassword.Location = new System.Drawing.Point(432, 264);
+            this.textBoxNewPassword.Name = "textBoxNewPassword";
+            this.textBoxNewPassword.Size = new System.Drawing.Size(455, 44);
+            this.textBoxNewPassword.TabIndex = 18;
             // 
             // label9
             // 
@@ -635,22 +645,11 @@
             this.StatusDesc.Text = "Status Description";
             this.StatusDesc.Width = 460;
             // 
-            // labelInfo
-            // 
-            this.labelInfo.AutoSize = true;
-            this.labelInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInfo.Location = new System.Drawing.Point(52, 101);
-            this.labelInfo.Name = "labelInfo";
-            this.labelInfo.Size = new System.Drawing.Size(96, 138);
-            this.labelInfo.TabIndex = 14;
-            this.labelInfo.Text = ".";
-
-            // 
             // UserAccountManagment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2510, 1793);
+            this.ClientSize = new System.Drawing.Size(836, 597);
             this.Controls.Add(this.tabControl1);
             this.Name = "UserAccountManagment";
             this.Text = "UserAccountManagment";
@@ -703,9 +702,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button buttonUpdate;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxOldPassword;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxNewPassword;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
