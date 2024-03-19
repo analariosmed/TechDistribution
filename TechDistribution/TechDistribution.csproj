@@ -70,22 +70,22 @@
     <Compile Include="GUI\EmployeeLogin.Designer.cs">
       <DependentUpon>EmployeeLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\EmployeeManagament.cs">
+    <Compile Include="GUI\EmployeeManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\EmployeeManagament.Designer.cs">
-      <DependentUpon>EmployeeManagament.cs</DependentUpon>
+    <Compile Include="GUI\EmployeeManagement.Designer.cs">
+      <DependentUpon>EmployeeManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserAccountManagment.cs">
+    <Compile Include="GUI\UserAccountsManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\UserAccountManagment.Designer.cs">
-      <DependentUpon>UserAccountManagment.cs</DependentUpon>
+    <Compile Include="GUI\UserAccountsManagement.Designer.cs">
+      <DependentUpon>UserAccountsManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="GUI\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="GUI\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -100,13 +100,13 @@
     <EmbeddedResource Include="GUI\EmployeeLogin.resx">
       <DependentUpon>EmployeeLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\EmployeeManagament.resx">
-      <DependentUpon>EmployeeManagament.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\EmployeeManagement.resx">
+      <DependentUpon>EmployeeManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserAccountManagment.resx">
-      <DependentUpon>UserAccountManagment.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UserAccountsManagement.resx">
+      <DependentUpon>UserAccountsManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

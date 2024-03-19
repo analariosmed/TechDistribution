@@ -14,9 +14,9 @@ using TechDistribution.VALIDATION;
 
 namespace TechDistribution.GUI
 {
-    public partial class UserAccountManagment : Form
+    public partial class UserAccountsManagement : Form
     {
-        public UserAccountManagment()
+        public UserAccountsManagement()
         {
             InitializeComponent();
         }
@@ -81,12 +81,25 @@ namespace TechDistribution.GUI
             User user = new User();
             user.UserId = Convert.ToInt32(textBoxUserId.Text);
             user.Password = textBoxNewPassword.Text;
-            bool value=User.UpdateUser(user);
-            if (value==true)
+            if (!User.IsAnExistingUserAccount(user) == true)
             {
-                MessageBox.Show("Password has been update sucessfully!");
+                if (!Validator.IsValidPassword(user.Password))
+                {
+                    MessageBox.Show("Password must be at least 6 characters long. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (textBoxNewPassword != textBoxRepeatNew)
+                {
+                    MessageBox.Show("Passwords do not match Please try again.", "Error", MessageBoxButtons.OK);
+                    return;
+                }
+                bool value = User.UpdateUser(user);
+                if (value == true)
+                {
+                    MessageBox.Show("Password has been update sucessfully!");
+                }
+
             }
-            
         }
 
         private void buttonListAll_Click(object sender, EventArgs e)
@@ -117,10 +130,21 @@ namespace TechDistribution.GUI
         {
             User user = new User();
             int employeeId = Convert.ToInt32(textBoxEmployeeId.Text);
+            string password = textBoxPassword.Text.Trim();
 
             //Search if an account was created already for this employee
             if (!User.IsAnExistingUserAccount(user)==true)
             {
+                if (!Validator.IsValidPassword(password))
+                {
+                    MessageBox.Show("Password must be at least 6 characters long. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (textBoxPassword != textBoxPassword2)
+                {
+                    MessageBox.Show("Passwords do not match Lease try again.", "Error", MessageBoxButtons.OK);
+                    return;
+                }
                 user.Password = textBoxPassword.Text.Trim();
                 user.StatusId = 0;
                 user.EmployeeId = Convert.ToInt32(textBoxEmployeeId.Text);
@@ -198,6 +222,21 @@ namespace TechDistribution.GUI
 
             }
 
+        }
+
+        private void buttonEx_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void buttonExit2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

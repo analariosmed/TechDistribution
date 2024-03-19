@@ -59,10 +59,9 @@ namespace TechDistribution.DAL
             List<User> listU = new List<User>();
             SqlConnection conn = UtilityDB.GetDBConnection();
 
-            SqlCommand cmd = new SqlCommand("SELECT UA.UserId, E.FirstName, E.LastName, UA.DateCreated, UA.DateModified, UA.StatusId, S.StatusDesc, E.JobId, J.JobTitle " +
+            SqlCommand cmd = new SqlCommand("SELECT UA.UserId, E.FirstName, E.LastName, UA.DateCreated, UA.DateModified,  E.JobId, J.JobTitle " +
                                 "FROM UserAccounts UA " +
                                 "INNER JOIN Employees E ON UA.EmployeeId = E.EmployeeId " +
-                                "LEFT OUTER JOIN Status S ON UA.StatusId = S.StatusId " +
                                 "LEFT OUTER JOIN Jobs J ON E.JobId = J.JobId;", conn);
 
             try
@@ -80,8 +79,6 @@ namespace TechDistribution.DAL
                         LastName = reader["LastName"].ToString(),
                         DateCreated = reader["DateCreated"].ToString(),
                         DateModified = reader["DateModified"].ToString(),
-                        StatusId = Convert.ToInt32(reader["StatusId"]),
-                        StatusDesc = reader["StatusDesc"].ToString(),
                         JobId = Convert.ToInt32(reader["JobId"]),
                         JobTitle = reader["JobTitle"].ToString()
                     };
@@ -128,7 +125,7 @@ namespace TechDistribution.DAL
                 catch (Exception e)
                 {
                     MessageBox.Show(e.ToString());
-                    Console.WriteLine("Error we find an error your password was not save!" + e.Message);
+                    Console.WriteLine("Error updating your new password!" + e.Message);
                     return false;
                 }
             }
@@ -165,10 +162,9 @@ namespace TechDistribution.DAL
 
             SqlConnection conn = UtilityDB.GetDBConnection();
 
-            SqlCommand cmd = new SqlCommand("SELECT UA.UserId, E.FirstName, E.LastName, UA.DateCreated, UA.DateModified, UA.StatusId, S.StatusDesc, E.JobId, J.JobTitle " +
+            SqlCommand cmd = new SqlCommand("SELECT UA.UserId, E.FirstName, E.LastName, UA.DateCreated, UA.DateModified, E.JobId, J.JobTitle " +
                                  "FROM UserAccounts UA " +
                                  "INNER JOIN Employees E ON UA.EmployeeId = E.EmployeeId " +
-                                 "LEFT OUTER JOIN  Status S ON UA.StatusId = S.StatusId " +
                                  "LEFT OUTER JOIN  Jobs J ON E.JobId = J.JobId " +
                                  "WHERE UA.UserId = @UserId;", conn);
 
@@ -189,8 +185,6 @@ namespace TechDistribution.DAL
                         LastName = reader["LastName"].ToString(),
                         DateCreated = reader["DateCreated"].ToString(),
                         DateModified = reader["DateModified"].ToString(),
-                        StatusId = Convert.ToInt32(reader["StatusId"]),
-                        StatusDesc = reader["StatusDesc"].ToString(),
                         JobId = Convert.ToInt32(reader["JobId"]),
                         JobTitle = reader["JobTitle"].ToString()
                     };
@@ -218,7 +212,6 @@ namespace TechDistribution.DAL
             SqlCommand cmd = new SqlCommand("SELECT UA.UserId, E.FirstName, E.LastName, UA.DateCreated " +
                              "FROM UserAccounts UA " +
                              "INNER JOIN Employees E ON UA.EmployeeId = E.EmployeeId " +
-                             "LEFT OUTER JOIN Status S ON UA.StatusId = S.StatusId " +
                              "LEFT OUTER JOIN Jobs J ON E.JobId = J.JobId " +
                              "WHERE UA.EmployeeId = @EmployeeId;", conn);
 
@@ -254,29 +247,9 @@ namespace TechDistribution.DAL
             return null;
         }
 
-        //public static bool IsAnExistingUserAccount(int employeeId)
-        //{
-        //    List<User> listU = new List<User>();
-        //    SqlConnection conn = UtilityDB.GetDBConnection();
-        //    SqlCommand cmdFind = new SqlCommand("SELECT * FROM UserAccounts WHERE EmployeeId = @EmployeeId", conn);
-        //    cmdFind.Parameters.AddWithValue("@EmployeeId", employeeId);
-
-        //    SqlDataReader reader = cmdFind.ExecuteReader();
-        //    User user = new User();
-
-
-        //    if (reader.Read())
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //    conn.Close();
-        }
-
-
     }
+
+
+ }
 
 

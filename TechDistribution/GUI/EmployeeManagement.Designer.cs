@@ -1,6 +1,6 @@
 ﻿namespace TechDistribution.GUI
 {
-    partial class EmployeeManagament
+    partial class EmployeeManagement
     {
         /// <summary>
         /// Required designer variable.

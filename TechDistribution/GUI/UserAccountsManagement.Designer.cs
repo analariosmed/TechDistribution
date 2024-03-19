@@ -1,6 +1,6 @@
 ﻿namespace TechDistribution.GUI
 {
-    partial class UserAccountManagment
+    partial class UserAccountsManagement
     {
         /// <summary>
         /// Required designer variable.
@@ -34,6 +34,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.labelInfo = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
@@ -53,9 +54,10 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.buttonEx = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.textBoxOldPassword = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxRepeatNew = new System.Windows.Forms.TextBox();
             this.textBoxNewPassword = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -68,7 +70,6 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonDelete = new System.Windows.Forms.Button();
             this.ButtonSearch = new System.Windows.Forms.Button();
             this.textBoxUserId = new System.Windows.Forms.TextBox();
@@ -155,6 +156,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.textBoxEmail);
             this.groupBox1.Controls.Add(this.textBoxLastName);
             this.groupBox1.Controls.Add(this.textBoxFirstName);
@@ -180,6 +182,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Create User Account";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(436, 834);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(369, 29);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "must be at least 6 characters long";
             // 
             // textBoxEmail
             // 
@@ -245,12 +257,11 @@
             this.buttonSearchEmployee.TabIndex = 16;
             this.buttonSearchEmployee.Text = "Search";
             this.buttonSearchEmployee.UseVisualStyleBackColor = false;
-            this.buttonSearchEmployee.Click += new System.EventHandler(this.buttonSearchEmployee_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(87, 681);
+            this.label6.Location = new System.Drawing.Point(14, 703);
             this.label6.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(757, 37);
@@ -267,12 +278,11 @@
             this.buttonCreateAccount.TabIndex = 12;
             this.buttonCreateAccount.Text = "Create Account";
             this.buttonCreateAccount.UseVisualStyleBackColor = false;
-            this.buttonCreateAccount.Click += new System.EventHandler(this.buttonCreateAccount_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(52, 278);
+            this.label5.Location = new System.Drawing.Point(14, 285);
             this.label5.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(367, 37);
@@ -349,7 +359,7 @@
             // 
             // buttonEx
             // 
-            this.buttonEx.BackColor = System.Drawing.Color.LightGray;
+            this.buttonEx.BackColor = System.Drawing.Color.DarkGray;
             this.buttonEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEx.Location = new System.Drawing.Point(1754, 1240);
             this.buttonEx.Margin = new System.Windows.Forms.Padding(7);
@@ -361,9 +371,10 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.buttonUpdate);
             this.groupBox3.Controls.Add(this.textBoxOldPassword);
-            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.textBoxRepeatNew);
             this.groupBox3.Controls.Add(this.textBoxNewPassword);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label8);
@@ -376,6 +387,16 @@
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Update User Account";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(518, 320);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(369, 29);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "must be at least 6 characters long";
             // 
             // buttonUpdate
             // 
@@ -396,12 +417,12 @@
             this.textBoxOldPassword.Size = new System.Drawing.Size(455, 44);
             this.textBoxOldPassword.TabIndex = 20;
             // 
-            // textBox2
+            // textBoxRepeatNew
             // 
-            this.textBox2.Location = new System.Drawing.Point(432, 369);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(455, 44);
-            this.textBox2.TabIndex = 19;
+            this.textBoxRepeatNew.Location = new System.Drawing.Point(432, 369);
+            this.textBoxRepeatNew.Name = "textBoxRepeatNew";
+            this.textBoxRepeatNew.Size = new System.Drawing.Size(455, 44);
+            this.textBoxRepeatNew.TabIndex = 19;
             // 
             // textBoxNewPassword
             // 
@@ -464,8 +485,7 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7});
+            this.columnHeader6});
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(28, 183);
             this.listView1.Margin = new System.Windows.Forms.Padding(7);
@@ -504,11 +524,6 @@
             // 
             this.columnHeader6.Text = "Job Tilte";
             this.columnHeader6.Width = 166;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Status Description";
-            this.columnHeader7.Width = 460;
             // 
             // buttonDelete
             // 
@@ -589,7 +604,6 @@
             this.buttonListAll.TabIndex = 2;
             this.buttonListAll.Text = "List All Users";
             this.buttonListAll.UseVisualStyleBackColor = true;
-            this.buttonListAll.Click += new System.EventHandler(this.buttonListAll_Click);
             // 
             // listViewAllUsers
             // 
@@ -645,13 +659,13 @@
             this.StatusDesc.Text = "Status Description";
             this.StatusDesc.Width = 460;
             // 
-            // UserAccountManagment
+            // UserAccountsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2408, 1626);
             this.Controls.Add(this.tabControl1);
-            this.Name = "UserAccountManagment";
+            this.Name = "UserAccountsManagement";
             this.Text = "UserAccountManagment";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -703,7 +717,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.TextBox textBoxOldPassword;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxRepeatNew;
         private System.Windows.Forms.TextBox textBoxNewPassword;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
@@ -712,7 +726,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -728,5 +741,7 @@
         private System.Windows.Forms.Button buttonEx;
         private System.Windows.Forms.Button buttonExit2;
         private System.Windows.Forms.Label labelInfo;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
