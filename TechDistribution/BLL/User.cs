@@ -58,10 +58,7 @@ namespace TechDistribution.BLL
             return existing;
         }
 
-        public User SearchUser(int userId)
-        {
-            return UserDB.SearchUser(userId);
-        }
+        
 
         public static List<User> GetUsers()
         {
@@ -77,14 +74,31 @@ namespace TechDistribution.BLL
             return UserDB.UpdateUser(user);
         }
 
-        public User SearchUserByEmployeeId(int employeeId) 
-        {
-            return UserDB.SearchUserByEmployeeId(employeeId);
-        }
         public static void DeleteUser(int userId)
         {
             UserDB.DeleteUser(userId);
         }
+
+        public User SearchUserByEmployeeId(int employeeId) 
+        {
+            return UserDB.SearchUserByEmployeeId(employeeId);
+        }
+
+        public User SearchUser(int userId)
+        {
+            return UserDB.SearchUser(userId);
+        }
+  
+
+        public static bool IsAnExistingUserAccount(User user) {
+            if (UserDB.SearchUserByEmployeeId(user.employeeId)==null) { return true; } else { return false;}
+           
+
+
+            //bool existingAccount = UserDB.IsAnExistingUserAccount(employeeId);
+            //return existingAccount;
+        }
+
 
     }
 }

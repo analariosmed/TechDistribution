@@ -103,7 +103,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(7);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(2180, 1309);
+            this.tabControl1.Size = new System.Drawing.Size(2211, 1363);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -281,7 +281,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(7);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(7);
-            this.tabPage2.Size = new System.Drawing.Size(2156, 1239);
+            this.tabPage2.Size = new System.Drawing.Size(2187, 1293);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Search/Update/Delete";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -596,7 +596,7 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(7);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(7);
-            this.tabPage3.Size = new System.Drawing.Size(2156, 1239);
+            this.tabPage3.Size = new System.Drawing.Size(2187, 1293);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Employee List";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -670,7 +670,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2187, 1320);
+            this.ClientSize = new System.Drawing.Size(2469, 2107);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(7);
             this.Name = "EmployeeManagament";

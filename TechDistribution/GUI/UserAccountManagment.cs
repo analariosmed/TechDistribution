@@ -113,9 +113,71 @@ namespace TechDistribution.GUI
 
 
 
+        private void buttonCreateAccount_Click(object sender, EventArgs e)
+        {
+            User user = new User();
+            int employeeId = Convert.ToInt32(textBoxEmployeeId.Text);
+
+            //Search if an account was created already for this employee
+            if (!User.IsAnExistingUserAccount(user)==true)
+            {
+                user.Password = textBoxPassword.Text.Trim();
+                user.StatusId = 0;
+                user.EmployeeId = Convert.ToInt32(textBoxEmployeeId.Text);
+                // try catch to create the userAccount
+                try
+                {
+                    user.CreateUserAccount(user);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error to Create the User Account");
+                    return;
+                }
+
+                textBoxPassword.Clear();
+                textBoxPassword2.Clear();
+                textBoxFirstName.Clear();
+                textBoxLastName.Clear();    
+                textBoxEmail.Clear();
+
+                MessageBox.Show("The User Account was created Sucessfully");
+
+                //Get UserId from SQL (created automatically) to share in the screen
+                
+                try
+                {
+                    user = user.SearchUserByEmployeeId(employeeId);
+                    if (user == null)
+                    {
+                        MessageBox.Show("Sorry, something was wrong creating your UserId.");
+
+                    }
+                    string firstName = user.FirstName;
+                    string lastName = user.LastName;
+                    int userId = user.UserId;
+                    string dateCreated = user.DateCreated;
+                    labelInfo.Text = user.FirstName + " " + user.LastName + "\n" +
+                           "Your Account was created successfully!!\n" +
+                            "Your User Id is " + user.UserId.ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Sorry, something was wrong creating your UserId.");
+
+                }
+            }
+            else {
+                MessageBox.Show("Sorry the employee has an Account already.");
+
+            }
+
+           
+        }
+
         private void buttonSearchEmployee_Click(object sender, EventArgs e)
         {
-
             int employeeId = Convert.ToInt32(textBoxEmployeeId.Text);
 
 
@@ -126,66 +188,16 @@ namespace TechDistribution.GUI
                 textBoxFirstName.Text = employee.FirstName;
                 textBoxLastName.Text = employee.LastName;
                 textBoxEmail.Text = employee.Email;
+           
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Sorry, we didn't find an employee with that ID.");
+              
 
             }
+
         }
-
-        private void buttonCreateAccount_Click(object sender, EventArgs e)
-        {
-            User user = new User();
-            user.Password = textBoxPassword.Text.Trim();
-            user.StatusId = 0;
-            user.EmployeeId = Convert.ToInt32(textBoxEmployeeId.Text);
-
-            try
-            {
-                user.CreateUserAccount(user);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Error to Create the User Account");
-                return;
-            }
-
-            textBoxPassword.Clear();
-            textBoxPassword2.Clear();
-           
-
-            MessageBox.Show("The User Account was created Sucessfully");
-
-            int employeeId = Convert.ToInt32(textBoxEmployeeId.Text);
-            User user1 = new User();
-
-            try
-            {
-                user1 = user.SearchUserByEmployeeId(employeeId);
-                if (user1 == null) 
-                {
-                    MessageBox.Show("Sorry, something was wrong getting your Information.");
-                    
-                }
-                string firstName = user1.FirstName;
-                string lastName = user1.LastName;
-                int userId = user1.UserId;
-                string dateCreated = user.DateCreated;  
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Sorry, something was wrong getting your information.");
-
-            }
-
-            labelInfo.Text = user1.FirstName + " " + user1.LastName + "\n"+
-                            "Your Account was created successfully!!\n" +
-                             "Your User Id is " + user1.UserId.ToString();
-        }
-
-  
     }
 }

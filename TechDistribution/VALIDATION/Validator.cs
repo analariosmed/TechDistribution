@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace TechDistribution.VALIDATION
 {
@@ -34,6 +35,12 @@ namespace TechDistribution.VALIDATION
         public static bool IsValidEmail(string email)
         {
             if (!Regex.IsMatch(email, @"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"))
+                return false;
+            return true;
+        }
+        public static bool IsValidPassword(string password)
+        { 
+            if (!Regex.IsMatch(password, @"^.{6,}$"))
                 return false;
             return true;
         }

@@ -102,98 +102,7 @@ namespace TechDistribution.DAL
         }
 
 
-        public static User SearchUser(int userId)
-        {
-
-            SqlConnection conn = UtilityDB.GetDBConnection();
-
-            SqlCommand cmd = new SqlCommand("SELECT UA.UserId, E.FirstName, E.LastName, UA.DateCreated, UA.DateModified, UA.StatusId, S.StatusDesc, E.JobId, J.JobTitle " +
-                                 "FROM UserAccounts UA " +
-                                 "INNER JOIN Employees E ON UA.EmployeeId = E.EmployeeId " +
-                                 "LEFT OUTER JOIN  Status S ON UA.StatusId = S.StatusId " +
-                                 "LEFT OUTER JOIN  Jobs J ON E.JobId = J.JobId " +
-                                 "WHERE UA.UserId = @UserId;", conn);
-
-            cmd.Parameters.AddWithValue("@UserId", userId); // Add UserId parameter
-
-            try
-            {
-                conn.Close();
-                conn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    User user = new User
-                    {
-                        UserId = Convert.ToInt32(reader["UserId"]),
-                        FirstName = reader["FirstName"].ToString(),
-                        LastName = reader["LastName"].ToString(),
-                        DateCreated = reader["DateCreated"].ToString(),
-                        DateModified = reader["DateModified"].ToString(),
-                        StatusId = Convert.ToInt32(reader["StatusId"]),
-                        StatusDesc = reader["StatusDesc"].ToString(),
-                        JobId = Convert.ToInt32(reader["JobId"]),
-                        JobTitle = reader["JobTitle"].ToString()
-                    };
-
-                    return user;
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error: " + ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
-            return null;
-
-        }
-
-        public static User SearchUserByEmployeeId(int employeeId) {
-
-                SqlConnection conn = UtilityDB.GetDBConnection();
-
-                SqlCommand cmd = new SqlCommand("SELECT UA.UserId, E.FirstName, E.LastName, UA.DateCreated " +
-                                 "FROM UserAccounts UA " +
-                                 "INNER JOIN Employees E ON UA.EmployeeId = E.EmployeeId " +
-                                 "LEFT OUTER JOIN Status S ON UA.StatusId = S.StatusId " +
-                                 "LEFT OUTER JOIN Jobs J ON E.JobId = J.JobId " +
-                                 "WHERE UA.EmployeeId = @EmployeeId;", conn);
-
-                cmd.Parameters.AddWithValue("@EmployeeId", employeeId);
-
-                try
-                {
-                    conn.Close();
-                    conn.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        User user = new User
-                        {
-                            UserId = Convert.ToInt32(reader["UserId"]),
-                            FirstName = reader["FirstName"].ToString(),
-                            LastName = reader["LastName"].ToString(),
-                            DateCreated = reader["DateCreated"].ToString(),
-                        };
-
-                        return user;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error: " + ex.Message);
-                }
-                finally
-                {
-                    conn.Close();
-                }
-                return null;
-            }
+       
 
         public static bool UpdateUser(User user)
         {
@@ -250,6 +159,124 @@ namespace TechDistribution.DAL
                 conn.Close();
             }
         }
+
+        public static User SearchUser(int userId)
+        {
+
+            SqlConnection conn = UtilityDB.GetDBConnection();
+
+            SqlCommand cmd = new SqlCommand("SELECT UA.UserId, E.FirstName, E.LastName, UA.DateCreated, UA.DateModified, UA.StatusId, S.StatusDesc, E.JobId, J.JobTitle " +
+                                 "FROM UserAccounts UA " +
+                                 "INNER JOIN Employees E ON UA.EmployeeId = E.EmployeeId " +
+                                 "LEFT OUTER JOIN  Status S ON UA.StatusId = S.StatusId " +
+                                 "LEFT OUTER JOIN  Jobs J ON E.JobId = J.JobId " +
+                                 "WHERE UA.UserId = @UserId;", conn);
+
+            cmd.Parameters.AddWithValue("@UserId", userId); // Add UserId parameter
+
+            try
+            {
+                conn.Close();
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    User user = new User
+                    {
+                        UserId = Convert.ToInt32(reader["UserId"]),
+                        FirstName = reader["FirstName"].ToString(),
+                        LastName = reader["LastName"].ToString(),
+                        DateCreated = reader["DateCreated"].ToString(),
+                        DateModified = reader["DateModified"].ToString(),
+                        StatusId = Convert.ToInt32(reader["StatusId"]),
+                        StatusDesc = reader["StatusDesc"].ToString(),
+                        JobId = Convert.ToInt32(reader["JobId"]),
+                        JobTitle = reader["JobTitle"].ToString()
+                    };
+
+                    return user;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return null;
+
+        }
+
+        public static User SearchUserByEmployeeId(int employeeId)
+        {
+
+            SqlConnection conn = UtilityDB.GetDBConnection();
+
+            SqlCommand cmd = new SqlCommand("SELECT UA.UserId, E.FirstName, E.LastName, UA.DateCreated " +
+                             "FROM UserAccounts UA " +
+                             "INNER JOIN Employees E ON UA.EmployeeId = E.EmployeeId " +
+                             "LEFT OUTER JOIN Status S ON UA.StatusId = S.StatusId " +
+                             "LEFT OUTER JOIN Jobs J ON E.JobId = J.JobId " +
+                             "WHERE UA.EmployeeId = @EmployeeId;", conn);
+
+            cmd.Parameters.AddWithValue("@EmployeeId", employeeId);
+
+            try
+            {
+                conn.Close();
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    User user = new User
+                    {
+                        UserId = Convert.ToInt32(reader["UserId"]),
+                        FirstName = reader["FirstName"].ToString(),
+                        LastName = reader["LastName"].ToString(),
+                        DateCreated = reader["DateCreated"].ToString(),
+                    };
+
+                    return user;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return null;
+        }
+
+        //public static bool IsAnExistingUserAccount(int employeeId)
+        //{
+        //    List<User> listU = new List<User>();
+        //    SqlConnection conn = UtilityDB.GetDBConnection();
+        //    SqlCommand cmdFind = new SqlCommand("SELECT * FROM UserAccounts WHERE EmployeeId = @EmployeeId", conn);
+        //    cmdFind.Parameters.AddWithValue("@EmployeeId", employeeId);
+
+        //    SqlDataReader reader = cmdFind.ExecuteReader();
+        //    User user = new User();
+
+
+        //    if (reader.Read())
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //    conn.Close();
+        }
+
+
     }
-}
+
 
