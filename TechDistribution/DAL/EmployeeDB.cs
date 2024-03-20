@@ -151,6 +151,8 @@ namespace TechDistribution.DAL
                     MessageBox.Show(e.ToString());
                     return;
                 }
+
+                conn.Close();
             }
         }
 

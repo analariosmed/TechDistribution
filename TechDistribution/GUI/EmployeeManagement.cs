@@ -14,10 +14,10 @@ using System.Windows.Forms;
 
 namespace TechDistribution.GUI
 {
-    public partial class EmployeeManagament : Form
+    public partial class EmployeeManagement : Form
     {
 
-        public EmployeeManagament()
+        public EmployeeManagement()
         {
             InitializeComponent();
             comboBoxStatus.SelectedIndex = 0;
