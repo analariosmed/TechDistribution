@@ -23,34 +23,7 @@ namespace TechDistribution.GUI
 
         private void ButtonSearch_Click(object sender, EventArgs e)
         {
-            if (textBoxUserId.Text == "")
-            {
-                MessageBox.Show("Please select a User Id");
-                return;
-            }
-
-            listView1.Items.Clear();
-            User user = new User();
-            int userId = Convert.ToInt32(textBoxUserId.Text);
-
-
-            try
-            {
-                User user1 = user.SearchUser(userId);
-                ListViewItem item = new ListViewItem(user1.UserId.ToString());
-                item.SubItems.Add(user1.FirstName.ToString());
-                item.SubItems.Add(user1.LastName.ToString());
-                item.SubItems.Add(user1.DateCreated.ToString());
-                item.SubItems.Add(user1.DateModified.ToString());
-                item.SubItems.Add(user1.JobTitle.ToString());
-                item.SubItems.Add(user1.StatusDesc.ToString());
-
-                listView1.Items.Add(item);
-            }
-            catch
-            {
-                MessageBox.Show("Sorry! User don't found");
-            }
+          
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -237,6 +210,39 @@ namespace TechDistribution.GUI
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void buttonSearchEmployee_Click_1(object sender, EventArgs e)
+        {
+            if (textBoxUserId.Text == "")
+            {
+                MessageBox.Show("Please select a User Id");
+                return;
+            }
+
+            listView1.Items.Clear();
+            User user = new User();
+            int userId = Convert.ToInt32(textBoxUserId.Text);
+
+
+            try
+            {
+                User user1 = user.SearchUser(userId);
+                ListViewItem item = new ListViewItem(user1.UserId.ToString());
+                item.SubItems.Add(user1.FirstName.ToString());
+                item.SubItems.Add(user1.LastName.ToString());
+                item.SubItems.Add(user1.DateCreated.ToString());
+                item.SubItems.Add(user1.DateModified.ToString());
+                item.SubItems.Add(user1.JobTitle.ToString());
+                item.SubItems.Add(user1.StatusDesc.ToString());
+
+                listView1.Items.Add(item);
+            }
+            catch
+            {
+                MessageBox.Show("Sorry! User don't found");
+            }
+
         }
     }
 }

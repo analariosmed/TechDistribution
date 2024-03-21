@@ -257,6 +257,7 @@
             this.buttonSearchEmployee.TabIndex = 16;
             this.buttonSearchEmployee.Text = "Search";
             this.buttonSearchEmployee.UseVisualStyleBackColor = false;
+            this.buttonSearchEmployee.Click += new System.EventHandler(this.buttonSearchEmployee_Click_1);
             // 
             // label6
             // 
