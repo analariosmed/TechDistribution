@@ -36,10 +36,6 @@ namespace TechDistribution.BLL
         {
             return EmployeeDB.GetEmployeesComplete();
         }
-        public void CreateAccountEmployee(Employee employee)
-        {
-            EmployeeDB.SaveEmployee(employee);
-        }
 
         public bool AddEmployee(Employee employee)
         {
@@ -50,10 +46,6 @@ namespace TechDistribution.BLL
             return EmployeeDB.SearchEmployee(employeeId);
         }
 
-        public static void ModifyEmployee(Employee employee)
-        {
-            EmployeeDB.modifyEmployee(employee);
-        }
         public static void DeleteEmployee(int empId)
         {
             EmployeeDB.DeleteEmployee(empId);

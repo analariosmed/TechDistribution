@@ -160,28 +160,7 @@ namespace TechDistribution.DAL
 
         /*********************************************************************/
 
-        public static List<Employee> GetAllRecords()
-        {
-            List<Employee> listE = new List<Employee>();
-            SqlConnection conn = UtilityDB.GetDBConnection();
 
-            SqlCommand cmdSelectAll = new SqlCommand("SELECT * FROM Employees", conn);
-            SqlDataReader reader = cmdSelectAll.ExecuteReader();
-            Employee employee;
-            while (reader.Read())
-            {
-                employee = new Employee();
-                employee.EmployeeId = Convert.ToInt32(reader["EmployeeId"]);
-                employee.FirstName = reader["FirstName"].ToString();
-                employee.LastName = reader["LastName"].ToString();
-                employee.Email = reader["Email"].ToString();
-
-                listE.Add(employee);
-            }
-            conn.Close();
-            return listE;
-
-        }
 
         public static Employee SearchEmployee(int employeeId)
         {
@@ -217,27 +196,7 @@ namespace TechDistribution.DAL
 
         }
 
-        public static void SaveEmployee(Employee employee)
-        {
-            SqlConnection conn = UtilityDB.GetDBConnection();
-            SqlCommand cmdInsert = new SqlCommand();
-            cmdInsert.Connection = conn;
-            cmdInsert.CommandText = "INSERT INTO Employees (FirstName,LastName,Email)" +
-                                     "VALUES(@FirstName,@LastName,@Email)";
-
-
-            cmdInsert.Parameters.AddWithValue("@FirstName", employee.FirstName);
-            cmdInsert.Parameters.AddWithValue("@LastName", employee.LastName);
-            cmdInsert.Parameters.AddWithValue("@Email", employee.Email);
-
-
-
-            //write the sequence statement (line to execute)
-            cmdInsert.ExecuteNonQuery();
-            conn.Close();
-
-        }
-
+ 
         public static bool IsAnExistingEmployee(int employeeId)
         {
             List<Employee> listE = new List<Employee>();
@@ -249,17 +208,21 @@ namespace TechDistribution.DAL
 
             Employee student = new Employee();
 
+            conn.Close();
 
             if (reader.Read())
             {
                 return true;
+               
             }
             else
             {
                 return false;
+                
             }
+            
 
-            conn.Close();
+            
         }
 
         public static void modifyEmployee(Employee employeeUpdated)

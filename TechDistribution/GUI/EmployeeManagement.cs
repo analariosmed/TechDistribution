@@ -376,7 +376,38 @@ namespace TechDistribution.GUI
 
         private void comboBoxSearchBy_SelectedIndexChanged(object sender, EventArgs e)
         {
+            /*  ID
+                First Name
+                Last Name
+                Email
+                Phone Number
+            */
+            
+
+            switch (comboBoxSearchBy.SelectedIndex)
+            {
+                case 0:
+                    label19.Text = "7 digits for ID";
+                    break;
+                case 1:
+                    label19.Text = "Only text";
+                    break;
+                case 2:
+                    label19.Text = "Only text";
+                    break;
+                case 3:
+                    label19.Text = "example@example.com";
+                    break;
+                case 4:
+                    label19.Text = "(777)777-7777";
+                    break;
+
+            }
+
+            label19.Show();
+
             textBoxSearchBy.Clear();
+            
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
@@ -477,10 +508,20 @@ namespace TechDistribution.GUI
                     MessageBox.Show("There were a problem at delete the employee" + ep.ToString());
                     return;
                 }
-                
+
             }
 
 
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to close this window?", "Close", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }
