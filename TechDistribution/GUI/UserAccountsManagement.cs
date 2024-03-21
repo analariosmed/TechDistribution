@@ -23,7 +23,34 @@ namespace TechDistribution.GUI
 
         private void ButtonSearch_Click(object sender, EventArgs e)
         {
-          
+            if (textBoxUserId.Text == "")
+            {
+                MessageBox.Show("Please select a User Id");
+                return;
+            }
+
+            listView1.Items.Clear();
+            User user = new User();
+            int userId = Convert.ToInt32(textBoxUserId.Text);
+
+
+            try
+            {
+                User user1 = user.SearchUser(userId);
+                ListViewItem item = new ListViewItem(user1.UserId.ToString());
+                item.SubItems.Add(user1.FirstName.ToString());
+                item.SubItems.Add(user1.LastName.ToString());
+                item.SubItems.Add(user1.DateCreated.ToString());
+                item.SubItems.Add(user1.DateModified.ToString());
+                item.SubItems.Add(user1.JobTitle.ToString());
+
+                listView1.Items.Add(item);
+            }
+            catch
+            {
+                MessageBox.Show("Sorry! User don't found");
+            }
+
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -61,7 +88,7 @@ namespace TechDistribution.GUI
                     MessageBox.Show("Password must be at least 6 characters long. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if (textBoxNewPassword != textBoxRepeatNew)
+                if (textBoxNewPassword.Text != textBoxRepeatNew.Text)
                 {
                     MessageBox.Show("Passwords do not match Please try again.", "Error", MessageBoxButtons.OK);
                     return;
@@ -106,16 +133,16 @@ namespace TechDistribution.GUI
             string password = textBoxPassword.Text.Trim();
 
             //Search if an account was created already for this employee
-            if (!User.IsAnExistingUserAccount(user)==true)
+            if (User.IsAnExistingUserAccount(user) == false)
             {
                 if (!Validator.IsValidPassword(password))
                 {
                     MessageBox.Show("Password must be at least 6 characters long. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if (textBoxPassword != textBoxPassword2)
+                if (textBoxPassword.Text != textBoxPassword2.Text)
                 {
-                    MessageBox.Show("Passwords do not match Lease try again.", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Passwords do not match please try again.", "Error", MessageBoxButtons.OK);
                     return;
                 }
                 user.Password = textBoxPassword.Text.Trim();
@@ -135,13 +162,13 @@ namespace TechDistribution.GUI
                 textBoxPassword.Clear();
                 textBoxPassword2.Clear();
                 textBoxFirstName.Clear();
-                textBoxLastName.Clear();    
+                textBoxLastName.Clear();
                 textBoxEmail.Clear();
 
                 MessageBox.Show("The User Account was created Sucessfully");
 
                 //Get UserId from SQL (created automatically) to share in the screen
-                
+
                 try
                 {
                     user = user.SearchUserByEmployeeId(employeeId);
@@ -165,84 +192,22 @@ namespace TechDistribution.GUI
 
                 }
             }
-            else {
+            else
+            {
                 MessageBox.Show("Sorry the employee has an Account already.");
 
             }
 
-           
-        }
-
-        private void buttonSearchEmployee_Click(object sender, EventArgs e)
-        {
-            int employeeId = Convert.ToInt32(textBoxEmployeeId.Text);
-
-
-            try
-            {
-                Employee employee = new Employee();
-                employee = employee.SearchEmployee(employeeId);
-                textBoxFirstName.Text = employee.FirstName;
-                textBoxLastName.Text = employee.LastName;
-                textBoxEmail.Text = employee.Email;
-           
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Sorry, we didn't find an employee with that ID.");
-              
-
-            }
 
         }
 
-        private void buttonEx_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void buttonExit2_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
+    
+      
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void buttonSearchEmployee_Click_1(object sender, EventArgs e)
-        {
-            if (textBoxUserId.Text == "")
-            {
-                MessageBox.Show("Please select a User Id");
-                return;
-            }
 
-            listView1.Items.Clear();
-            User user = new User();
-            int userId = Convert.ToInt32(textBoxUserId.Text);
-
-
-            try
-            {
-                User user1 = user.SearchUser(userId);
-                ListViewItem item = new ListViewItem(user1.UserId.ToString());
-                item.SubItems.Add(user1.FirstName.ToString());
-                item.SubItems.Add(user1.LastName.ToString());
-                item.SubItems.Add(user1.DateCreated.ToString());
-                item.SubItems.Add(user1.DateModified.ToString());
-                item.SubItems.Add(user1.JobTitle.ToString());
-                item.SubItems.Add(user1.StatusDesc.ToString());
-
-                listView1.Items.Add(item);
-            }
-            catch
-            {
-                MessageBox.Show("Sorry! User don't found");
-            }
-
-        }
     }
 }

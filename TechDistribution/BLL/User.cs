@@ -93,11 +93,11 @@ namespace TechDistribution.BLL
         public static bool IsAnExistingUserAccount(User user) {
             if (UserDB.SearchUserByEmployeeId(user.employeeId)==null)
             {
-                return true; 
+                return false; 
             } 
             else 
             { 
-                return false;
+                return true;
             }
 
         }
