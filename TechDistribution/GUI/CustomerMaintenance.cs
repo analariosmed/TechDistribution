@@ -40,13 +40,13 @@ namespace TechDistribution.GUI
         {
             int searchId = Convert.ToInt32(textBoxCustomerId.Text);
             DataRow drCustomer = dtCustomers.Rows.Find(searchId);
-            drCustomer["CustomerName"] = textBoxName.Text.Trim();
-            drCustomer["Street"] = textBoxStreet.Text.Trim();
-            drCustomer["City"] = textBoxCity.Text.Trim();
-            drCustomer["PostalCode"] = textBoxPostalCode.Text.Trim();
-            drCustomer["PhoneNumber"] = textBoxPhoneNumber.Text.Trim();
-            drCustomer["FaxNumber"] = textBoxFaxNumber.Text.Trim();
-            drCustomer["CreditLimit"] = textBoxCreditLimit.Text.Trim();
+            drCustomer["CustomerName"] = textBoxNameUpdate.Text.Trim();
+            drCustomer["Street"] = textBoxStreetUpdate.Text.Trim();
+            drCustomer["City"] = textBoxCityUpdate.Text.Trim();
+            drCustomer["PostalCode"] = textBoxPostalCodeUpdate.Text.Trim();
+            drCustomer["PhoneNumber"] = textBoxPhoneNumberUpdate.Text.Trim();
+            drCustomer["FaxNumber"] = textBoxFaxNumberUpdate.Text.Trim();
+            drCustomer["CreditLimit"] = Convert.ToDecimal(textBoxCreditLimitUpdate.Text.Trim());
 
 
             MessageBox.Show("The RowState in the DataTable Customers : " + drCustomer.RowState, "RowState");
@@ -57,6 +57,7 @@ namespace TechDistribution.GUI
           
             TechDistributionDB = new DataSet("TechDistributionDS");
             dtCustomers = new DataTable("Customers");
+            //fixing problem with the constrains
             TechDistributionDB.Tables.Clear();
             TechDistributionDB.EnforceConstraints = false;
             TechDistributionDB.Tables.Add(dtCustomers);
@@ -68,11 +69,12 @@ namespace TechDistribution.GUI
             dtCustomers.Columns.Add("PostalCode", typeof(string));
             dtCustomers.Columns.Add("PhoneNumber", typeof(string));
             dtCustomers.Columns.Add("FaxNumber", typeof(string));
-            dtCustomers.Columns.Add("CreditLimit", typeof(int));
+            dtCustomers.Columns.Add("CreditLimit", typeof(decimal));
 
-            // Set AllowDBNull property to true for the FaxNumber column
+            // Set Allow Null property fir  FaxNumber column
             dtCustomers.Columns["FaxNumber"].AllowDBNull = true;
 
+            //set primaryKey and autoincrement for CustomerId
             dtCustomers.PrimaryKey = new DataColumn[] { dtCustomers.Columns["CustomerId"] };
             dtCustomers.Columns["CustomerId"].AutoIncrement = true;
             dtCustomers.Columns["CustomerId"].AutoIncrementSeed = 1;
@@ -92,10 +94,15 @@ namespace TechDistribution.GUI
 
         private void buttonDS_Click(object sender, EventArgs e)
         {
-            dataAdapter.SelectCommand = new SqlCommand("SELECT * FROM Customers", UtilityDB.GetDBConnection());
-            dataAdapter.Fill(TechDistributionDB, "Customers");
+            listViewDS.Items.Clear();
+            ////dataAdapter.SelectCommand = new SqlCommand("SELECT * FROM Customers", UtilityDB.GetDBConnection());
+            //dataAdapter.Fill(TechDistributionDB, "Customers");
             foreach (DataRow row in TechDistributionDB.Tables["Customers"].Rows)
             {
+                if (row.RowState == DataRowState.Deleted)
+                {
+                    continue;
+                }
                 ListViewItem item = new ListViewItem(row["CustomerId"].ToString()); 
                 item.SubItems.Add(row["CustomerName"].ToString());
                 item.SubItems.Add(row["Street"].ToString());
@@ -114,7 +121,8 @@ namespace TechDistribution.GUI
             listViewDB.Items.Clear();
 
             List<Customer> customersList = new Customer().GetCustomers();
-
+            dataAdapter.SelectCommand = new SqlCommand("SELECT * FROM Customers", UtilityDB.GetDBConnection());
+            dataAdapter.Fill(TechDistributionDB, "Customers");
             foreach (Customer customer in customersList)
             {
                 ListViewItem item = new ListViewItem(customer.CustomerId.ToString());
@@ -131,9 +139,7 @@ namespace TechDistribution.GUI
 
         private void buttonAdd_Click_1(object sender, EventArgs e)
         {
-            Customer customer = new Customer();
-
-
+       
             //validation missing
 
 
@@ -161,9 +167,7 @@ namespace TechDistribution.GUI
 
         private void buttonUpdateDB_Click(object sender, EventArgs e)
         {
-            //dataAdapter.SelectCommand = new SqlCommand("SELECT * FROM Customers", UtilityDB.GetDBConnection());
-            //dataAdapter.Fill(TechDistributionDB, "Customers");
-            // dataAdapter.UpdateCommand.ExecuteNonQuery();
+          
             dataAdapter.SelectCommand = new SqlCommand("SELECT * FROM Customers", UtilityDB.GetDBConnection());
             dataAdapter.Fill(TechDistributionDB, "Customers");
             dataAdapter.Update(TechDistributionDB, "Customers");
@@ -203,14 +207,16 @@ namespace TechDistribution.GUI
         {
             //search operation first found it
             int searchId = Convert.ToInt32(textBoxCustomerId.Text);
-            DataRow drCustomers = dtCustomers.Rows.Find(searchId);
+            DataRow drCustomers = TechDistributionDB.Tables["Customers"].Rows.Find(searchId);
             drCustomers.Delete();
             MessageBox.Show("The RowState in the DataTable Customers : " + drCustomers.RowState, "RowState");
+
         }
 
         private void buttonListAll_Click(object sender, EventArgs e)
         {
 
         }
+
     }
 }

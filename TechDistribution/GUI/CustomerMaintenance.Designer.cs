@@ -691,6 +691,7 @@
             this.textBoxPostalCodeUpdate.Name = "textBoxPostalCodeUpdate";
             this.textBoxPostalCodeUpdate.Size = new System.Drawing.Size(401, 44);
             this.textBoxPostalCodeUpdate.TabIndex = 8;
+
             // 
             // textBoxNameUpdate
             // 

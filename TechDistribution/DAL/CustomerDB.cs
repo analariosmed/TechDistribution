@@ -28,7 +28,7 @@ namespace TechDistribution.DAL
                 customer.PostalCode = reader["PostalCode"].ToString();
                 customer.PhoneNumber = reader["PhoneNumber"].ToString();
                 customer.FaxNumber = reader["FaxNumber"].ToString();
-                customer.CreditLimit = Convert.ToInt32(reader["CreditLimit"]);
+                customer.CreditLimit = Convert.ToDecimal(reader["CreditLimit"]);
 
 
                 listS.Add(customer);
@@ -59,7 +59,7 @@ namespace TechDistribution.DAL
                 customer.PostalCode = reader["PostalCode"].ToString();
                 customer.PhoneNumber = reader["PhoneNumber"].ToString();
                 customer.FaxNumber = reader["FaxNumber"].ToString();
-                customer.CreditLimit = Convert.ToInt32(reader["CreditLimit"]);
+                customer.CreditLimit = Convert.ToDecimal(reader["CreditLimit"]);
 
 
                 return customer;

@@ -16,7 +16,7 @@ namespace TechDistribution.BLL
         private string postalCode;
         private string phoneNumber;      
         private string faxNumber;
-        private int creditLimit;
+        private decimal creditLimit;
 
         //public List<Orders> Orders { get; set; }
 
@@ -27,7 +27,7 @@ namespace TechDistribution.BLL
         //    Orders = new List<Order>();
         //}
 
-        public Customer(int customerId, string name, string street, string city, string postalCode, string phoneNumber, string faxNumber, int creditLimit)
+        public Customer(int customerId, string name, string street, string city, string postalCode, string phoneNumber, string faxNumber, decimal creditLimit)
         {
             this.CustomerId = customerId;
             this.Name = name;
@@ -46,8 +46,7 @@ namespace TechDistribution.BLL
         public string PostalCode { get => postalCode; set => postalCode = value; }
         public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
         public string FaxNumber { get => faxNumber; set => faxNumber = value; }
-        public int CreditLimit { get => creditLimit; set => creditLimit = value; }
-
+        public decimal CreditLimit { get => creditLimit; set => creditLimit = value; }
 
         public List<Customer> GetCustomers()
         {
