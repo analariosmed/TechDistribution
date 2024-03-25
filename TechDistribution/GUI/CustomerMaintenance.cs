@@ -23,11 +23,12 @@ namespace TechDistribution.GUI
         DataSet TechDistributionDB;
         DataTable dtCustomers;
         SqlCommandBuilder sqlCommandBuilder;
-
+       
 
         public CustomerMaintenance()
         {
             InitializeComponent();
+            
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -83,6 +84,8 @@ namespace TechDistribution.GUI
             dataAdapter = new SqlDataAdapter();
             dataAdapter.TableMappings.Add("Customers", "Customers");
             sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);
+            dataAdapter.SelectCommand = new SqlCommand("SELECT * FROM Customers", UtilityDB.GetDBConnection());
+            dataAdapter.Fill(TechDistributionDB, "Customers");
         }
 
         private void buttonUpdate_Click_1(object sender, EventArgs e)
@@ -118,23 +121,7 @@ namespace TechDistribution.GUI
 
         private void buttonDB_Click(object sender, EventArgs e)
         {
-            listViewDB.Items.Clear();
-
-            List<Customer> customersList = new Customer().GetCustomers();
-            dataAdapter.SelectCommand = new SqlCommand("SELECT * FROM Customers", UtilityDB.GetDBConnection());
-            dataAdapter.Fill(TechDistributionDB, "Customers");
-            foreach (Customer customer in customersList)
-            {
-                ListViewItem item = new ListViewItem(customer.CustomerId.ToString());
-                item.SubItems.Add(customer.Name);
-                item.SubItems.Add(customer.Street);
-                item.SubItems.Add(customer.City);
-                item.SubItems.Add(customer.PostalCode);
-                item.SubItems.Add(customer.PhoneNumber);
-                item.SubItems.Add(customer.FaxNumber);
-                item.SubItems.Add(customer.CreditLimit.ToString());
-                listViewDB.Items.Add(item);
-            }
+        
         }
 
         private void buttonAdd_Click_1(object sender, EventArgs e)
@@ -179,7 +166,7 @@ namespace TechDistribution.GUI
             //INPUT data validation
             int customerId = Convert.ToInt32(textBoxCustomerId.Text.Trim());
             bool found = false;
-            foreach (DataRow dr in dtCustomers.Rows)
+            foreach (DataRow dr in TechDistributionDB.Tables["Customers"].Rows)
             {
                 if (Convert.ToInt32(dr["CustomerId"]) == customerId)
                 {
@@ -215,7 +202,23 @@ namespace TechDistribution.GUI
 
         private void buttonListAll_Click(object sender, EventArgs e)
         {
+            listView1.Items.Clear();
 
+            List<Customer> customersList = new Customer().GetCustomers();
+           // dataAdapter.SelectCommand = new SqlCommand("SELECT * FROM Customers", UtilityDB.GetDBConnection());
+            //dataAdapter.Fill(TechDistributionDB, "Customers");
+            foreach (Customer customer in customersList)
+            {
+                ListViewItem item = new ListViewItem(customer.CustomerId.ToString());
+                item.SubItems.Add(customer.Name);
+                item.SubItems.Add(customer.Street);
+                item.SubItems.Add(customer.City);
+                item.SubItems.Add(customer.PostalCode);
+                item.SubItems.Add(customer.PhoneNumber);
+                item.SubItems.Add(customer.FaxNumber);
+                item.SubItems.Add(customer.CreditLimit.ToString());
+                listView1.Items.Add(item);
+            }
         }
 
     }

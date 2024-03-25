@@ -52,17 +52,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.buttonDB = new System.Windows.Forms.Button();
             this.buttonDS = new System.Windows.Forms.Button();
-            this.listViewDB = new System.Windows.Forms.ListView();
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listViewDS = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -186,10 +176,10 @@
             // 
             // buttonUpdateDB
             // 
-            this.buttonUpdateDB.Location = new System.Drawing.Point(699, 1056);
+            this.buttonUpdateDB.Location = new System.Drawing.Point(699, 1042);
             this.buttonUpdateDB.Margin = new System.Windows.Forms.Padding(7);
             this.buttonUpdateDB.Name = "buttonUpdateDB";
-            this.buttonUpdateDB.Size = new System.Drawing.Size(240, 57);
+            this.buttonUpdateDB.Size = new System.Drawing.Size(317, 71);
             this.buttonUpdateDB.TabIndex = 25;
             this.buttonUpdateDB.Text = "Update Data Base";
             this.buttonUpdateDB.UseVisualStyleBackColor = true;
@@ -269,10 +259,10 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(396, 1056);
+            this.buttonAdd.Location = new System.Drawing.Point(396, 1042);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(7);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(240, 57);
+            this.buttonAdd.Size = new System.Drawing.Size(240, 71);
             this.buttonAdd.TabIndex = 12;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -365,9 +355,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.buttonDB);
             this.groupBox4.Controls.Add(this.buttonDS);
-            this.groupBox4.Controls.Add(this.listViewDB);
             this.groupBox4.Controls.Add(this.listViewDS);
             this.groupBox4.Controls.Add(this.buttonExit2);
             this.groupBox4.Controls.Add(this.groupBox3);
@@ -377,17 +365,6 @@
             this.groupBox4.Size = new System.Drawing.Size(2648, 1674);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
-            // 
-            // buttonDB
-            // 
-            this.buttonDB.Location = new System.Drawing.Point(1356, 1009);
-            this.buttonDB.Margin = new System.Windows.Forms.Padding(7);
-            this.buttonDB.Name = "buttonDB";
-            this.buttonDB.Size = new System.Drawing.Size(475, 81);
-            this.buttonDB.TabIndex = 30;
-            this.buttonDB.Text = "Show Modifications in DB";
-            this.buttonDB.UseVisualStyleBackColor = true;
-            this.buttonDB.Click += new System.EventHandler(this.buttonDB_Click);
             // 
             // buttonDS
             // 
@@ -399,66 +376,6 @@
             this.buttonDS.Text = "Show Modifications in DS";
             this.buttonDS.UseVisualStyleBackColor = true;
             this.buttonDS.Click += new System.EventHandler(this.buttonDS_Click);
-            // 
-            // listViewDB
-            // 
-            this.listViewDB.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader9,
-            this.columnHeader12,
-            this.columnHeader19,
-            this.columnHeader20,
-            this.columnHeader21,
-            this.columnHeader22,
-            this.columnHeader23,
-            this.columnHeader24});
-            this.listViewDB.HideSelection = false;
-            this.listViewDB.Location = new System.Drawing.Point(1346, 1113);
-            this.listViewDB.Margin = new System.Windows.Forms.Padding(7);
-            this.listViewDB.Name = "listViewDB";
-            this.listViewDB.Size = new System.Drawing.Size(1202, 410);
-            this.listViewDB.TabIndex = 13;
-            this.listViewDB.UseCompatibleStateImageBehavior = false;
-            this.listViewDB.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Custmer ID";
-            this.columnHeader9.Width = 189;
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "Customer Name";
-            this.columnHeader12.Width = 261;
-            // 
-            // columnHeader19
-            // 
-            this.columnHeader19.Text = "Street";
-            this.columnHeader19.Width = 126;
-            // 
-            // columnHeader20
-            // 
-            this.columnHeader20.Text = "City";
-            this.columnHeader20.Width = 111;
-            // 
-            // columnHeader21
-            // 
-            this.columnHeader21.Text = "Postal Code";
-            this.columnHeader21.Width = 187;
-            // 
-            // columnHeader22
-            // 
-            this.columnHeader22.Text = "Phone Number";
-            this.columnHeader22.Width = 269;
-            // 
-            // columnHeader23
-            // 
-            this.columnHeader23.Text = "Fax Number";
-            this.columnHeader23.Width = 226;
-            // 
-            // columnHeader24
-            // 
-            this.columnHeader24.Text = "Credit Limit";
-            this.columnHeader24.Width = 227;
             // 
             // listViewDS
             // 
@@ -475,7 +392,7 @@
             this.listViewDS.Location = new System.Drawing.Point(79, 1113);
             this.listViewDS.Margin = new System.Windows.Forms.Padding(7);
             this.listViewDS.Name = "listViewDS";
-            this.listViewDS.Size = new System.Drawing.Size(1202, 410);
+            this.listViewDS.Size = new System.Drawing.Size(2344, 410);
             this.listViewDS.TabIndex = 12;
             this.listViewDS.UseCompatibleStateImageBehavior = false;
             this.listViewDS.View = System.Windows.Forms.View.Details;
@@ -691,7 +608,6 @@
             this.textBoxPostalCodeUpdate.Name = "textBoxPostalCodeUpdate";
             this.textBoxPostalCodeUpdate.Size = new System.Drawing.Size(401, 44);
             this.textBoxPostalCodeUpdate.TabIndex = 8;
-
             // 
             // textBoxNameUpdate
             // 
@@ -779,7 +695,7 @@
             // 
             // textBoxCustomerId
             // 
-            this.textBoxCustomerId.Location = new System.Drawing.Point(852, 86);
+            this.textBoxCustomerId.Location = new System.Drawing.Point(875, 175);
             this.textBoxCustomerId.Margin = new System.Windows.Forms.Padding(7);
             this.textBoxCustomerId.Name = "textBoxCustomerId";
             this.textBoxCustomerId.Size = new System.Drawing.Size(386, 44);
@@ -789,7 +705,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(529, 77);
+            this.label1.Location = new System.Drawing.Point(527, 175);
             this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(280, 52);
@@ -884,9 +800,9 @@
             this.buttonListAll.Location = new System.Drawing.Point(58, 53);
             this.buttonListAll.Margin = new System.Windows.Forms.Padding(7);
             this.buttonListAll.Name = "buttonListAll";
-            this.buttonListAll.Size = new System.Drawing.Size(384, 93);
+            this.buttonListAll.Size = new System.Drawing.Size(496, 93);
             this.buttonListAll.TabIndex = 5;
-            this.buttonListAll.Text = "List All Customers";
+            this.buttonListAll.Text = "List All Customers from DB";
             this.buttonListAll.UseVisualStyleBackColor = true;
             this.buttonListAll.Click += new System.EventHandler(this.buttonListAll_Click);
             // 
@@ -987,16 +903,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.Button buttonModify;
         private System.Windows.Forms.Button buttonUpdateDB;
-        private System.Windows.Forms.ListView listViewDB;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.ColumnHeader columnHeader12;
-        private System.Windows.Forms.ColumnHeader columnHeader19;
-        private System.Windows.Forms.ColumnHeader columnHeader20;
-        private System.Windows.Forms.ColumnHeader columnHeader21;
-        private System.Windows.Forms.ColumnHeader columnHeader22;
-        private System.Windows.Forms.ColumnHeader columnHeader23;
-        private System.Windows.Forms.ColumnHeader columnHeader24;
-        private System.Windows.Forms.Button buttonDB;
         private System.Windows.Forms.Button buttonDS;
     }
 }
