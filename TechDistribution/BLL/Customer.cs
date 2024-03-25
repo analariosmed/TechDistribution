@@ -18,7 +18,14 @@ namespace TechDistribution.BLL
         private string faxNumber;
         private int creditLimit;
 
+        //public List<Orders> Orders { get; set; }
+
         public Customer() { }
+
+        //public Customer()
+        //{
+        //    Orders = new List<Order>();
+        //}
 
         public Customer(int customerId, string name, string street, string city, string postalCode, string phoneNumber, string faxNumber, int creditLimit)
         {

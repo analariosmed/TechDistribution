@@ -35,89 +35,6 @@ namespace TechDistribution.GUI
 
         }
 
-        private void buttonAdd_Click(object sender, EventArgs e)
-        {
-        Customer customer = new Customer();
-
-
-        //validation missing
-
-
-        DataRow dr = dtCustomers.NewRow();
-        dr["CustomerName"] = textBoxName.Text.Trim();
-        dr["Street"] = textBoxStreet.Text.Trim();
-        dr["City"] = textBoxCity.Text.Trim();
-        dr["PostalCode"] = textBoxPostalCode.Text.Trim();
-        dr["PhoneNumber"] = textBoxPhoneNumber.Text.Trim();
-        dr["FaxNumber"] = textBoxFaxNumber.Text.Trim();
-        dr["CreditLimit"] = textBoxCreditLimit.Text.Trim();
-
-        dtCustomers.Rows.Add(dr);
-        MessageBox.Show(dr.RowState.ToString(), "RowState in DataTable Customers");
-
-
-            textBoxName.Clear();
-            textBoxStreet.Clear();
-            textBoxCity.Clear();
-            textBoxPostalCode.Clear();
-            textBoxPhoneNumber.Clear();
-            textBoxFaxNumber.Clear();
-            textBoxCreditLimit.Clear();
-
-
-    }
-
-        private void buttonDelete_Click(object sender, EventArgs e)
-        {
-            //search operation first found it
-            int searchId = Convert.ToInt32(textBoxCustomerId.Text);
-            DataRow drCustomers = dtCustomers.Rows.Find(searchId);
-            drCustomers.Delete();
-            MessageBox.Show("The RowState in the DataTable Students : " + drCustomers.RowState, "RowState");
-
-        }
-
-
-
-        private void ButtonSearch_Click(object sender, EventArgs e)
-        {
-        //INPUT data validation
-        int cutomerId = Convert.ToInt32(textBoxCustomerId.Text.Trim());
-        bool found = false;
-        foreach (DataRow dr in dtCustomers.Rows)
-        {
-            if (Convert.ToInt32(dr["CustomerID"]) == cutomerId)
-            {
-                textBoxName.Text = dr["CustomerName"].ToString();
-                textBoxStreet.Text = dr["Street"].ToString();
-                textBoxCity.Text = dr["City"].ToString();
-                textBoxPostalCode.Text = dr["PostalCode"].ToString();
-                textBoxPhoneNumber.Text = dr["PhoneNumber"].ToString();
-                textBoxFaxNumber.Text = dr["FaxNumber"].ToString();
-                textBoxCreditLimit.Text = dr["CreditLimit"].ToString();
-
-                found = true;
-                break;
-
-            }
-        }
-
-        if (!found)
-        {
-            MessageBox.Show("Customer not found!", "Invalid Customer ID");
-        }
-
-    }
-
-    private void buttonListAll_Click(object sender, EventArgs e)
-        {
-///from db
-           
-
-            //list from ds
-
-           
-        }
 
         private void buttonModify_Click(object sender, EventArgs e)
         {
@@ -137,11 +54,14 @@ namespace TechDistribution.GUI
 
         private void CustomerMaintenance_Load(object sender, EventArgs e)
         {
+          
             TechDistributionDB = new DataSet("TechDistributionDS");
-            dtCustomers = new DataTable("Students");
+            dtCustomers = new DataTable("Customers");
+            TechDistributionDB.Tables.Clear();
+            TechDistributionDB.EnforceConstraints = false;
             TechDistributionDB.Tables.Add(dtCustomers);
 
-            dtCustomers.Columns.Add("CustomerID", typeof(int));
+            dtCustomers.Columns.Add("CustomerId", typeof(int));
             dtCustomers.Columns.Add("CustomerName", typeof(string));
             dtCustomers.Columns.Add("Street", typeof(string));
             dtCustomers.Columns.Add("City", typeof(string));
@@ -150,10 +70,13 @@ namespace TechDistribution.GUI
             dtCustomers.Columns.Add("FaxNumber", typeof(string));
             dtCustomers.Columns.Add("CreditLimit", typeof(int));
 
-            dtCustomers.PrimaryKey = new DataColumn[] { dtCustomers.Columns["CustomerID"] };
-            dtCustomers.Columns["CustomerID"].AutoIncrement = true;
-            dtCustomers.Columns["CustomerID"].AutoIncrementSeed = 1;
-            dtCustomers.Columns["CustomerID"].AutoIncrementStep = 1;
+            // Set AllowDBNull property to true for the FaxNumber column
+            dtCustomers.Columns["FaxNumber"].AllowDBNull = true;
+
+            dtCustomers.PrimaryKey = new DataColumn[] { dtCustomers.Columns["CustomerId"] };
+            dtCustomers.Columns["CustomerId"].AutoIncrement = true;
+            dtCustomers.Columns["CustomerId"].AutoIncrementSeed = 1;
+            dtCustomers.Columns["CustomerId"].AutoIncrementStep = 1;
 
             dataAdapter = new SqlDataAdapter();
             dataAdapter.TableMappings.Add("Customers", "Customers");
@@ -173,7 +96,7 @@ namespace TechDistribution.GUI
             dataAdapter.Fill(TechDistributionDB, "Customers");
             foreach (DataRow row in TechDistributionDB.Tables["Customers"].Rows)
             {
-                ListViewItem item = new ListViewItem(row["CustomerID"].ToString()); 
+                ListViewItem item = new ListViewItem(row["CustomerId"].ToString()); 
                 item.SubItems.Add(row["CustomerName"].ToString());
                 item.SubItems.Add(row["Street"].ToString());
                 item.SubItems.Add(row["City"].ToString());
@@ -204,6 +127,90 @@ namespace TechDistribution.GUI
                 item.SubItems.Add(customer.CreditLimit.ToString());
                 listViewDB.Items.Add(item);
             }
+        }
+
+        private void buttonAdd_Click_1(object sender, EventArgs e)
+        {
+            Customer customer = new Customer();
+
+
+            //validation missing
+
+
+            DataRow dr = dtCustomers.NewRow();
+            dr["CustomerName"] = textBoxName.Text.Trim();
+            dr["Street"] = textBoxStreet.Text.Trim();
+            dr["City"] = textBoxCity.Text.Trim();
+            dr["PostalCode"] = textBoxPostalCode.Text.Trim();
+            dr["PhoneNumber"] = textBoxPhoneNumber.Text.Trim();
+            dr["FaxNumber"] = textBoxFaxNumber.Text.Trim();
+            dr["CreditLimit"] = textBoxCreditLimit.Text.Trim();
+
+            dtCustomers.Rows.Add(dr);
+            MessageBox.Show(dr.RowState.ToString(), "RowState in DataTable Customers");
+
+
+            textBoxName.Clear();
+            textBoxStreet.Clear();
+            textBoxCity.Clear();
+            textBoxPostalCode.Clear();
+            textBoxPhoneNumber.Clear();
+            textBoxFaxNumber.Clear();
+            textBoxCreditLimit.Clear();
+        }
+
+        private void buttonUpdateDB_Click(object sender, EventArgs e)
+        {
+            //dataAdapter.SelectCommand = new SqlCommand("SELECT * FROM Customers", UtilityDB.GetDBConnection());
+            //dataAdapter.Fill(TechDistributionDB, "Customers");
+            // dataAdapter.UpdateCommand.ExecuteNonQuery();
+            dataAdapter.SelectCommand = new SqlCommand("SELECT * FROM Customers", UtilityDB.GetDBConnection());
+            dataAdapter.Fill(TechDistributionDB, "Customers");
+            dataAdapter.Update(TechDistributionDB, "Customers");
+            MessageBox.Show("Database has beeen update sucessfully.", "Database update");
+        }
+
+        private void ButtonSearch_Click_1(object sender, EventArgs e)
+        {
+            //INPUT data validation
+            int customerId = Convert.ToInt32(textBoxCustomerId.Text.Trim());
+            bool found = false;
+            foreach (DataRow dr in dtCustomers.Rows)
+            {
+                if (Convert.ToInt32(dr["CustomerId"]) == customerId)
+                {
+                    textBoxNameUpdate.Text = dr["CustomerName"].ToString();
+                    textBoxStreetUpdate.Text = dr["Street"].ToString();
+                    textBoxCityUpdate.Text = dr["City"].ToString();
+                    textBoxPostalCodeUpdate.Text = dr["PostalCode"].ToString();
+                    textBoxPhoneNumberUpdate.Text = dr["PhoneNumber"].ToString();
+                    textBoxFaxNumberUpdate.Text = dr["FaxNumber"].ToString();
+                    textBoxCreditLimitUpdate.Text = dr["CreditLimit"].ToString();
+
+                    found = true;
+                    break;
+
+                }
+            }
+
+            if (!found)
+            {
+                MessageBox.Show("Customer not found!", "Invalid Customer ID");
+            }
+        }
+
+        private void buttonDelete_Click_1(object sender, EventArgs e)
+        {
+            //search operation first found it
+            int searchId = Convert.ToInt32(textBoxCustomerId.Text);
+            DataRow drCustomers = dtCustomers.Rows.Find(searchId);
+            drCustomers.Delete();
+            MessageBox.Show("The RowState in the DataTable Customers : " + drCustomers.RowState, "RowState");
+        }
+
+        private void buttonListAll_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

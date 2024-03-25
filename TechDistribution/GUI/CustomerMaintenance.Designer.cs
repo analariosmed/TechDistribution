@@ -193,6 +193,7 @@
             this.buttonUpdateDB.TabIndex = 25;
             this.buttonUpdateDB.Text = "Update Data Base";
             this.buttonUpdateDB.UseVisualStyleBackColor = true;
+            this.buttonUpdateDB.Click += new System.EventHandler(this.buttonUpdateDB_Click);
             // 
             // textBoxCreditLimit
             // 
@@ -275,6 +276,7 @@
             this.buttonAdd.TabIndex = 12;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click_1);
             // 
             // textBoxPhoneNumber
             // 
@@ -642,6 +644,7 @@
             this.buttonDelete.TabIndex = 16;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click_1);
             // 
             // textBoxSearchCustomerID
             // 
@@ -771,6 +774,7 @@
             this.ButtonSearch.TabIndex = 8;
             this.ButtonSearch.Text = "Search";
             this.ButtonSearch.UseVisualStyleBackColor = true;
+            this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click_1);
             // 
             // textBoxCustomerId
             // 
@@ -883,6 +887,7 @@
             this.buttonListAll.TabIndex = 5;
             this.buttonListAll.Text = "List All Customers";
             this.buttonListAll.UseVisualStyleBackColor = true;
+            this.buttonListAll.Click += new System.EventHandler(this.buttonListAll_Click);
             // 
             // CustomerMaintenance
             // 
