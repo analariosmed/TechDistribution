@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\Customer.cs" />
     <Compile Include="BLL\User.cs" />
     <Compile Include="DAL\UserDB.cs" />
     <Compile Include="GUI\CustomerLogin.cs">
@@ -58,6 +59,12 @@
     <Compile Include="BLL\Employee.cs" />
     <Compile Include="DAL\EmployeeDB.cs" />
     <Compile Include="DAL\UtilityDB.cs" />
+    <Compile Include="GUI\CustomerMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CustomerMaintenance.Designer.cs">
+      <DependentUpon>CustomerMaintenance.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\EmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +100,9 @@
     <Compile Include="VALIDATION\Validator.cs" />
     <EmbeddedResource Include="GUI\CustomerLogin.resx">
       <DependentUpon>CustomerLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CustomerMaintenance.resx">
+      <DependentUpon>CustomerMaintenance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>

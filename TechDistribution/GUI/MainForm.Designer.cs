@@ -35,6 +35,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonSupplier = new System.Windows.Forms.Button();
             this.buttonEmployee = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +67,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.buttonSupplier);
             this.groupBox2.Controls.Add(this.buttonEmployee);
@@ -73,7 +75,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(2156, 675);
+            this.groupBox2.Size = new System.Drawing.Size(2288, 1026);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
@@ -114,12 +116,25 @@
             this.buttonEmployee.UseVisualStyleBackColor = false;
             this.buttonEmployee.Click += new System.EventHandler(this.buttonEmployee_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(882, 180);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(634, 149);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Customer System";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(2484, 1390);
+            this.ClientSize = new System.Drawing.Size(2484, 1763);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -144,5 +159,6 @@
         private System.Windows.Forms.Button buttonSupplier;
         private System.Windows.Forms.Button buttonEmployee;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
