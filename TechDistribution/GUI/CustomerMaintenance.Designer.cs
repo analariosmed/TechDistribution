@@ -32,6 +32,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.buttonExit = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonUpdateDB = new System.Windows.Forms.Button();
             this.textBoxCreditLimit = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.textBoxFaxNumber = new System.Windows.Forms.TextBox();
@@ -40,10 +41,9 @@
             this.textBoxStreet = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.textBoxPhoneNumber = new System.Windows.Forms.TextBox();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.textBoxPostalCode = new System.Windows.Forms.TextBox();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,8 +52,29 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.buttonDB = new System.Windows.Forms.Button();
+            this.buttonDS = new System.Windows.Forms.Button();
+            this.listViewDB = new System.Windows.Forms.ListView();
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listViewDS = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonExit2 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonModify = new System.Windows.Forms.Button();
             this.textBoxCityUpdate = new System.Windows.Forms.TextBox();
             this.textBoxStreetUpdate = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
@@ -61,13 +82,12 @@
             this.textBoxCreditLimitUpdate = new System.Windows.Forms.TextBox();
             this.textBoxFaxNumberUpdate = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.textBoxSearchCustomerID = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.textBoxPhoneNumberUpdate = new System.Windows.Forms.TextBox();
-            this.textBoxEmailUpdate = new System.Windows.Forms.TextBox();
+            this.textBoxPostalCodeUpdate = new System.Windows.Forms.TextBox();
             this.textBoxNameUpdate = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -78,18 +98,7 @@
             this.ButtonSearch = new System.Windows.Forms.Button();
             this.textBoxCustomerId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.listViewSearch = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.buttonExit3 = new System.Windows.Forms.Button();
-            this.buttonListAll = new System.Windows.Forms.Button();
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -99,6 +108,8 @@
             this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonExit3 = new System.Windows.Forms.Button();
+            this.buttonListAll = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -145,6 +156,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.buttonUpdateDB);
             this.groupBox1.Controls.Add(this.textBoxCreditLimit);
             this.groupBox1.Controls.Add(this.label26);
             this.groupBox1.Controls.Add(this.textBoxFaxNumber);
@@ -153,10 +165,9 @@
             this.groupBox1.Controls.Add(this.textBoxStreet);
             this.groupBox1.Controls.Add(this.label24);
             this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.buttonAdd);
             this.groupBox1.Controls.Add(this.textBoxPhoneNumber);
-            this.groupBox1.Controls.Add(this.textBoxEmail);
+            this.groupBox1.Controls.Add(this.textBoxPostalCode);
             this.groupBox1.Controls.Add(this.textBoxName);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -172,6 +183,16 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Customer";
+            // 
+            // buttonUpdateDB
+            // 
+            this.buttonUpdateDB.Location = new System.Drawing.Point(699, 1056);
+            this.buttonUpdateDB.Margin = new System.Windows.Forms.Padding(7);
+            this.buttonUpdateDB.Name = "buttonUpdateDB";
+            this.buttonUpdateDB.Size = new System.Drawing.Size(240, 57);
+            this.buttonUpdateDB.TabIndex = 25;
+            this.buttonUpdateDB.Text = "Update Data Base";
+            this.buttonUpdateDB.UseVisualStyleBackColor = true;
             // 
             // textBoxCreditLimit
             // 
@@ -245,22 +266,12 @@
             this.label18.TabIndex = 17;
             this.label18.Text = "(777)777-7777";
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(340, 546);
-            this.label17.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(355, 37);
-            this.label17.TabIndex = 16;
-            this.label17.Text = "example@example.com";
-            // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(677, 1010);
+            this.buttonAdd.Location = new System.Drawing.Point(396, 1056);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(7);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(240, 81);
+            this.buttonAdd.Size = new System.Drawing.Size(240, 57);
             this.buttonAdd.TabIndex = 12;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -273,13 +284,13 @@
             this.textBoxPhoneNumber.Size = new System.Drawing.Size(401, 43);
             this.textBoxPhoneNumber.TabIndex = 9;
             // 
-            // textBoxEmail
+            // textBoxPostalCode
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(347, 496);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(7);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(401, 43);
-            this.textBoxEmail.TabIndex = 8;
+            this.textBoxPostalCode.Location = new System.Drawing.Point(347, 523);
+            this.textBoxPostalCode.Margin = new System.Windows.Forms.Padding(7);
+            this.textBoxPostalCode.Name = "textBoxPostalCode";
+            this.textBoxPostalCode.Size = new System.Drawing.Size(401, 43);
+            this.textBoxPostalCode.TabIndex = 8;
             // 
             // textBoxName
             // 
@@ -322,12 +333,12 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(63, 496);
+            this.label4.Location = new System.Drawing.Point(75, 535);
             this.label4.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 37);
+            this.label4.Size = new System.Drawing.Size(191, 37);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Email";
+            this.label4.Text = "Postal Code";
             // 
             // label2
             // 
@@ -335,7 +346,7 @@
             this.label2.Location = new System.Drawing.Point(63, 188);
             this.label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(309, 111);
+            this.label2.Size = new System.Drawing.Size(103, 37);
             this.label2.TabIndex = 0;
             this.label2.Text = "Name";
             // 
@@ -352,22 +363,167 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.buttonDB);
+            this.groupBox4.Controls.Add(this.buttonDS);
+            this.groupBox4.Controls.Add(this.listViewDB);
+            this.groupBox4.Controls.Add(this.listViewDS);
             this.groupBox4.Controls.Add(this.buttonExit2);
             this.groupBox4.Controls.Add(this.groupBox3);
             this.groupBox4.Controls.Add(this.groupBox2);
-            this.groupBox4.Controls.Add(this.listViewSearch);
             this.groupBox4.Location = new System.Drawing.Point(42, 46);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(2481, 1674);
+            this.groupBox4.Size = new System.Drawing.Size(2648, 1674);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             // 
+            // buttonDB
+            // 
+            this.buttonDB.Location = new System.Drawing.Point(1356, 1009);
+            this.buttonDB.Margin = new System.Windows.Forms.Padding(7);
+            this.buttonDB.Name = "buttonDB";
+            this.buttonDB.Size = new System.Drawing.Size(475, 81);
+            this.buttonDB.TabIndex = 30;
+            this.buttonDB.Text = "Show Modifications in DB";
+            this.buttonDB.UseVisualStyleBackColor = true;
+            this.buttonDB.Click += new System.EventHandler(this.buttonDB_Click);
+            // 
+            // buttonDS
+            // 
+            this.buttonDS.Location = new System.Drawing.Point(79, 1003);
+            this.buttonDS.Margin = new System.Windows.Forms.Padding(7);
+            this.buttonDS.Name = "buttonDS";
+            this.buttonDS.Size = new System.Drawing.Size(475, 81);
+            this.buttonDS.TabIndex = 29;
+            this.buttonDS.Text = "Show Modifications in DS";
+            this.buttonDS.UseVisualStyleBackColor = true;
+            this.buttonDS.Click += new System.EventHandler(this.buttonDS_Click);
+            // 
+            // listViewDB
+            // 
+            this.listViewDB.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader9,
+            this.columnHeader12,
+            this.columnHeader19,
+            this.columnHeader20,
+            this.columnHeader21,
+            this.columnHeader22,
+            this.columnHeader23,
+            this.columnHeader24});
+            this.listViewDB.HideSelection = false;
+            this.listViewDB.Location = new System.Drawing.Point(1346, 1113);
+            this.listViewDB.Margin = new System.Windows.Forms.Padding(7);
+            this.listViewDB.Name = "listViewDB";
+            this.listViewDB.Size = new System.Drawing.Size(1202, 410);
+            this.listViewDB.TabIndex = 13;
+            this.listViewDB.UseCompatibleStateImageBehavior = false;
+            this.listViewDB.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Custmer ID";
+            this.columnHeader9.Width = 189;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Customer Name";
+            this.columnHeader12.Width = 261;
+            // 
+            // columnHeader19
+            // 
+            this.columnHeader19.Text = "Street";
+            this.columnHeader19.Width = 126;
+            // 
+            // columnHeader20
+            // 
+            this.columnHeader20.Text = "City";
+            this.columnHeader20.Width = 111;
+            // 
+            // columnHeader21
+            // 
+            this.columnHeader21.Text = "Postal Code";
+            this.columnHeader21.Width = 187;
+            // 
+            // columnHeader22
+            // 
+            this.columnHeader22.Text = "Phone Number";
+            this.columnHeader22.Width = 269;
+            // 
+            // columnHeader23
+            // 
+            this.columnHeader23.Text = "Fax Number";
+            this.columnHeader23.Width = 226;
+            // 
+            // columnHeader24
+            // 
+            this.columnHeader24.Text = "Credit Limit";
+            this.columnHeader24.Width = 227;
+            // 
+            // listViewDS
+            // 
+            this.listViewDS.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8});
+            this.listViewDS.HideSelection = false;
+            this.listViewDS.Location = new System.Drawing.Point(79, 1113);
+            this.listViewDS.Margin = new System.Windows.Forms.Padding(7);
+            this.listViewDS.Name = "listViewDS";
+            this.listViewDS.Size = new System.Drawing.Size(1202, 410);
+            this.listViewDS.TabIndex = 12;
+            this.listViewDS.UseCompatibleStateImageBehavior = false;
+            this.listViewDS.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Custmer ID";
+            this.columnHeader1.Width = 189;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Customer Name";
+            this.columnHeader2.Width = 261;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Street";
+            this.columnHeader3.Width = 126;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "City";
+            this.columnHeader4.Width = 111;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Postal Code";
+            this.columnHeader5.Width = 187;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Phone Number";
+            this.columnHeader6.Width = 269;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Fax Number";
+            this.columnHeader7.Width = 226;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Credit Limit";
+            this.columnHeader8.Width = 227;
+            // 
             // buttonExit2
             // 
-            this.buttonExit2.Location = new System.Drawing.Point(2000, 1557);
+            this.buttonExit2.Location = new System.Drawing.Point(2197, 1569);
             this.buttonExit2.Margin = new System.Windows.Forms.Padding(7);
             this.buttonExit2.Name = "buttonExit2";
-            this.buttonExit2.Size = new System.Drawing.Size(280, 95);
+            this.buttonExit2.Size = new System.Drawing.Size(372, 95);
             this.buttonExit2.TabIndex = 11;
             this.buttonExit2.Text = "Exit";
             this.buttonExit2.UseVisualStyleBackColor = true;
@@ -375,6 +531,7 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox3.Controls.Add(this.buttonModify);
             this.groupBox3.Controls.Add(this.textBoxCityUpdate);
             this.groupBox3.Controls.Add(this.textBoxStreetUpdate);
             this.groupBox3.Controls.Add(this.label27);
@@ -382,31 +539,41 @@
             this.groupBox3.Controls.Add(this.textBoxCreditLimitUpdate);
             this.groupBox3.Controls.Add(this.textBoxFaxNumberUpdate);
             this.groupBox3.Controls.Add(this.label20);
-            this.groupBox3.Controls.Add(this.label21);
             this.groupBox3.Controls.Add(this.buttonDelete);
             this.groupBox3.Controls.Add(this.textBoxSearchCustomerID);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.buttonUpdate);
             this.groupBox3.Controls.Add(this.textBoxPhoneNumberUpdate);
-            this.groupBox3.Controls.Add(this.textBoxEmailUpdate);
+            this.groupBox3.Controls.Add(this.textBoxPostalCodeUpdate);
             this.groupBox3.Controls.Add(this.textBoxNameUpdate);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Location = new System.Drawing.Point(67, 739);
+            this.groupBox3.Location = new System.Drawing.Point(79, 370);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(7);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(7);
-            this.groupBox3.Size = new System.Drawing.Size(2290, 782);
+            this.groupBox3.Size = new System.Drawing.Size(2469, 593);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Update - Delete";
             // 
+            // buttonModify
+            // 
+            this.buttonModify.Location = new System.Drawing.Point(2107, 86);
+            this.buttonModify.Margin = new System.Windows.Forms.Padding(7);
+            this.buttonModify.Name = "buttonModify";
+            this.buttonModify.Size = new System.Drawing.Size(339, 81);
+            this.buttonModify.TabIndex = 28;
+            this.buttonModify.Text = "Modify";
+            this.buttonModify.UseVisualStyleBackColor = true;
+            this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
+            // 
             // textBoxCityUpdate
             // 
-            this.textBoxCityUpdate.Location = new System.Drawing.Point(355, 529);
+            this.textBoxCityUpdate.Location = new System.Drawing.Point(366, 363);
             this.textBoxCityUpdate.Margin = new System.Windows.Forms.Padding(7);
             this.textBoxCityUpdate.Name = "textBoxCityUpdate";
             this.textBoxCityUpdate.Size = new System.Drawing.Size(401, 44);
@@ -414,7 +581,7 @@
             // 
             // textBoxStreetUpdate
             // 
-            this.textBoxStreetUpdate.Location = new System.Drawing.Point(355, 437);
+            this.textBoxStreetUpdate.Location = new System.Drawing.Point(355, 266);
             this.textBoxStreetUpdate.Margin = new System.Windows.Forms.Padding(7);
             this.textBoxStreetUpdate.Name = "textBoxStreetUpdate";
             this.textBoxStreetUpdate.Size = new System.Drawing.Size(401, 44);
@@ -423,7 +590,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(97, 551);
+            this.label27.Location = new System.Drawing.Point(109, 382);
             this.label27.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(71, 37);
@@ -433,7 +600,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(88, 444);
+            this.label19.Location = new System.Drawing.Point(97, 273);
             this.label19.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(101, 37);
@@ -466,22 +633,12 @@
             this.label20.TabIndex = 21;
             this.label20.Text = "(777)777-7777";
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(359, 372);
-            this.label21.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(355, 37);
-            this.label21.TabIndex = 20;
-            this.label21.Text = "example@example.com";
-            // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(1911, 234);
+            this.buttonDelete.Location = new System.Drawing.Point(2113, 247);
             this.buttonDelete.Margin = new System.Windows.Forms.Padding(7);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(240, 81);
+            this.buttonDelete.Size = new System.Drawing.Size(342, 81);
             this.buttonDelete.TabIndex = 16;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
@@ -507,13 +664,14 @@
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.Location = new System.Drawing.Point(1903, 83);
+            this.buttonUpdate.Location = new System.Drawing.Point(2116, 423);
             this.buttonUpdate.Margin = new System.Windows.Forms.Padding(7);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(240, 81);
+            this.buttonUpdate.Size = new System.Drawing.Size(339, 81);
             this.buttonUpdate.TabIndex = 12;
-            this.buttonUpdate.Text = "Update";
+            this.buttonUpdate.Text = "Update Data Base";
             this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click_1);
             // 
             // textBoxPhoneNumberUpdate
             // 
@@ -523,13 +681,13 @@
             this.textBoxPhoneNumberUpdate.Size = new System.Drawing.Size(401, 44);
             this.textBoxPhoneNumberUpdate.TabIndex = 9;
             // 
-            // textBoxEmailUpdate
+            // textBoxPostalCodeUpdate
             // 
-            this.textBoxEmailUpdate.Location = new System.Drawing.Point(355, 306);
-            this.textBoxEmailUpdate.Margin = new System.Windows.Forms.Padding(7);
-            this.textBoxEmailUpdate.Name = "textBoxEmailUpdate";
-            this.textBoxEmailUpdate.Size = new System.Drawing.Size(401, 44);
-            this.textBoxEmailUpdate.TabIndex = 8;
+            this.textBoxPostalCodeUpdate.Location = new System.Drawing.Point(366, 479);
+            this.textBoxPostalCodeUpdate.Margin = new System.Windows.Forms.Padding(7);
+            this.textBoxPostalCodeUpdate.Name = "textBoxPostalCodeUpdate";
+            this.textBoxPostalCodeUpdate.Size = new System.Drawing.Size(401, 44);
+            this.textBoxPostalCodeUpdate.TabIndex = 8;
             // 
             // textBoxNameUpdate
             // 
@@ -545,7 +703,7 @@
             this.label8.Location = new System.Drawing.Point(982, 322);
             this.label8.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(537, 111);
+            this.label8.Size = new System.Drawing.Size(179, 37);
             this.label8.TabIndex = 5;
             this.label8.Text = "Credit Limit";
             // 
@@ -572,12 +730,12 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(97, 306);
+            this.label11.Location = new System.Drawing.Point(109, 482);
             this.label11.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(97, 37);
+            this.label11.Size = new System.Drawing.Size(182, 37);
             this.label11.TabIndex = 2;
-            this.label11.Text = "Email";
+            this.label11.Text = "PostalCode";
             // 
             // label13
             // 
@@ -599,17 +757,17 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(7);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(7);
-            this.groupBox2.Size = new System.Drawing.Size(2290, 294);
+            this.groupBox2.Size = new System.Drawing.Size(2469, 294);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search";
             // 
             // ButtonSearch
             // 
-            this.ButtonSearch.Location = new System.Drawing.Point(1907, 106);
+            this.ButtonSearch.Location = new System.Drawing.Point(2117, 122);
             this.ButtonSearch.Margin = new System.Windows.Forms.Padding(7);
             this.ButtonSearch.Name = "ButtonSearch";
-            this.ButtonSearch.Size = new System.Drawing.Size(240, 81);
+            this.ButtonSearch.Size = new System.Drawing.Size(311, 81);
             this.ButtonSearch.TabIndex = 8;
             this.ButtonSearch.Text = "Search";
             this.ButtonSearch.UseVisualStyleBackColor = true;
@@ -633,56 +791,6 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Customer ID:";
             // 
-            // listViewSearch
-            // 
-            this.listViewSearch.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader9});
-            this.listViewSearch.HideSelection = false;
-            this.listViewSearch.Location = new System.Drawing.Point(79, 402);
-            this.listViewSearch.Margin = new System.Windows.Forms.Padding(7);
-            this.listViewSearch.Name = "listViewSearch";
-            this.listViewSearch.Size = new System.Drawing.Size(2289, 288);
-            this.listViewSearch.TabIndex = 6;
-            this.listViewSearch.UseCompatibleStateImageBehavior = false;
-            this.listViewSearch.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Custmer ID";
-            this.columnHeader1.Width = 244;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Customer Name";
-            this.columnHeader2.Width = 286;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Email";
-            this.columnHeader4.Width = 176;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Street";
-            this.columnHeader5.Width = 254;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "City";
-            this.columnHeader6.Width = 187;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Phone Number";
-            this.columnHeader7.Width = 269;
-            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.listView1);
@@ -695,36 +803,6 @@
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Customers List";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // buttonExit3
-            // 
-            this.buttonExit3.Location = new System.Drawing.Point(2325, 1617);
-            this.buttonExit3.Margin = new System.Windows.Forms.Padding(7);
-            this.buttonExit3.Name = "buttonExit3";
-            this.buttonExit3.Size = new System.Drawing.Size(280, 91);
-            this.buttonExit3.TabIndex = 6;
-            this.buttonExit3.Text = "Exit";
-            this.buttonExit3.UseVisualStyleBackColor = true;
-            // 
-            // buttonListAll
-            // 
-            this.buttonListAll.Location = new System.Drawing.Point(58, 53);
-            this.buttonListAll.Margin = new System.Windows.Forms.Padding(7);
-            this.buttonListAll.Name = "buttonListAll";
-            this.buttonListAll.Size = new System.Drawing.Size(384, 93);
-            this.buttonListAll.TabIndex = 5;
-            this.buttonListAll.Text = "List All Customers";
-            this.buttonListAll.UseVisualStyleBackColor = true;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Fax Number";
-            this.columnHeader8.Width = 226;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Credit Limit";
-            this.columnHeader9.Width = 227;
             // 
             // listView1
             // 
@@ -758,17 +836,17 @@
             // 
             // columnHeader13
             // 
-            this.columnHeader13.Text = "Email";
+            this.columnHeader13.Text = "Street";
             this.columnHeader13.Width = 176;
             // 
             // columnHeader14
             // 
-            this.columnHeader14.Text = "Street";
-            this.columnHeader14.Width = 254;
+            this.columnHeader14.Text = "City";
+            this.columnHeader14.Width = 176;
             // 
             // columnHeader15
             // 
-            this.columnHeader15.Text = "City";
+            this.columnHeader15.Text = "Postal Code";
             this.columnHeader15.Width = 187;
             // 
             // columnHeader16
@@ -786,14 +864,35 @@
             this.columnHeader18.Text = "Credit Limit";
             this.columnHeader18.Width = 227;
             // 
+            // buttonExit3
+            // 
+            this.buttonExit3.Location = new System.Drawing.Point(2325, 1617);
+            this.buttonExit3.Margin = new System.Windows.Forms.Padding(7);
+            this.buttonExit3.Name = "buttonExit3";
+            this.buttonExit3.Size = new System.Drawing.Size(280, 91);
+            this.buttonExit3.TabIndex = 6;
+            this.buttonExit3.Text = "Exit";
+            this.buttonExit3.UseVisualStyleBackColor = true;
+            // 
+            // buttonListAll
+            // 
+            this.buttonListAll.Location = new System.Drawing.Point(58, 53);
+            this.buttonListAll.Margin = new System.Windows.Forms.Padding(7);
+            this.buttonListAll.Name = "buttonListAll";
+            this.buttonListAll.Size = new System.Drawing.Size(384, 93);
+            this.buttonListAll.TabIndex = 5;
+            this.buttonListAll.Text = "List All Customers";
+            this.buttonListAll.UseVisualStyleBackColor = true;
+            // 
             // CustomerMaintenance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(3168, 2018);
+            this.ClientSize = new System.Drawing.Size(2965, 1868);
             this.Controls.Add(this.tabControl1);
             this.Name = "CustomerMaintenance";
             this.Text = "CustomerMaintenance";
+            this.Load += new System.EventHandler(this.CustomerMaintenance_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -818,10 +917,9 @@
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.TextBox textBoxPhoneNumber;
-        private System.Windows.Forms.TextBox textBoxEmail;
+        private System.Windows.Forms.TextBox textBoxPostalCode;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -830,13 +928,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.TextBox textBoxSearchCustomerID;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.TextBox textBoxPhoneNumberUpdate;
-        private System.Windows.Forms.TextBox textBoxEmailUpdate;
+        private System.Windows.Forms.TextBox textBoxPostalCodeUpdate;
         private System.Windows.Forms.TextBox textBoxNameUpdate;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -847,13 +944,6 @@
         private System.Windows.Forms.Button ButtonSearch;
         private System.Windows.Forms.TextBox textBoxCustomerId;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listViewSearch;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.Button buttonExit3;
         private System.Windows.Forms.Button buttonListAll;
         private System.Windows.Forms.Label label26;
@@ -871,8 +961,6 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox textBoxCreditLimitUpdate;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.ColumnHeader columnHeader11;
@@ -882,5 +970,27 @@
         private System.Windows.Forms.ColumnHeader columnHeader16;
         private System.Windows.Forms.ColumnHeader columnHeader17;
         private System.Windows.Forms.ColumnHeader columnHeader18;
+        private System.Windows.Forms.ListView listViewDS;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.Button buttonModify;
+        private System.Windows.Forms.Button buttonUpdateDB;
+        private System.Windows.Forms.ListView listViewDB;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.ColumnHeader columnHeader19;
+        private System.Windows.Forms.ColumnHeader columnHeader20;
+        private System.Windows.Forms.ColumnHeader columnHeader21;
+        private System.Windows.Forms.ColumnHeader columnHeader22;
+        private System.Windows.Forms.ColumnHeader columnHeader23;
+        private System.Windows.Forms.ColumnHeader columnHeader24;
+        private System.Windows.Forms.Button buttonDB;
+        private System.Windows.Forms.Button buttonDS;
     }
 }

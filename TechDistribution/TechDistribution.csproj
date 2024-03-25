@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="BLL\Customer.cs" />
     <Compile Include="BLL\User.cs" />
+    <Compile Include="DAL\CustomerDB.cs" />
     <Compile Include="DAL\UserDB.cs" />
     <Compile Include="GUI\CustomerLogin.cs">
       <SubType>Form</SubType>
