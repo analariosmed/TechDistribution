@@ -261,19 +261,5 @@ namespace TechDistribution.GUI
             }
         }
 
-        private void buttonExit3_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void buttonExit2_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void groupBox4_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -32,6 +32,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.buttonExit = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.buttonUpdateDB = new System.Windows.Forms.Button();
             this.textBoxCreditLimit = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
@@ -64,6 +65,7 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonExit2 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.buttonModify = new System.Windows.Forms.Button();
             this.textBoxCityUpdate = new System.Windows.Forms.TextBox();
             this.textBoxStreetUpdate = new System.Windows.Forms.TextBox();
@@ -98,8 +100,6 @@
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonExit3 = new System.Windows.Forms.Button();
             this.buttonListAll = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -135,13 +135,14 @@
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(1379, 1325);
+            this.buttonExit.BackColor = System.Drawing.Color.DarkGray;
+            this.buttonExit.Location = new System.Drawing.Point(1438, 1317);
             this.buttonExit.Margin = new System.Windows.Forms.Padding(7);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(346, 80);
             this.buttonExit.TabIndex = 6;
             this.buttonExit.Text = "Exit";
-            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // groupBox1
@@ -176,15 +177,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Customer";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(350, 988);
+            this.label12.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(191, 32);
+            this.label12.TabIndex = 30;
+            this.label12.Text = "Minimum 100 ";
+            // 
             // buttonUpdateDB
             // 
-            this.buttonUpdateDB.Location = new System.Drawing.Point(699, 1042);
+            this.buttonUpdateDB.BackColor = System.Drawing.Color.DarkGray;
+            this.buttonUpdateDB.Location = new System.Drawing.Point(699, 1076);
             this.buttonUpdateDB.Margin = new System.Windows.Forms.Padding(7);
             this.buttonUpdateDB.Name = "buttonUpdateDB";
             this.buttonUpdateDB.Size = new System.Drawing.Size(317, 71);
             this.buttonUpdateDB.TabIndex = 25;
             this.buttonUpdateDB.Text = "Update Data Base";
-            this.buttonUpdateDB.UseVisualStyleBackColor = true;
+            this.buttonUpdateDB.UseVisualStyleBackColor = false;
             this.buttonUpdateDB.Click += new System.EventHandler(this.buttonUpdateDB_Click);
             // 
             // textBoxCreditLimit
@@ -199,7 +212,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(340, 848);
+            this.label26.Location = new System.Drawing.Point(340, 863);
             this.label26.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(122, 32);
@@ -254,7 +267,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(340, 713);
+            this.label18.Location = new System.Drawing.Point(340, 732);
             this.label18.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(201, 32);
@@ -263,13 +276,14 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(396, 1042);
+            this.buttonAdd.BackColor = System.Drawing.Color.DarkGray;
+            this.buttonAdd.Location = new System.Drawing.Point(399, 1076);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(7);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(240, 71);
             this.buttonAdd.TabIndex = 12;
             this.buttonAdd.Text = "Add";
-            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // textBoxPhoneNumber
@@ -369,17 +383,18 @@
             this.groupBox4.Size = new System.Drawing.Size(2648, 1674);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // buttonDS
             // 
+            this.buttonDS.BackColor = System.Drawing.Color.Silver;
+            this.buttonDS.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonDS.Location = new System.Drawing.Point(79, 1003);
             this.buttonDS.Margin = new System.Windows.Forms.Padding(7);
             this.buttonDS.Name = "buttonDS";
             this.buttonDS.Size = new System.Drawing.Size(475, 81);
             this.buttonDS.TabIndex = 29;
             this.buttonDS.Text = "Show Modifications in DS";
-            this.buttonDS.UseVisualStyleBackColor = true;
+            this.buttonDS.UseVisualStyleBackColor = false;
             this.buttonDS.Click += new System.EventHandler(this.buttonDS_Click);
             // 
             // listViewDS
@@ -444,14 +459,14 @@
             // 
             // buttonExit2
             // 
+            this.buttonExit2.BackColor = System.Drawing.Color.DarkGray;
             this.buttonExit2.Location = new System.Drawing.Point(2197, 1569);
             this.buttonExit2.Margin = new System.Windows.Forms.Padding(7);
             this.buttonExit2.Name = "buttonExit2";
             this.buttonExit2.Size = new System.Drawing.Size(372, 95);
             this.buttonExit2.TabIndex = 11;
             this.buttonExit2.Text = "Exit";
-            this.buttonExit2.UseVisualStyleBackColor = true;
-            this.buttonExit2.Click += new System.EventHandler(this.buttonExit2_Click);
+            this.buttonExit2.UseVisualStyleBackColor = false;
             // 
             // groupBox3
             // 
@@ -484,15 +499,27 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Update - Delete";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1244, 339);
+            this.label3.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(191, 32);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Minimum 100 ";
+            // 
             // buttonModify
             // 
+            this.buttonModify.BackColor = System.Drawing.Color.DarkGray;
             this.buttonModify.Location = new System.Drawing.Point(2107, 86);
             this.buttonModify.Margin = new System.Windows.Forms.Padding(7);
             this.buttonModify.Name = "buttonModify";
             this.buttonModify.Size = new System.Drawing.Size(339, 81);
             this.buttonModify.TabIndex = 28;
             this.buttonModify.Text = "Modify";
-            this.buttonModify.UseVisualStyleBackColor = true;
+            this.buttonModify.UseVisualStyleBackColor = false;
             this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
             // 
             // textBoxCityUpdate
@@ -560,24 +587,26 @@
             // 
             // buttonDelete
             // 
+            this.buttonDelete.BackColor = System.Drawing.Color.DarkGray;
             this.buttonDelete.Location = new System.Drawing.Point(2113, 247);
             this.buttonDelete.Margin = new System.Windows.Forms.Padding(7);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(342, 81);
             this.buttonDelete.TabIndex = 16;
             this.buttonDelete.Text = "Delete";
-            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.UseVisualStyleBackColor = false;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonUpdate
             // 
+            this.buttonUpdate.BackColor = System.Drawing.Color.DarkGray;
             this.buttonUpdate.Location = new System.Drawing.Point(2116, 423);
             this.buttonUpdate.Margin = new System.Windows.Forms.Padding(7);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(339, 81);
             this.buttonUpdate.TabIndex = 12;
             this.buttonUpdate.Text = "Update Data Base";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.UseVisualStyleBackColor = false;
             this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // textBoxPhoneNumberUpdate
@@ -671,13 +700,14 @@
             // 
             // ButtonSearch
             // 
+            this.ButtonSearch.BackColor = System.Drawing.Color.DarkGray;
             this.ButtonSearch.Location = new System.Drawing.Point(2117, 122);
             this.ButtonSearch.Margin = new System.Windows.Forms.Padding(7);
             this.ButtonSearch.Name = "ButtonSearch";
             this.ButtonSearch.Size = new System.Drawing.Size(311, 81);
             this.ButtonSearch.TabIndex = 8;
             this.ButtonSearch.Text = "Search";
-            this.ButtonSearch.UseVisualStyleBackColor = true;
+            this.ButtonSearch.UseVisualStyleBackColor = false;
             this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
             // textBoxCustomerId
@@ -774,47 +804,26 @@
             // 
             // buttonExit3
             // 
-            this.buttonExit3.Location = new System.Drawing.Point(2325, 1617);
+            this.buttonExit3.BackColor = System.Drawing.Color.DarkGray;
+            this.buttonExit3.Location = new System.Drawing.Point(2380, 1608);
             this.buttonExit3.Margin = new System.Windows.Forms.Padding(7);
             this.buttonExit3.Name = "buttonExit3";
             this.buttonExit3.Size = new System.Drawing.Size(280, 91);
             this.buttonExit3.TabIndex = 6;
             this.buttonExit3.Text = "Exit";
-            this.buttonExit3.UseVisualStyleBackColor = true;
-            this.buttonExit3.Click += new System.EventHandler(this.buttonExit3_Click);
+            this.buttonExit3.UseVisualStyleBackColor = false;
             // 
             // buttonListAll
             // 
+            this.buttonListAll.BackColor = System.Drawing.Color.DarkGray;
             this.buttonListAll.Location = new System.Drawing.Point(58, 53);
             this.buttonListAll.Margin = new System.Windows.Forms.Padding(7);
             this.buttonListAll.Name = "buttonListAll";
             this.buttonListAll.Size = new System.Drawing.Size(496, 93);
             this.buttonListAll.TabIndex = 5;
             this.buttonListAll.Text = "List All Customers from DB";
-            this.buttonListAll.UseVisualStyleBackColor = true;
+            this.buttonListAll.UseVisualStyleBackColor = false;
             this.buttonListAll.Click += new System.EventHandler(this.buttonListAll_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1244, 339);
-            this.label3.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(191, 32);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Minimum 100 ";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(355, 978);
-            this.label12.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(191, 32);
-            this.label12.TabIndex = 30;
-            this.label12.Text = "Minimum 100 ";
             // 
             // CustomerMaintenance
             // 

@@ -18,14 +18,9 @@ namespace TechDistribution.BLL
         private string faxNumber;
         private decimal creditLimit;
 
-        //public List<Orders> Orders { get; set; }
 
         public Customer() { }
 
-        //public Customer()
-        //{
-        //    Orders = new List<Order>();
-        //}
 
         public Customer(int customerId, string name, string street, string city, string postalCode, string phoneNumber, string faxNumber, decimal creditLimit)
         {
@@ -52,28 +47,6 @@ namespace TechDistribution.BLL
         {
             return CustomerDB.GetAllRecords();
         }
-        //    public void AddCustomer(Customer customer)
-        //    {
-        //        CustomerDB.SaveCustomer(customer);
-        //    }
-        //    public Customer SearchCustomer(int customerId)
-        //    {
-        //        return CustomerDB.SearchUser(customerId);
-        //    }
 
-        //    public void ModifyStudent(Customer customer)
-        //    {
-        //        CustomerDB.modifyCustomer(customer);
-        //    }
-        //    public void DeleteStudent(Customer customer)
-        //    {
-        //        CustomerDB.Delete(customer.customerId);
-        //    }
-
-        //    public bool IsAExistingStudent(int customerId)
-        //    {
-        //        bool existing = CustomerDB.IsAnExistingCustomer(customerId);
-        //        return existing;
-        //    }
     }
 }
