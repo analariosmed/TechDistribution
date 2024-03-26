@@ -52,28 +52,28 @@ namespace TechDistribution.BLL
         {
             return CustomerDB.GetAllRecords();
         }
-        public void AddCustomer(Customer customer)
-        {
-            CustomerDB.SaveCustomer(customer);
-        }
-        public Customer SearchCustomer(int customerId)
-        {
-            return CustomerDB.SearchUser(customerId);
-        }
+        //    public void AddCustomer(Customer customer)
+        //    {
+        //        CustomerDB.SaveCustomer(customer);
+        //    }
+        //    public Customer SearchCustomer(int customerId)
+        //    {
+        //        return CustomerDB.SearchUser(customerId);
+        //    }
 
-        public void ModifyStudent(Customer customer)
-        {
-            CustomerDB.modifyCustomer(customer);
-        }
-        public void DeleteStudent(Customer customer)
-        {
-            CustomerDB.Delete(customer.customerId);
-        }
+        //    public void ModifyStudent(Customer customer)
+        //    {
+        //        CustomerDB.modifyCustomer(customer);
+        //    }
+        //    public void DeleteStudent(Customer customer)
+        //    {
+        //        CustomerDB.Delete(customer.customerId);
+        //    }
 
-        public bool IsAExistingStudent(int customerId)
-        {
-            bool existing = CustomerDB.IsAnExistingCustomer(customerId);
-            return existing;
-        }
+        //    public bool IsAExistingStudent(int customerId)
+        //    {
+        //        bool existing = CustomerDB.IsAnExistingCustomer(customerId);
+        //        return existing;
+        //    }
     }
 }

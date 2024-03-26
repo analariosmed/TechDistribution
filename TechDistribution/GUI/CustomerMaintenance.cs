@@ -11,8 +11,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TechDistribution.DAL;
 using TechDistribution.BLL;
+using TechDistribution.VALIDATION;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Data.SqlClient; // WORK IN A DISCONNECTED MOODE
+
 
 
 namespace TechDistribution.GUI
@@ -33,12 +35,31 @@ namespace TechDistribution.GUI
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
-
 
         private void buttonModify_Click(object sender, EventArgs e)
         {
+            string input;
+
+            input = textBoxPhoneNumberUpdate.Text.Trim();
+
+            if (!Validator.IsValidPhoneNumber(input))
+            {
+                MessageBox.Show("The Phone number  is not correct, try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            input = textBoxCreditLimitUpdate.Text.Trim();
+                
+            if(!Validator.IsValidNumber(input))
+            {
+                MessageBox.Show("The Credit Limit  is not correct, try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            
+
             int searchId = Convert.ToInt32(textBoxCustomerId.Text);
             DataRow drCustomer = dtCustomers.Rows.Find(searchId);
             drCustomer["CustomerName"] = textBoxNameUpdate.Text.Trim();
@@ -88,7 +109,7 @@ namespace TechDistribution.GUI
             dataAdapter.Fill(TechDistributionDB, "Customers");
         }
 
-        private void buttonUpdate_Click_1(object sender, EventArgs e)
+        private void buttonUpdate_Click(object sender, EventArgs e)
         {
 
             dataAdapter.Update(TechDistributionDB, "Customers");
@@ -119,15 +140,34 @@ namespace TechDistribution.GUI
 
         }
 
-        private void buttonDB_Click(object sender, EventArgs e)
+        private void buttonAdd_Click(object sender, EventArgs e)
         {
-        
-        }
+            string input;
 
-        private void buttonAdd_Click_1(object sender, EventArgs e)
-        {
-       
-            //validation missing
+            input = textBoxName.Text.Trim();
+
+            if (!Validator.IsValidText(input))
+            {
+                MessageBox.Show("The Name is not correct, try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            input = textBoxPhoneNumber.Text.Trim();
+
+            if (!Validator.IsValidPhoneNumber(input))
+            {
+                MessageBox.Show("The Phone number  is not correct, try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            input = textBoxCreditLimit.Text.Trim();
+
+            if (!Validator.IsValidNumber(input))
+            {
+                MessageBox.Show("The Credit Limit  is not correct, try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
 
 
             DataRow dr = dtCustomers.NewRow();
@@ -161,7 +201,7 @@ namespace TechDistribution.GUI
             MessageBox.Show("Database has beeen update sucessfully.", "Database update");
         }
 
-        private void ButtonSearch_Click_1(object sender, EventArgs e)
+        private void ButtonSearch_Click(object sender, EventArgs e)
         {
             //INPUT data validation
             int customerId = Convert.ToInt32(textBoxCustomerId.Text.Trim());
@@ -190,7 +230,7 @@ namespace TechDistribution.GUI
             }
         }
 
-        private void buttonDelete_Click_1(object sender, EventArgs e)
+        private void buttonDelete_Click(object sender, EventArgs e)
         {
             //search operation first found it
             int searchId = Convert.ToInt32(textBoxCustomerId.Text);
@@ -221,5 +261,19 @@ namespace TechDistribution.GUI
             }
         }
 
+        private void buttonExit3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void buttonExit2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

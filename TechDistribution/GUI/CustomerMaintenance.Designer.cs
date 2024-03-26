@@ -73,8 +73,6 @@
             this.textBoxFaxNumberUpdate = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.buttonDelete = new System.Windows.Forms.Button();
-            this.textBoxSearchCustomerID = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.textBoxPhoneNumberUpdate = new System.Windows.Forms.TextBox();
             this.textBoxPostalCodeUpdate = new System.Windows.Forms.TextBox();
@@ -100,6 +98,8 @@
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonExit3 = new System.Windows.Forms.Button();
             this.buttonListAll = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -142,10 +142,12 @@
             this.buttonExit.TabIndex = 6;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.buttonUpdateDB);
             this.groupBox1.Controls.Add(this.textBoxCreditLimit);
             this.groupBox1.Controls.Add(this.label26);
@@ -196,10 +198,11 @@
             // label26
             // 
             this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.Location = new System.Drawing.Point(340, 848);
             this.label26.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(137, 37);
+            this.label26.Size = new System.Drawing.Size(122, 32);
             this.label26.TabIndex = 23;
             this.label26.Text = "Optional";
             // 
@@ -250,10 +253,11 @@
             // label18
             // 
             this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(340, 713);
             this.label18.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(229, 37);
+            this.label18.Size = new System.Drawing.Size(201, 32);
             this.label18.TabIndex = 17;
             this.label18.Text = "(777)777-7777";
             // 
@@ -266,7 +270,7 @@
             this.buttonAdd.TabIndex = 12;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click_1);
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // textBoxPhoneNumber
             // 
@@ -365,6 +369,7 @@
             this.groupBox4.Size = new System.Drawing.Size(2648, 1674);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // buttonDS
             // 
@@ -446,10 +451,12 @@
             this.buttonExit2.TabIndex = 11;
             this.buttonExit2.Text = "Exit";
             this.buttonExit2.UseVisualStyleBackColor = true;
+            this.buttonExit2.Click += new System.EventHandler(this.buttonExit2_Click);
             // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.buttonModify);
             this.groupBox3.Controls.Add(this.textBoxCityUpdate);
             this.groupBox3.Controls.Add(this.textBoxStreetUpdate);
@@ -459,8 +466,6 @@
             this.groupBox3.Controls.Add(this.textBoxFaxNumberUpdate);
             this.groupBox3.Controls.Add(this.label20);
             this.groupBox3.Controls.Add(this.buttonDelete);
-            this.groupBox3.Controls.Add(this.textBoxSearchCustomerID);
-            this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.buttonUpdate);
             this.groupBox3.Controls.Add(this.textBoxPhoneNumberUpdate);
             this.groupBox3.Controls.Add(this.textBoxPostalCodeUpdate);
@@ -492,7 +497,7 @@
             // 
             // textBoxCityUpdate
             // 
-            this.textBoxCityUpdate.Location = new System.Drawing.Point(366, 363);
+            this.textBoxCityUpdate.Location = new System.Drawing.Point(355, 295);
             this.textBoxCityUpdate.Margin = new System.Windows.Forms.Padding(7);
             this.textBoxCityUpdate.Name = "textBoxCityUpdate";
             this.textBoxCityUpdate.Size = new System.Drawing.Size(401, 44);
@@ -500,7 +505,7 @@
             // 
             // textBoxStreetUpdate
             // 
-            this.textBoxStreetUpdate.Location = new System.Drawing.Point(355, 266);
+            this.textBoxStreetUpdate.Location = new System.Drawing.Point(355, 185);
             this.textBoxStreetUpdate.Margin = new System.Windows.Forms.Padding(7);
             this.textBoxStreetUpdate.Name = "textBoxStreetUpdate";
             this.textBoxStreetUpdate.Size = new System.Drawing.Size(401, 44);
@@ -509,7 +514,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(109, 382);
+            this.label27.Location = new System.Drawing.Point(128, 291);
             this.label27.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(71, 37);
@@ -519,7 +524,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(97, 273);
+            this.label19.Location = new System.Drawing.Point(128, 185);
             this.label19.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(101, 37);
@@ -528,7 +533,7 @@
             // 
             // textBoxCreditLimitUpdate
             // 
-            this.textBoxCreditLimitUpdate.Location = new System.Drawing.Point(1240, 319);
+            this.textBoxCreditLimitUpdate.Location = new System.Drawing.Point(1240, 288);
             this.textBoxCreditLimitUpdate.Margin = new System.Windows.Forms.Padding(7);
             this.textBoxCreditLimitUpdate.Name = "textBoxCreditLimitUpdate";
             this.textBoxCreditLimitUpdate.Size = new System.Drawing.Size(401, 44);
@@ -536,7 +541,7 @@
             // 
             // textBoxFaxNumberUpdate
             // 
-            this.textBoxFaxNumberUpdate.Location = new System.Drawing.Point(1238, 205);
+            this.textBoxFaxNumberUpdate.Location = new System.Drawing.Point(1240, 178);
             this.textBoxFaxNumberUpdate.Margin = new System.Windows.Forms.Padding(7);
             this.textBoxFaxNumberUpdate.Name = "textBoxFaxNumberUpdate";
             this.textBoxFaxNumberUpdate.Size = new System.Drawing.Size(401, 44);
@@ -545,10 +550,11 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(1245, 122);
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(1233, 108);
             this.label20.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(229, 37);
+            this.label20.Size = new System.Drawing.Size(201, 32);
             this.label20.TabIndex = 21;
             this.label20.Text = "(777)777-7777";
             // 
@@ -561,26 +567,7 @@
             this.buttonDelete.TabIndex = 16;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click_1);
-            // 
-            // textBoxSearchCustomerID
-            // 
-            this.textBoxSearchCustomerID.Location = new System.Drawing.Point(355, 83);
-            this.textBoxSearchCustomerID.Margin = new System.Windows.Forms.Padding(7);
-            this.textBoxSearchCustomerID.Name = "textBoxSearchCustomerID";
-            this.textBoxSearchCustomerID.ReadOnly = true;
-            this.textBoxSearchCustomerID.Size = new System.Drawing.Size(401, 44);
-            this.textBoxSearchCustomerID.TabIndex = 15;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(61, 86);
-            this.label14.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(196, 37);
-            this.label14.TabIndex = 14;
-            this.label14.Text = "Customer ID";
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonUpdate
             // 
@@ -591,7 +578,7 @@
             this.buttonUpdate.TabIndex = 12;
             this.buttonUpdate.Text = "Update Data Base";
             this.buttonUpdate.UseVisualStyleBackColor = true;
-            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click_1);
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // textBoxPhoneNumberUpdate
             // 
@@ -603,7 +590,7 @@
             // 
             // textBoxPostalCodeUpdate
             // 
-            this.textBoxPostalCodeUpdate.Location = new System.Drawing.Point(366, 479);
+            this.textBoxPostalCodeUpdate.Location = new System.Drawing.Point(355, 404);
             this.textBoxPostalCodeUpdate.Margin = new System.Windows.Forms.Padding(7);
             this.textBoxPostalCodeUpdate.Name = "textBoxPostalCodeUpdate";
             this.textBoxPostalCodeUpdate.Size = new System.Drawing.Size(401, 44);
@@ -611,7 +598,7 @@
             // 
             // textBoxNameUpdate
             // 
-            this.textBoxNameUpdate.Location = new System.Drawing.Point(355, 171);
+            this.textBoxNameUpdate.Location = new System.Drawing.Point(355, 86);
             this.textBoxNameUpdate.Margin = new System.Windows.Forms.Padding(7);
             this.textBoxNameUpdate.Name = "textBoxNameUpdate";
             this.textBoxNameUpdate.Size = new System.Drawing.Size(401, 44);
@@ -620,7 +607,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(982, 322);
+            this.label8.Location = new System.Drawing.Point(982, 298);
             this.label8.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(179, 37);
@@ -630,7 +617,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(982, 212);
+            this.label9.Location = new System.Drawing.Point(982, 185);
             this.label9.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(194, 37);
@@ -650,7 +637,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(109, 482);
+            this.label11.Location = new System.Drawing.Point(128, 404);
             this.label11.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(182, 37);
@@ -660,7 +647,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(88, 174);
+            this.label13.Location = new System.Drawing.Point(128, 93);
             this.label13.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(103, 37);
@@ -691,7 +678,7 @@
             this.ButtonSearch.TabIndex = 8;
             this.ButtonSearch.Text = "Search";
             this.ButtonSearch.UseVisualStyleBackColor = true;
-            this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click_1);
+            this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
             // textBoxCustomerId
             // 
@@ -794,6 +781,7 @@
             this.buttonExit3.TabIndex = 6;
             this.buttonExit3.Text = "Exit";
             this.buttonExit3.UseVisualStyleBackColor = true;
+            this.buttonExit3.Click += new System.EventHandler(this.buttonExit3_Click);
             // 
             // buttonListAll
             // 
@@ -805,6 +793,28 @@
             this.buttonListAll.Text = "List All Customers from DB";
             this.buttonListAll.UseVisualStyleBackColor = true;
             this.buttonListAll.Click += new System.EventHandler(this.buttonListAll_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1244, 339);
+            this.label3.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(191, 32);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Minimum 100 ";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(355, 978);
+            this.label12.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(191, 32);
+            this.label12.TabIndex = 30;
+            this.label12.Text = "Minimum 100 ";
             // 
             // CustomerMaintenance
             // 
@@ -851,8 +861,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.TextBox textBoxSearchCustomerID;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.TextBox textBoxPhoneNumberUpdate;
         private System.Windows.Forms.TextBox textBoxPostalCodeUpdate;
@@ -904,5 +912,7 @@
         private System.Windows.Forms.Button buttonModify;
         private System.Windows.Forms.Button buttonUpdateDB;
         private System.Windows.Forms.Button buttonDS;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label3;
     }
 }
