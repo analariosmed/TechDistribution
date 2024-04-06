@@ -113,7 +113,7 @@
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(942, 649);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Create Account";
@@ -134,9 +134,9 @@
             // 
             this.groupBox4.Controls.Add(this.labelInfo);
             this.groupBox4.Location = new System.Drawing.Point(453, 34);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(1);
             this.groupBox4.Size = new System.Drawing.Size(462, 479);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
@@ -332,7 +332,7 @@
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(942, 649);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Search/Update/Delete";
@@ -391,7 +391,7 @@
             // textBoxOldPassword
             // 
             this.textBoxOldPassword.Location = new System.Drawing.Point(176, 67);
-            this.textBoxOldPassword.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.textBoxOldPassword.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxOldPassword.Name = "textBoxOldPassword";
             this.textBoxOldPassword.Size = new System.Drawing.Size(194, 22);
             this.textBoxOldPassword.TabIndex = 20;
@@ -399,7 +399,7 @@
             // textBoxRepeatNew
             // 
             this.textBoxRepeatNew.Location = new System.Drawing.Point(182, 160);
-            this.textBoxRepeatNew.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.textBoxRepeatNew.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxRepeatNew.Name = "textBoxRepeatNew";
             this.textBoxRepeatNew.Size = new System.Drawing.Size(194, 22);
             this.textBoxRepeatNew.TabIndex = 19;
@@ -407,7 +407,7 @@
             // textBoxNewPassword
             // 
             this.textBoxNewPassword.Location = new System.Drawing.Point(182, 114);
-            this.textBoxNewPassword.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.textBoxNewPassword.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxNewPassword.Name = "textBoxNewPassword";
             this.textBoxNewPassword.Size = new System.Drawing.Size(194, 22);
             this.textBoxNewPassword.TabIndex = 18;
@@ -547,7 +547,7 @@
             this.tabPage3.Controls.Add(this.listViewAllUsers);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(942, 649);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Users List";
@@ -632,7 +632,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 688);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "UserAccountsManagement";
             this.Text = "UserAccountManagment";
             this.tabControl1.ResumeLayout(false);
