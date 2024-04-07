@@ -16,6 +16,8 @@ namespace TechDistribution.GUI
 {
     public partial class EmployeeManagement : Form
     {
+        TechDistributionEntities dbContext = new TechDistributionEntities();
+        
 
         public EmployeeManagement()
         {
@@ -23,6 +25,39 @@ namespace TechDistribution.GUI
             comboBoxStatus.SelectedIndex = 0;
             comboBoxJobTitle.SelectedIndex = 0;
             comboBoxSearchBy.SelectedIndex = 0;
+
+            BookRepository bookRepository = new BookRepository(dbContext);
+
+            Author author = new Author();
+            author.FirstName = "JK";
+            author.LastName = "Rowling";
+            author.Email = "sergioaqs17@gmail.com";
+
+
+            /*
+            Author author1 = new Author();
+            author1.FirstName = "Sergio";
+            author1.LastName = "Quiroz";
+            author1.Email = "cpp@gmail.com";
+
+            List<Author> listOfAuthors = new List<Author>();
+
+            listOfAuthors.Add(author1);
+            listOfAuthors.Add(author);
+
+            bookRepository.addBook(book);
+            book.Authors = listOfAuthors;
+            */
+
+            var booktoEdit = dbContext.Books.Where(x => x.ISBN == "1234dfsd23").First();
+
+            Author authorToDelete = dbContext.Authors.Where(x => x.AuthorID == 1).First();
+
+            booktoEdit.Authors.Remove(authorToDelete);
+            dbContext.SaveChanges();
+
+
+            
         }
 
         private void clearFields()
