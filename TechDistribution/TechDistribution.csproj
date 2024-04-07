@@ -56,6 +56,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\Author.cs">
+      <DependentUpon>TechDistributionEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Book.cs">
+      <DependentUpon>TechDistributionEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Category.cs">
+      <DependentUpon>TechDistributionEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Publisher.cs">
+      <DependentUpon>TechDistributionEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\TechDistributionEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TechDistributionEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\TechDistributionEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TechDistributionEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\TechDistributionEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TechDistributionEntities.edmx</DependentUpon>
+    </Compile>
     <Compile Include="BLL\User.cs" />
     <Compile Include="DAL\UserDB.cs" />
     <Compile Include="GUI\CustomerLogin.cs">
@@ -127,12 +154,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="BLL\TechDistributionDB.edmx">
+    <EntityDeploy Include="BLL\TechDistributionEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TechDistributionDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>TechDistributionEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="BLL\TechDistributionDB.edmx.diagram">
-      <DependentUpon>TechDistributionDB.edmx</DependentUpon>
+    <None Include="BLL\TechDistributionEntities.edmx.diagram">
+      <DependentUpon>TechDistributionEntities.edmx</DependentUpon>
     </None>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
@@ -153,15 +180,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BLL\TechDistributionDB.Context.tt">
+    <Content Include="BLL\TechDistributionEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TechDistributionDB.edmx</DependentUpon>
-      <LastGenOutput>TechDistributionDB.Context.cs</LastGenOutput>
+      <DependentUpon>TechDistributionEntities.edmx</DependentUpon>
+      <LastGenOutput>TechDistributionEntities.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="BLL\TechDistributionDB.tt">
+    <Content Include="BLL\TechDistributionEntities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TechDistributionDB.edmx</DependentUpon>
-      <LastGenOutput>TechDistributionDB.cs</LastGenOutput>
+      <DependentUpon>TechDistributionEntities.edmx</DependentUpon>
+      <LastGenOutput>TechDistributionEntities.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

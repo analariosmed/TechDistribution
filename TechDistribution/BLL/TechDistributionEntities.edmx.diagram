@@ -4,15 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="eda7f0f9d933466eab9fc4e7c2a3a59c" Name="Diagram1">
-        <EntityTypeShape EntityType="TechDistributionModel.Author" Width="1.5" PointX="0.5" PointY="1.625" IsExpanded="true" />
+      <Diagram DiagramId="f9babb8c59d14076a2ab5cb7e5308a46" Name="Diagram1">
+        <EntityTypeShape EntityType="TechDistributionModel.Author" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="TechDistributionModel.Book" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="TechDistributionModel.Category" Width="1.5" PointX="5.375" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="TechDistributionModel.Publisher" Width="1.5" PointX="5.875" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechDistributionModel.Category" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechDistributionModel.Publisher" Width="1.5" PointX="5.875" PointY="3" IsExpanded="true" />
         <AssociationConnector Association="TechDistributionModel.FK__Books__CategoryI__3D5E1FD2" ManuallyRouted="false" />
         <AssociationConnector Association="TechDistributionModel.FK__Books__Publisher__3E52440B" ManuallyRouted="false" />
-        <AssociationConnector Association="TechDistributionModel.BookAuthors" ManuallyRouted="false" >
-        </AssociationConnector>
+        <AssociationConnector Association="TechDistributionModel.BookAuthors" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
