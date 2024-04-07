@@ -17,6 +17,13 @@ namespace TechDistribution.VALIDATION
                 return false;
             return true;
         }
+
+        public static bool IsValidNumber(string id)
+        {
+            if (!Regex.IsMatch(id, @"^[1-9]\d{2,}$"))
+                return false;
+            return true;
+        }
         public static bool IsValidPhoneNumber(string phoneNumber)
         {
             if (!Regex.IsMatch(phoneNumber, @"^\(\d{3}\)\d{3}-\d{4}$"))

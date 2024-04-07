@@ -31,11 +31,10 @@ namespace TechDistribution.DAL
 
                 cmd.Connection = conn;
 
-                cmd.CommandText = "INSERT INTO UserAccounts(Password,StatusId, EmployeeId) " +
-                                  "VALUES (@Password, @StatusId, @EmployeeId);";
+                cmd.CommandText = "INSERT INTO UserAccounts(Password, EmployeeId) " +
+                                  "VALUES (@Password, @EmployeeId);";
 
                 cmd.Parameters.AddWithValue("@Password", user.Password);
-                cmd.Parameters.AddWithValue("@StatusId", user.StatusId);
                 cmd.Parameters.AddWithValue("@EmployeeId", user.EmployeeId);
 
 

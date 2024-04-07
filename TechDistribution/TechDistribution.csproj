@@ -56,37 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\Author.cs">
-      <DependentUpon>TechDistributionDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BLL\Book.cs">
-      <DependentUpon>TechDistributionDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BLL\Category.cs">
-      <DependentUpon>TechDistributionDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BLL\Publisher.cs">
-      <DependentUpon>TechDistributionDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BLL\TechDistributionDB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TechDistributionDB.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BLL\TechDistributionDB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TechDistributionDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BLL\TechDistributionDB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TechDistributionDB.edmx</DependentUpon>
-    </Compile>
     <Compile Include="BLL\User.cs" />
-    <Compile Include="DAL\AuthorRepository.cs" />
-    <Compile Include="DAL\BookRepository.cs" />
-    <Compile Include="DAL\BaseRepository.cs" />
     <Compile Include="DAL\UserDB.cs" />
     <Compile Include="GUI\CustomerLogin.cs">
       <SubType>Form</SubType>
@@ -97,6 +67,12 @@
     <Compile Include="BLL\Employee.cs" />
     <Compile Include="DAL\EmployeeDB.cs" />
     <Compile Include="DAL\UtilityDB.cs" />
+    <Compile Include="GUI\EmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EmployeeForm.Designer.cs">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\EmployeeLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +102,9 @@
     <Compile Include="VALIDATION\Validator.cs" />
     <EmbeddedResource Include="GUI\CustomerLogin.resx">
       <DependentUpon>CustomerLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EmployeeForm.resx">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\EmployeeLogin.resx">
       <DependentUpon>EmployeeLogin.cs</DependentUpon>

@@ -33,5 +33,13 @@ namespace TechDistribution.GUI
             formUserAccount.Show();
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CustomerMaintenance formCustomers = new CustomerMaintenance();
+            this.Hide();
+            formCustomers.Show();
+
+        }
     }
 }
