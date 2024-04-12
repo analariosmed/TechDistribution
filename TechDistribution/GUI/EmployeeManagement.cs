@@ -28,33 +28,64 @@ namespace TechDistribution.GUI
 
             BookRepository bookRepository = new BookRepository(dbContext);
 
+            /*
             Author author = new Author();
             author.FirstName = "JK";
             author.LastName = "Rowling";
             author.Email = "sergioaqs17@gmail.com";
 
 
-            /*
+            
             Author author1 = new Author();
             author1.FirstName = "Sergio";
             author1.LastName = "Quiroz";
             author1.Email = "cpp@gmail.com";
 
-            List<Author> listOfAuthors = new List<Author>();
-
-            listOfAuthors.Add(author1);
-            listOfAuthors.Add(author);
-
-            bookRepository.addBook(book);
-            book.Authors = listOfAuthors;
             */
 
-            var booktoEdit = dbContext.Books.Where(x => x.ISBN == "1234dfsd23").First();
 
-            Author authorToDelete = dbContext.Authors.Where(x => x.AuthorID == 1).First();
+            Author author3 = dbContext.Authors.Where(x => x.AuthorID == 1).First();
 
-            booktoEdit.Authors.Remove(authorToDelete);
-            dbContext.SaveChanges();
+            Author author4 = dbContext.Authors.Where(x => x.AuthorID == 2).First();
+
+            List<Author> listOfAuthors = new List<Author>
+            {
+                author3
+            };
+
+            Book book = new Book();
+
+            book.ISBN = "23df23d";
+            book.Title = "Harry potter";
+
+            //bookRepository.addBook(book);
+
+
+            book.Authors = listOfAuthors;
+
+            //dbContext.Books.Add(book);
+           
+
+
+            Book booktoEdit = dbContext.Books.Where(x => x.ISBN == "1234dfsd23").First();
+
+            //Author authorToDelete = dbContext.Authors.Where(x => x.AuthorID == 1).First();
+
+            var author = booktoEdit.Authors.Where(x => x.AuthorID == 1);
+
+
+           
+            
+
+            //foreach(Author au in )
+
+            
+            
+
+
+          
+
+            
 
 
             
