@@ -115,8 +115,8 @@
             this.tabPage1.Location = new System.Drawing.Point(12, 58);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(7);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(7);
-            this.tabPage1.Size = new System.Drawing.Size(2232, 1498);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Size = new System.Drawing.Size(942, 649);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Create Account";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -137,11 +137,11 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.labelInfo);
-            this.groupBox4.Location = new System.Drawing.Point(1076, 79);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Location = new System.Drawing.Point(453, 34);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(1097, 1108);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox4.Size = new System.Drawing.Size(462, 479);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "User Information :";
@@ -357,8 +357,8 @@
             this.tabPage2.Location = new System.Drawing.Point(12, 58);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(7);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(7);
-            this.tabPage2.Size = new System.Drawing.Size(2232, 1498);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Size = new System.Drawing.Size(942, 649);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Search/Update/Delete";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -420,24 +420,24 @@
             // 
             // textBoxOldPassword
             // 
-            this.textBoxOldPassword.Location = new System.Drawing.Point(418, 155);
-            this.textBoxOldPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxOldPassword.Location = new System.Drawing.Point(176, 67);
+            this.textBoxOldPassword.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.textBoxOldPassword.Name = "textBoxOldPassword";
             this.textBoxOldPassword.Size = new System.Drawing.Size(455, 44);
             this.textBoxOldPassword.TabIndex = 20;
             // 
             // textBoxRepeatNew
             // 
-            this.textBoxRepeatNew.Location = new System.Drawing.Point(432, 370);
-            this.textBoxRepeatNew.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxRepeatNew.Location = new System.Drawing.Point(182, 160);
+            this.textBoxRepeatNew.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.textBoxRepeatNew.Name = "textBoxRepeatNew";
             this.textBoxRepeatNew.Size = new System.Drawing.Size(455, 44);
             this.textBoxRepeatNew.TabIndex = 19;
             // 
             // textBoxNewPassword
             // 
-            this.textBoxNewPassword.Location = new System.Drawing.Point(432, 264);
-            this.textBoxNewPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxNewPassword.Location = new System.Drawing.Point(182, 114);
+            this.textBoxNewPassword.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.textBoxNewPassword.Name = "textBoxNewPassword";
             this.textBoxNewPassword.Size = new System.Drawing.Size(455, 44);
             this.textBoxNewPassword.TabIndex = 18;
@@ -588,8 +588,8 @@
             this.tabPage3.Location = new System.Drawing.Point(12, 58);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(7);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(7);
-            this.tabPage3.Size = new System.Drawing.Size(2232, 1498);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Size = new System.Drawing.Size(942, 649);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Users List";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -678,7 +678,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2301, 1591);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "UserAccountsManagement";
             this.Text = "UserAccountManagment";
             this.tabControl1.ResumeLayout(false);

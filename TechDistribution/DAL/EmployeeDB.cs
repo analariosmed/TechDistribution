@@ -208,19 +208,16 @@ namespace TechDistribution.DAL
 
             Employee student = new Employee();
 
-            conn.Close();
 
             if (reader.Read())
             {
                 return true;
-               
+
             }
             else
             {
                 return false;
-                
             }
-            
 
             
         }

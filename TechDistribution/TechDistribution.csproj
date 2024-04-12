@@ -33,9 +33,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,8 +56,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\Author.cs">
+      <DependentUpon>TechDistributionEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Book.cs">
+      <DependentUpon>TechDistributionEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Category.cs">
+      <DependentUpon>TechDistributionEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="BLL\Customer.cs" />
+    <Compile Include="BLL\Publisher.cs">
+      <DependentUpon>TechDistributionEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\TechDistributionEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TechDistributionEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\TechDistributionEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TechDistributionEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\TechDistributionEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TechDistributionEntities.edmx</DependentUpon>
+    </Compile>
     <Compile Include="BLL\User.cs" />
+    <Compile Include="BLL\UserAccount.cs" />
+    <Compile Include="DAL\AuthorRepository.cs" />
+    <Compile Include="DAL\BaseRepository.cs" />
+    <Compile Include="DAL\BookRepository.cs" />
     <Compile Include="DAL\CustomerDB.cs" />
     <Compile Include="DAL\UserDB.cs" />
     <Compile Include="GUI\CustomerLogin.cs">
@@ -78,6 +118,12 @@
     <Compile Include="GUI\EmployeeManagement.Designer.cs">
       <DependentUpon>EmployeeManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserAccountManagament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UserAccountManagament.Designer.cs">
+      <DependentUpon>UserAccountManagament.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UserAccountsManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +151,9 @@
     <EmbeddedResource Include="GUI\EmployeeManagement.resx">
       <DependentUpon>EmployeeManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserAccountManagament.resx">
+      <DependentUpon>UserAccountManagament.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserAccountsManagement.resx">
       <DependentUpon>UserAccountsManagement.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +169,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="BLL\TechDistributionEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TechDistributionEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BLL\TechDistributionEntities.edmx.diagram">
+      <DependentUpon>TechDistributionEntities.edmx</DependentUpon>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -131,7 +189,22 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="VALIDATION\App.config" />
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BLL\TechDistributionEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TechDistributionEntities.edmx</DependentUpon>
+      <LastGenOutput>TechDistributionEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BLL\TechDistributionEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TechDistributionEntities.edmx</DependentUpon>
+      <LastGenOutput>TechDistributionEntities.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

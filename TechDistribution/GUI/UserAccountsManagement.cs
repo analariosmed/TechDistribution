@@ -201,13 +201,43 @@ namespace TechDistribution.GUI
 
         }
 
-    
-      
-        private void buttonExit_Click(object sender, EventArgs e)
+        private void buttonSearchEmployee_Click(object sender, EventArgs e)
+        {
+            int employeeId = Convert.ToInt32(textBoxEmployeeId.Text);
+
+
+            try
+            {
+                Employee employee = new Employee();
+                employee = employee.SearchEmployee(employeeId);
+                textBoxFirstName.Text = employee.FirstName;
+                textBoxLastName.Text = employee.LastName;
+                textBoxEmail.Text = employee.Email;
+           
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sorry, we didn't find an employee with that ID.");
+              
+
+            }
+
+        }
+
+        private void buttonEx_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        private void buttonExit2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
