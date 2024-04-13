@@ -15,7 +15,7 @@ namespace TechDistribution.DAL
         {
         }
 
-        public IEnumerable<Author> GetAuthors() => dbContext.Authors.ToList();
+        public List<Author> GetAuthors() => dbContext.Authors.ToList();
 
         public void AddAuthor(Author nAuthor)
         {
@@ -56,6 +56,19 @@ namespace TechDistribution.DAL
 
 
             */
+        }
+
+        public bool IsAnExistingAuthor(int authorId)
+        {
+
+            Author fAuthor = new Author();
+            fAuthor = GetAuthorById(authorId);
+
+            if (fAuthor == null)
+                return false;
+            else
+                return true;
+
         }
 
 

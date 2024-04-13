@@ -78,10 +78,21 @@ namespace TechDistribution.DAL
         }
 
         public Book GetBookByISBN(string isbn) => dbContext.Books.Where(x => x.ISBN == isbn).First();
+
+        public List<Book> GetBooksByTitle(string name) => dbContext.Books.Where(x => x.Title.Contains(name)).ToList();
         
 
-        
+        public bool IsAnExistingBook(string isbn)
+        {
+            Book fBook = new Book();
 
+            fBook = GetBookByISBN(isbn);
+
+            if (fBook == null)
+                return false;
+            else
+                return true;
+        }
 
     }
 }
