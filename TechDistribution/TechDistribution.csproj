@@ -59,9 +59,11 @@
     <Compile Include="BLL\Author.cs">
       <DependentUpon>TechDistributionEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="BLL\AuthorController.cs" />
     <Compile Include="BLL\Book.cs">
       <DependentUpon>TechDistributionEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="BLL\BookController.cs" />
     <Compile Include="BLL\Category.cs">
       <DependentUpon>TechDistributionEntities.tt</DependentUpon>
     </Compile>

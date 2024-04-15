@@ -50,7 +50,7 @@ namespace TechDistribution.GUI
 
             List<Author> listOfAuthors = new List<Author>
             {
-                author3
+                author4
             };
 
             Book book = new Book();
