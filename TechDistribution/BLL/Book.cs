@@ -18,6 +18,7 @@ namespace TechDistribution.BLL
         public Book()
         {
             this.Authors = new HashSet<Author>();
+            this.OrderItems = new HashSet<OrderItem>();
         }
     
         public string ISBN { get; set; }
@@ -32,5 +33,7 @@ namespace TechDistribution.BLL
         public virtual Publisher Publisher { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Author> Authors { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderItem> OrderItems { get; set; }
     }
 }

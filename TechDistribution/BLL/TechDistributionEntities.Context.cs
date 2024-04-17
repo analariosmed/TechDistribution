@@ -29,5 +29,9 @@ namespace TechDistribution.BLL
         public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Publisher> Publishers { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<OrderItem> OrderItems { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<Status> Status { get; set; }
     }
 }

@@ -109,6 +109,10 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -192,7 +196,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(7);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(7);
-            this.groupBox1.Size = new System.Drawing.Size(1317, 908);
+            this.groupBox1.Size = new System.Drawing.Size(1317, 933);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Order";
@@ -292,6 +296,8 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox3.Controls.Add(this.textBox8);
+            this.groupBox3.Controls.Add(this.button8);
             this.groupBox3.Controls.Add(this.comboBox8);
             this.groupBox3.Controls.Add(this.Book);
             this.groupBox3.Controls.Add(this.button5);
@@ -553,6 +559,8 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox5.Controls.Add(this.textBox9);
+            this.groupBox5.Controls.Add(this.button9);
             this.groupBox5.Controls.Add(this.button2);
             this.groupBox5.Controls.Add(this.dataGridView1);
             this.groupBox5.Controls.Add(this.comboBox3);
@@ -565,7 +573,7 @@
             this.groupBox5.Margin = new System.Windows.Forms.Padding(7);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(7);
-            this.groupBox5.Size = new System.Drawing.Size(1090, 897);
+            this.groupBox5.Size = new System.Drawing.Size(1090, 922);
             this.groupBox5.TabIndex = 13;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Items ";
@@ -755,7 +763,7 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Silver;
-            this.button4.Location = new System.Drawing.Point(965, 297);
+            this.button4.Location = new System.Drawing.Point(943, 283);
             this.button4.Margin = new System.Windows.Forms.Padding(7);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(337, 81);
@@ -776,11 +784,11 @@
             // 
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.MenuBar;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(965, 419);
+            this.dataGridView2.Location = new System.Drawing.Point(943, 392);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 123;
             this.dataGridView2.RowTemplate.Height = 46;
-            this.dataGridView2.Size = new System.Drawing.Size(1023, 350);
+            this.dataGridView2.Size = new System.Drawing.Size(1078, 226);
             this.dataGridView2.TabIndex = 56;
             // 
             // comboBox6
@@ -954,6 +962,45 @@
             this.button7.Text = "Exit";
             this.button7.UseVisualStyleBackColor = false;
             // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.Silver;
+            this.button8.Location = new System.Drawing.Point(943, 660);
+            this.button8.Margin = new System.Windows.Forms.Padding(7);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(337, 81);
+            this.button8.TabIndex = 60;
+            this.button8.Text = "Update Amount";
+            this.button8.UseVisualStyleBackColor = false;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.Location = new System.Drawing.Point(1326, 693);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(7);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(401, 48);
+            this.textBox8.TabIndex = 61;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.Silver;
+            this.button9.Location = new System.Drawing.Point(30, 798);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(318, 88);
+            this.button9.TabIndex = 44;
+            this.button9.Text = "Get Total Amount";
+            this.button9.UseVisualStyleBackColor = false;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox9.Location = new System.Drawing.Point(372, 826);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(7);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(279, 57);
+            this.textBox9.TabIndex = 39;
+            // 
             // OrderManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
@@ -1065,5 +1112,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Button button8;
     }
 }
