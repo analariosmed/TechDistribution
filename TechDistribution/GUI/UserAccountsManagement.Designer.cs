@@ -31,8 +31,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.buttonExit = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.labelInfo = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
@@ -87,7 +85,6 @@
             this.StatusDesc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -110,13 +107,12 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.buttonExit);
-            this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(12, 58);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(7);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage1.Size = new System.Drawing.Size(942, 649);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(2232, 1498);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Create Account";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -133,29 +129,6 @@
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.labelInfo);
-            this.groupBox4.Location = new System.Drawing.Point(453, 34);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.groupBox4.Size = new System.Drawing.Size(462, 479);
-            this.groupBox4.TabIndex = 1;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "User Information :";
-            // 
-            // labelInfo
-            // 
-            this.labelInfo.AutoSize = true;
-            this.labelInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInfo.Location = new System.Drawing.Point(52, 102);
-            this.labelInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelInfo.Name = "labelInfo";
-            this.labelInfo.Size = new System.Drawing.Size(32, 46);
-            this.labelInfo.TabIndex = 14;
-            this.labelInfo.Text = ".";
             // 
             // groupBox1
             // 
@@ -261,7 +234,6 @@
             this.buttonSearchEmployee.TabIndex = 16;
             this.buttonSearchEmployee.Text = "Search";
             this.buttonSearchEmployee.UseVisualStyleBackColor = false;
-
             // 
             // label6
             // 
@@ -357,8 +329,8 @@
             this.tabPage2.Location = new System.Drawing.Point(12, 58);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(7);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage2.Size = new System.Drawing.Size(942, 649);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(2232, 1498);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Search/Update/Delete";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -421,7 +393,7 @@
             // textBoxOldPassword
             // 
             this.textBoxOldPassword.Location = new System.Drawing.Point(176, 67);
-            this.textBoxOldPassword.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.textBoxOldPassword.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxOldPassword.Name = "textBoxOldPassword";
             this.textBoxOldPassword.Size = new System.Drawing.Size(455, 44);
             this.textBoxOldPassword.TabIndex = 20;
@@ -429,7 +401,7 @@
             // textBoxRepeatNew
             // 
             this.textBoxRepeatNew.Location = new System.Drawing.Point(182, 160);
-            this.textBoxRepeatNew.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.textBoxRepeatNew.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxRepeatNew.Name = "textBoxRepeatNew";
             this.textBoxRepeatNew.Size = new System.Drawing.Size(455, 44);
             this.textBoxRepeatNew.TabIndex = 19;
@@ -437,7 +409,7 @@
             // textBoxNewPassword
             // 
             this.textBoxNewPassword.Location = new System.Drawing.Point(182, 114);
-            this.textBoxNewPassword.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.textBoxNewPassword.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxNewPassword.Name = "textBoxNewPassword";
             this.textBoxNewPassword.Size = new System.Drawing.Size(455, 44);
             this.textBoxNewPassword.TabIndex = 18;
@@ -588,8 +560,8 @@
             this.tabPage3.Location = new System.Drawing.Point(12, 58);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(7);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage3.Size = new System.Drawing.Size(942, 649);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(2232, 1498);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Users List";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -678,13 +650,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2301, 1591);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "UserAccountsManagement";
             this.Text = "UserAccountManagment";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -742,7 +712,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -753,7 +722,6 @@
         private System.Windows.Forms.TextBox textBoxFirstName;
         private System.Windows.Forms.Button buttonEx;
         private System.Windows.Forms.Button buttonExit2;
-        private System.Windows.Forms.Label labelInfo;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
     }

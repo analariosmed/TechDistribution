@@ -120,6 +120,12 @@
     <Compile Include="GUI\EmployeeManagement.Designer.cs">
       <DependentUpon>EmployeeManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\OrderManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\OrderManagement.Designer.cs">
+      <DependentUpon>OrderManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UserAccountManagament.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\EmployeeManagement.resx">
       <DependentUpon>EmployeeManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\OrderManagement.resx">
+      <DependentUpon>OrderManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserAccountManagament.resx">
       <DependentUpon>UserAccountManagament.cs</DependentUpon>
