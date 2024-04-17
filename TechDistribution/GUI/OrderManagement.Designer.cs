@@ -108,6 +108,7 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button7 = new System.Windows.Forms.Button();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -134,6 +135,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button7);
             this.tabPage3.Controls.Add(this.button3);
             this.tabPage3.Controls.Add(this.groupBox5);
             this.tabPage3.Controls.Add(this.groupBox1);
@@ -190,7 +192,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(7);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(7);
-            this.groupBox1.Size = new System.Drawing.Size(1403, 908);
+            this.groupBox1.Size = new System.Drawing.Size(1317, 908);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Order";
@@ -279,10 +281,10 @@
             // buttonExit2
             // 
             this.buttonExit2.BackColor = System.Drawing.Color.Silver;
-            this.buttonExit2.Location = new System.Drawing.Point(1974, 1669);
+            this.buttonExit2.Location = new System.Drawing.Point(1878, 1659);
             this.buttonExit2.Margin = new System.Windows.Forms.Padding(7);
             this.buttonExit2.Name = "buttonExit2";
-            this.buttonExit2.Size = new System.Drawing.Size(372, 95);
+            this.buttonExit2.Size = new System.Drawing.Size(309, 95);
             this.buttonExit2.TabIndex = 11;
             this.buttonExit2.Text = "Exit";
             this.buttonExit2.UseVisualStyleBackColor = false;
@@ -477,6 +479,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(808, 48);
             this.comboBox1.TabIndex = 31;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -558,11 +561,11 @@
             this.groupBox5.Controls.Add(this.label15);
             this.groupBox5.Controls.Add(this.label21);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(1520, 36);
+            this.groupBox5.Location = new System.Drawing.Point(1414, 47);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(7);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(7);
-            this.groupBox5.Size = new System.Drawing.Size(1090, 908);
+            this.groupBox5.Size = new System.Drawing.Size(1090, 897);
             this.groupBox5.TabIndex = 13;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Items ";
@@ -641,7 +644,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Silver;
-            this.button3.Location = new System.Drawing.Point(2340, 998);
+            this.button3.Location = new System.Drawing.Point(1927, 1004);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(260, 93);
             this.button3.TabIndex = 14;
@@ -941,6 +944,16 @@
             this.columnHeader8.Text = "Credit Limit";
             this.columnHeader8.Width = 227;
             // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Silver;
+            this.button7.Location = new System.Drawing.Point(2244, 1004);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(260, 93);
+            this.button7.TabIndex = 15;
+            this.button7.Text = "Exit";
+            this.button7.UseVisualStyleBackColor = false;
+            // 
             // OrderManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
@@ -1051,5 +1064,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.Button button7;
     }
 }
