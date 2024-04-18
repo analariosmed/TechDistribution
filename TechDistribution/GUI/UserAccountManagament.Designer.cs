@@ -624,6 +624,7 @@
             this.listViewAllEmployees.TabIndex = 1;
             this.listViewAllEmployees.UseCompatibleStateImageBehavior = false;
             this.listViewAllEmployees.View = System.Windows.Forms.View.Details;
+            this.listViewAllEmployees.SelectedIndexChanged += new System.EventHandler(this.listViewAllEmployees_SelectedIndexChanged);
             // 
             // EmployeeID
             // 

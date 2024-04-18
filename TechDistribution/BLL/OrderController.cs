@@ -24,9 +24,9 @@ namespace TechDistribution.BLL
 
         public Order GetOrderByID(int orderId) => orderRep.GetOrderByID(orderId);
 
-        public List<Order> GetOrdersByDate(DateTime date) => orderRep.GetOrdersByDate(date);
+       // public List<Order> GetOrdersByDate(DateTime date) => orderRep.GetOrdersByDate(date);
 
-        public List<Order> GetOrdersByStatus(int statusId) => orderRep.GetOrdersByStatus(statusId);
+       // public List<Order> GetOrdersByStatus(int statusId) => orderRep.GetOrdersByStatus(statusId);
 
         public bool isAnExistingOrder(int orderId) => orderRep.isAnExistingOrder(orderId);
 

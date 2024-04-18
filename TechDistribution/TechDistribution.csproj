@@ -70,6 +70,7 @@
     <Compile Include="BLL\Customer.cs">
       <DependentUpon>TechDistributionEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="BLL\CustomerController.cs" />
     <Compile Include="BLL\Order.cs">
       <DependentUpon>TechDistributionEntities.tt</DependentUpon>
     </Compile>
@@ -77,6 +78,7 @@
     <Compile Include="BLL\OrderItem.cs">
       <DependentUpon>TechDistributionEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="BLL\OrderItemController.cs" />
     <Compile Include="BLL\Publisher.cs">
       <DependentUpon>TechDistributionEntities.tt</DependentUpon>
     </Compile>
@@ -104,6 +106,7 @@
     <Compile Include="DAL\BaseRepository.cs" />
     <Compile Include="DAL\BookRepository.cs" />
     <Compile Include="DAL\CustomerDB.cs" />
+    <Compile Include="DAL\OrderItemRepository.cs" />
     <Compile Include="DAL\OrderRepository.cs" />
     <Compile Include="DAL\UserDB.cs" />
     <Compile Include="GUI\CustomerLogin.cs">

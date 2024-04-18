@@ -16,6 +16,8 @@ namespace TechDistribution.DAL
         public void AddOrder(Order nOrder)
         {
             dbContext.Orders.Add(nOrder);
+
+
             dbContext.SaveChanges();
         }
 

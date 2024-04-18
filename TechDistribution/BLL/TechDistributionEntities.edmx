@@ -176,6 +176,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Orders_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="StatusId" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="TechDistributionModelStoreContainer">
           <EntitySet Name="Authors" EntityType="Self.Authors" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BookAuthors" EntityType="Self.BookAuthors" Schema="dbo" store:Type="Tables" />
@@ -212,6 +224,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_Orders_Customers" Association="Self.FK_Orders_Customers">
             <End Role="Customers" EntitySet="Customers" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Status" Association="Self.FK_Orders_Status">
+            <End Role="Status" EntitySet="Status" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
         </EntityContainer>
@@ -322,6 +338,10 @@
             <End Role="Order" EntitySet="Orders" />
             <End Role="OrderItem" EntitySet="OrderItems" />
           </AssociationSet>
+          <AssociationSet Name="FK_Orders_Status" Association="TechDistributionModel.FK_Orders_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Customer">
           <Key>
@@ -364,13 +384,15 @@
           <Property Name="StatusId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Customer" Relationship="TechDistributionModel.FK_Orders_Customers" FromRole="Order" ToRole="Customer" />
           <NavigationProperty Name="OrderItems" Relationship="TechDistributionModel.FK__OrderItem__Order__412EB0B6" FromRole="Order" ToRole="OrderItem" />
+          <NavigationProperty Name="Status1" Relationship="TechDistributionModel.FK_Orders_Status" FromRole="Order" ToRole="Status" />
         </EntityType>
         <EntityType Name="Status">
           <Key>
             <PropertyRef Name="StatusId" />
           </Key>
           <Property Name="StatusId" Type="Int32" Nullable="false" />
-          <Property Name="StatusDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StatusDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="true" />
+          <NavigationProperty Name="Orders1" Relationship="TechDistributionModel.FK_Orders_Status" FromRole="Status" ToRole="Order" />
         </EntityType>
         <Association Name="FK__OrderItems__ISBN__4222D4EF">
           <End Type="TechDistributionModel.Book" Role="Book" Multiplicity="1" />
@@ -405,6 +427,18 @@
             </Principal>
             <Dependent Role="OrderItem">
               <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Status">
+          <End Type="TechDistributionModel.Status" Role="Status" Multiplicity="1" />
+          <End Type="TechDistributionModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="StatusId" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="StatusId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
