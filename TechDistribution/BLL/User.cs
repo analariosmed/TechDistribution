@@ -102,6 +102,11 @@ namespace TechDistribution.BLL
 
         }
 
+        public static User FindUserByUserID(int userId)
+        {
+            return UserDB.FindUserByUserID(userId);
+        }
+
 
     }
 }

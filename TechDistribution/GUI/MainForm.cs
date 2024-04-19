@@ -20,23 +20,15 @@ namespace TechDistribution.GUI
 
         private void buttonEmployee_Click(object sender, EventArgs e)
         {
-            EmployeeManagement formEmployee = new EmployeeManagement();
+            EmployeeManagement formEmployee = new EmployeeManagement(this);
             this.Hide();
             formEmployee.Show();
 
         }
 
-        private void buttonSupplier_Click(object sender, EventArgs e)
-        {
-            UserAccountsManagement formUserAccount = new UserAccountsManagement();
-            this.Hide();
-            formUserAccount.Show();
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            CustomerMaintenance formCustomers = new CustomerMaintenance();
+            CustomerMaintenance formCustomers = new CustomerMaintenance(this);
             this.Hide();
             formCustomers.Show();
 

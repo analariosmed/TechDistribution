@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,8 +17,10 @@ namespace TechDistribution.GUI
 {
     public partial class UserAccountsManagement : Form
     {
-        public UserAccountsManagement()
+        Form prevForm;
+        public UserAccountsManagement(Form prevForm)
         {
+            this.prevForm = prevForm;
             InitializeComponent();
         }
 
@@ -145,6 +148,7 @@ namespace TechDistribution.GUI
                     MessageBox.Show("Passwords do not match please try again.", "Error", MessageBoxButtons.OK);
                     return;
                 }
+                user.UserId = employeeId;
                 user.Password = textBoxPassword.Text.Trim();
                 user.StatusId = 0;
                 user.EmployeeId = Convert.ToInt32(textBoxEmployeeId.Text);
@@ -196,7 +200,7 @@ namespace TechDistribution.GUI
         //    {
         //        MessageBox.Show("Sorry the employee has an Account already.");
 
-         }
+            }
 
 
         }
@@ -205,6 +209,9 @@ namespace TechDistribution.GUI
         {
             int employeeId = Convert.ToInt32(textBoxEmployeeId.Text);
 
+            //SqlConnection conn = UtilityDB.GetDBConnection();
+
+            //MessageBox.Show($"The connection is {conn.State}");
 
             try
             {
@@ -227,17 +234,44 @@ namespace TechDistribution.GUI
 
         private void buttonEx_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult result = MessageBox.Show("Do you want to close this window?", "Close", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+
+
+            if (result == DialogResult.Yes)
+            {
+                prevForm.Show();
+                Close();
+            }
+
         }
 
         private void buttonExit2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
+            DialogResult result = MessageBox.Show("Do you want to close this window?", "Close", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+
+
+            if (result == DialogResult.Yes)
+            {
+                prevForm.Show();
+                Close();
+            }
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
+            DialogResult result = MessageBox.Show("Do you want to close this window?", "Close", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+
+
+            if (result == DialogResult.Yes)
+            {
+                prevForm.Show();
+                Close();
+            }
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)

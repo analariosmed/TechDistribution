@@ -19,9 +19,11 @@ namespace TechDistribution.GUI
         TechDistributionEntities tech;
         BookController bookController;
         AuthorController authorController;
+        Form prevForm;
 
-        public BookForm()
+        public BookForm(Form prevForm)
         {
+            this.prevForm = prevForm;
             tech = new TechDistributionEntities();
             bookController = new BookController(tech);
             authorController = new AuthorController(tech);
@@ -384,6 +386,19 @@ namespace TechDistribution.GUI
             dataGridView3.Refresh();
 
             dataGridView3.DataSource = authorsBook;
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to close this window?", "Close", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+
+
+            if (result == DialogResult.Yes)
+            {
+                prevForm.Show();
+                Close();
+            }
         }
     }
 }

@@ -17,14 +17,16 @@ namespace TechDistribution.GUI
     public partial class EmployeeManagement : Form
     {
         TechDistributionEntities dbContext = new TechDistributionEntities();
-        
+        Form prevForm;
 
-        public EmployeeManagement()
+        public EmployeeManagement(Form previousForm)
         {
             InitializeComponent();
             comboBoxStatus.SelectedIndex = 0;
             comboBoxJobTitle.SelectedIndex = 0;
             comboBoxSearchBy.SelectedIndex = 0;
+
+             prevForm = previousForm;
 
             //BookRepository bookRepository = new BookRepository(dbContext);
 
@@ -581,7 +583,8 @@ namespace TechDistribution.GUI
 
             if (result == DialogResult.Yes)
             {
-                this.Close();
+                prevForm.Show();
+                Close();
             }
         }
     }

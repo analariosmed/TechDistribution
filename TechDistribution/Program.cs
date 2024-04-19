@@ -25,7 +25,7 @@ namespace TechDistribution
             //}
                 Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new OrderManagement());
+            Application.Run(new EmployeeLogin());
         }
     }
 }

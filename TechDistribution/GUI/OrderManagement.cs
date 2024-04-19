@@ -16,8 +16,10 @@ namespace TechDistribution.GUI
     {
 
         List<OrderItem> orderItems = new List<OrderItem>();
-        public OrderManagement()
+        Form prevForm;
+        public OrderManagement(Form prevForm)
         {
+            this.prevForm = prevForm;
             InitializeComponent();
         }
 
@@ -138,6 +140,32 @@ namespace TechDistribution.GUI
 
 
 
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to close this window?", "Close", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+
+
+            if (result == DialogResult.Yes)
+            {
+                prevForm.Show();
+                Close();
+            }
+        }
+
+        private void buttonExit2_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to close this window?", "Close", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+
+
+            if (result == DialogResult.Yes)
+            {
+                prevForm.Show();
+                Close();
+            }
         }
     }
 }

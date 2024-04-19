@@ -25,17 +25,28 @@ namespace TechDistribution.GUI
         DataSet TechDistributionDB;
         DataTable dtCustomers;
         SqlCommandBuilder sqlCommandBuilder;
+
+        Form prevForm;
        
 
-        public CustomerMaintenance()
+        public CustomerMaintenance(Form prevForm)
         {
+            this.prevForm = prevForm;
             InitializeComponent();
             
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult result = MessageBox.Show("Do you want to close this window?", "Close", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+
+
+            if (result == DialogResult.Yes)
+            {
+                prevForm.Show();
+                Close();
+            }
         }
 
         private void buttonModify_Click(object sender, EventArgs e)
@@ -260,5 +271,30 @@ namespace TechDistribution.GUI
             //}
         }
 
+        private void buttonExit2_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to close this window?", "Close", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+
+
+            if (result == DialogResult.Yes)
+            {
+                prevForm.Show();
+                Close();
+            }
+        }
+
+        private void buttonExit3_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to close this window?", "Close", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+
+
+            if (result == DialogResult.Yes)
+            {
+                prevForm.Show();
+                Close();
+            }
+        }
     }
 }

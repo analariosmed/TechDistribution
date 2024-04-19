@@ -31,9 +31,10 @@ namespace TechDistribution.DAL
 
                 cmd.Connection = conn;
 
-                cmd.CommandText = "INSERT INTO UserAccounts(Password, EmployeeId) " +
-                                  "VALUES (@Password, @EmployeeId);";
+                cmd.CommandText = "INSERT INTO UserAccounts(UserId,Password, EmployeeId) " +
+                                  "VALUES (@UserId, @Password, @EmployeeId);";
 
+                cmd.Parameters.AddWithValue("@UserId", user.UserId);
                 cmd.Parameters.AddWithValue("@Password", user.Password);
                 cmd.Parameters.AddWithValue("@EmployeeId", user.EmployeeId);
 
@@ -79,7 +80,9 @@ namespace TechDistribution.DAL
                         DateCreated = reader["DateCreated"].ToString(),
                         DateModified = reader["DateModified"].ToString(),
                         JobId = Convert.ToInt32(reader["JobId"]),
-                        JobTitle = reader["JobTitle"].ToString()
+                        JobTitle = reader["JobTitle"].ToString(),
+                        Password = reader["Password"].ToString()
+                        
                     };
 
                     listU.Add(user);
@@ -161,7 +164,7 @@ namespace TechDistribution.DAL
 
             SqlConnection conn = UtilityDB.GetDBConnection();
 
-            SqlCommand cmd = new SqlCommand("SELECT UA.UserId, E.FirstName, E.LastName, UA.DateCreated, UA.DateModified, E.JobId, J.JobTitle " +
+            SqlCommand cmd = new SqlCommand("SELECT UA.UserId, UA.Password, E.FirstName, E.LastName, UA.DateCreated, UA.DateModified, E.JobId, J.JobTitle " +
                                  "FROM UserAccounts UA " +
                                  "INNER JOIN Employees E ON UA.EmployeeId = E.EmployeeId " +
                                  "LEFT OUTER JOIN  Jobs J ON E.JobId = J.JobId " +
@@ -208,7 +211,7 @@ namespace TechDistribution.DAL
 
             SqlConnection conn = UtilityDB.GetDBConnection();
 
-            SqlCommand cmd = new SqlCommand("SELECT UA.UserId, E.FirstName, E.LastName, UA.DateCreated " +
+            SqlCommand cmd = new SqlCommand("SELECT UA.UserId, E.FirstName, E.LastName, UA.DateCreated , E.JobId" +
                              "FROM UserAccounts UA " +
                              "INNER JOIN Employees E ON UA.EmployeeId = E.EmployeeId " +
                              "LEFT OUTER JOIN Jobs J ON E.JobId = J.JobId " +
@@ -230,6 +233,8 @@ namespace TechDistribution.DAL
                         FirstName = reader["FirstName"].ToString(),
                         LastName = reader["LastName"].ToString(),
                         DateCreated = reader["DateCreated"].ToString(),
+                        EmployeeId = Convert.ToInt32(reader["JobId"].ToString())
+                        
                     };
 
                     return user;
@@ -244,6 +249,52 @@ namespace TechDistribution.DAL
                 conn.Close();
             }
             return null;
+        }
+
+        public static User FindUserByUserID(int userId)
+        {
+            User fetchedUser = new User();
+            
+            try
+            {
+                /*Query i need
+
+                SELECT Userid, Password, ua.EmployeeId, e.jobId
+                FROM UserAccounts ua, Employees e
+                WHERE ua.EmployeeId = e.EmployeeId AND ua.EmployeeId = 10000;
+                */
+
+
+                SqlConnection conn = UtilityDB.GetDBConnection();
+                SqlCommand cmd = new SqlCommand("SELECT UserId, Password, ua.EmployeeId, e.jobId " +
+                                                "FROM UserAccounts ua, Employees e " +
+                                                "WHERE ua.EmployeeId = e.EmployeeId AND UserId = @userId;", conn);
+                cmd.Parameters.AddWithValue("@userId", userId);
+                SqlDataReader reader = cmd.ExecuteReader();
+                //reader = cmd.ExecuteReader();
+                //User fetchedUser = new User();
+                reader.Read();
+                fetchedUser.UserId = Convert.ToInt32(reader["UserId"].ToString());
+                fetchedUser.Password = reader["Password"].ToString();
+                //fetchedUser.DateCreated = reader["DateCreated"].ToString();
+                //fetchedUser.DateModified = reader["DateModified"].ToString();
+                //fetchedUser.StatusId = Convert.ToInt32(reader["StatusId"]);
+                fetchedUser.EmployeeId = Convert.ToInt32(reader["EmployeeId"]);
+                fetchedUser.JobId = Convert.ToInt32(reader["jobId"]);
+                
+
+                conn.Close();
+
+                return fetchedUser;
+            }
+            catch
+            {
+                MessageBox.Show("Error with the database");
+            }
+
+            fetchedUser = null;
+            return fetchedUser;
+
         }
 
     }

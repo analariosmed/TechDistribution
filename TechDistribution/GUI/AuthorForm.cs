@@ -19,8 +19,10 @@ namespace TechDistribution.GUI
     {
         TechDistributionEntities dbContext;
         AuthorController auCtrl;
-        public AuthorForm()
+        Form prevForm;
+        public AuthorForm(Form prevForm)
         {
+            this.prevForm = prevForm;
             dbContext = new TechDistributionEntities();
             auCtrl = new AuthorController(dbContext);
             InitializeComponent();
@@ -216,5 +218,15 @@ namespace TechDistribution.GUI
             dataGridView1.DataSource = search;
         }
 
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to close this window?", "Close", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                prevForm.Show();
+                Close();
+            }
+        }
     }
 }

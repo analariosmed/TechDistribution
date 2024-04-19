@@ -59,6 +59,9 @@
             this.ListBooks = new System.Windows.Forms.TabPage();
             this.buttonListAllAuthors = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.buttonExit = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.AddBook.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -83,6 +86,7 @@
             // 
             // AddBook
             // 
+            this.AddBook.Controls.Add(this.buttonExit);
             this.AddBook.Controls.Add(this.groupBox1);
             this.AddBook.Location = new System.Drawing.Point(4, 25);
             this.AddBook.Name = "AddBook";
@@ -284,6 +288,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.buttonSearch);
             this.groupBox2.Controls.Add(this.textBoxSearchBy);
@@ -347,6 +352,7 @@
             // 
             // ListBooks
             // 
+            this.ListBooks.Controls.Add(this.button2);
             this.ListBooks.Controls.Add(this.buttonListAllAuthors);
             this.ListBooks.Controls.Add(this.dataGridView2);
             this.ListBooks.Location = new System.Drawing.Point(4, 25);
@@ -375,6 +381,36 @@
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(979, 458);
             this.dataGridView2.TabIndex = 3;
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.Location = new System.Drawing.Point(870, 481);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(110, 45);
+            this.buttonExit.TabIndex = 1;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(860, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 37);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Exit";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(871, 16);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(109, 34);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Exit";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // AuthorForm
             // 
@@ -433,5 +469,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
