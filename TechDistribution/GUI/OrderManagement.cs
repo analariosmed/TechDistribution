@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.Entity.Validation;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.Pkcs;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -139,6 +140,8 @@ namespace TechDistribution.GUI
                 MessageBox.Show("error while creating the order: " + ex);
             }
 
+
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -268,6 +271,13 @@ namespace TechDistribution.GUI
             {
                 MessageBox.Show(Text = "Error: " + ex);
             }
+            textBoxPhone.Clear();
+            textBoxEmail.Clear(); ;
+            textBoxFax.Clear(); 
+            comboBox2.Items.Clear();
+            comboBoxStatus.Items.Clear();
+         //   textBox8.Text.Clear();
+          
         }
 
         private void buttonHowOrders_Click(object sender, EventArgs e)
@@ -547,6 +557,12 @@ namespace TechDistribution.GUI
             {
                 MessageBox.Show("Please enter a valid Order ID");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form form = new Login();
+            form.Show();
         }
     }
 }

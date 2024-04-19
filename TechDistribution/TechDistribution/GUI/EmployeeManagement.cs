@@ -584,19 +584,5 @@ namespace TechDistribution.GUI
                 this.Close();
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form form = new UserAccountsManagement();
-            form.Show();
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form form = new UserAccountsManagement();
-            form.Show();
-        }
     }
 }

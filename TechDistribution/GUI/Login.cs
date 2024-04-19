@@ -16,13 +16,13 @@ using System.Data.SqlClient;
 
 namespace TechDistribution
 {
-    public partial class CustomerLogin : Form
+    public partial class Login : Form
     {
         SqlDataAdapter dataAdapter;
         DataSet TechDistributionDB;
         DataTable dtCustomers;
         SqlCommandBuilder sqlCommandBuilder;
-        public CustomerLogin()
+        public Login()
         {
             InitializeComponent();
         }
@@ -89,6 +89,7 @@ namespace TechDistribution
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Form form = new UserAccountsManagement();
             form.Show();
         }

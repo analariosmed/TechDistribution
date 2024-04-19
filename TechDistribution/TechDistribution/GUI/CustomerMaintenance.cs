@@ -25,8 +25,7 @@ namespace TechDistribution.GUI
         DataSet TechDistributionDB;
         DataTable dtCustomers;
         SqlCommandBuilder sqlCommandBuilder;
-        TechDistributionEntities context = new TechDistributionEntities();
-
+       
 
         public CustomerMaintenance()
         {
@@ -112,14 +111,9 @@ namespace TechDistribution.GUI
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            try { 
-                dataAdapter.Update(TechDistributionDB, "Customers");
-                MessageBox.Show("Database has been update successfully.", "Database update");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error in updating the database: " + ex.Message);
-            }
+
+            dataAdapter.Update(TechDistributionDB, "Customers");
+            MessageBox.Show("Database has beeen update sucessfully.", "Database update");
         }
 
         private void buttonDS_Click(object sender, EventArgs e)
@@ -152,11 +146,11 @@ namespace TechDistribution.GUI
 
             input = textBoxName.Text.Trim();
 
-            //if (!MyValidator.IsValidText(input))
-            //{
-            //    MessageBox.Show("The Name is not correct, try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
+            if (!MyValidator.IsValidText(input))
+            {
+                MessageBox.Show("The Name is not correct, try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             input = textBoxPhoneNumber.Text.Trim();
 
@@ -228,13 +222,6 @@ namespace TechDistribution.GUI
                     break;
 
                 }
-                textBoxNameUpdate.Clear();
-                textBoxStreetUpdate.Clear();
-                textBoxCityUpdate.Clear();
-                textBoxPostalCodeUpdate.Clear();
-                textBoxPhoneNumberUpdate.Clear();
-                textBoxFaxNumberUpdate.Clear();
-                textBoxCreditLimitUpdate.Clear();
             }
 
             if (!found)
@@ -248,36 +235,8 @@ namespace TechDistribution.GUI
             //search operation first found it
             int searchId = Convert.ToInt32(textBoxCustomerId.Text);
             DataRow drCustomers = TechDistributionDB.Tables["Customers"].Rows.Find(searchId);
-            Order order = new Order();
-            //if the costumer has orders can not be deleted
-            if (order.CustomerID== searchId)
-            {
-                MessageBox.Show("The customer has orders, can not be deleted", "Error");
-                return;
-            }
-            try
-            {
-                OrderRepository orderRepository = new OrderRepository(context);
-                List<Order> listOrders = orderRepository.GetOrderByCustomers(searchId);
-                if (listOrders.Count > 0)
-                {
-                    MessageBox.Show("The customer has orders, can not be deleted", "Error");
-                    return;
-                }
-                drCustomers.Delete();
-                MessageBox.Show("The customer was successfully deleted " + drCustomers.RowState, "RowState");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("The RowState in the DataTable Customers : " + drCustomers.RowState, "RowState");
-            }
-            textBoxNameUpdate.Clear();
-            textBoxStreetUpdate.Clear();
-            textBoxCityUpdate.Clear();
-            textBoxPostalCodeUpdate.Clear();
-            textBoxPhoneNumberUpdate.Clear();
-            textBoxFaxNumberUpdate.Clear();
-            textBoxCreditLimitUpdate.Clear();
+            drCustomers.Delete();
+            MessageBox.Show("The RowState in the DataTable Customers : " + drCustomers.RowState, "RowState");
 
         }
 
@@ -285,12 +244,13 @@ namespace TechDistribution.GUI
         {
             listView1.Items.Clear();
 
-            List<Customer> customersList = CustomerDB.GetAllRecords();
-
+            List<Customer> customersList = new Customer().GetCustomers();
+           // dataAdapter.SelectCommand = new SqlCommand("SELECT * FROM Customers", UtilityDB.GetDBConnection());
+            //dataAdapter.Fill(TechDistributionDB, "Customers");
             foreach (Customer customer in customersList)
             {
                 ListViewItem item = new ListViewItem(customer.CustomerId.ToString());
-                item.SubItems.Add(customer.CustomerName);
+                item.SubItems.Add(customer.Name);
                 item.SubItems.Add(customer.Street);
                 item.SubItems.Add(customer.City);
                 item.SubItems.Add(customer.PostalCode);
@@ -301,20 +261,5 @@ namespace TechDistribution.GUI
             }
         }
 
-        private void buttonExit2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonExit3_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form form = new Login();
-            form.Show();
-        }
     }
 }

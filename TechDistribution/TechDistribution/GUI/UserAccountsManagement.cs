@@ -169,41 +169,59 @@ namespace TechDistribution.GUI
 
                 //Get UserId from SQL (created automatically) to share in the screen
 
-        //        try
-        //        {
-        //            user = user.SearchUserByEmployeeId(employeeId);
-        //            if (user == null)
-        //            {
-        //                MessageBox.Show("Sorry, something was wrong creating your UserId.");
+                try
+                {
+                    user = user.SearchUserByEmployeeId(employeeId);
+                    if (user == null)
+                    {
+                        MessageBox.Show("Sorry, something was wrong creating your UserId.");
 
-        //            }
-        //            string firstName = user.FirstName;
-        //            string lastName = user.LastName;
-        //            int userId = user.UserId;
-        //            string dateCreated = user.DateCreated;
-        //            labelInfo.Text = user.FirstName + " " + user.LastName + "\n" +
-        //                   "Your Account was created successfully!!\n" +
-        //                    "Your User Id is " + user.UserId.ToString();
+                    }
+                    string firstName = user.FirstName;
+                    string lastName = user.LastName;
+                    int userId = user.UserId;
+                    string dateCreated = user.DateCreated;
+                    labelInfo.Text = user.FirstName + " " + user.LastName + "\n" +
+                           "Your Account was created successfully!!\n" +
+                            "Your User Id is " + user.UserId.ToString();
 
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show("Sorry, something was wrong creating your UserId.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Sorry, something was wrong creating your UserId.");
 
-        //        }
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Sorry the employee has an Account already.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Sorry the employee has an Account already.");
 
-         }
+            }
 
 
         }
 
         private void buttonSearchEmployee_Click(object sender, EventArgs e)
         {
-            
+            int employeeId = Convert.ToInt32(textBoxEmployeeId.Text);
+
+
+            try
+            {
+                Employee employee = new Employee();
+                employee = employee.SearchEmployee(employeeId);
+                textBoxFirstName.Text = employee.FirstName;
+                textBoxLastName.Text = employee.LastName;
+                textBoxEmail.Text = employee.Email;
+           
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sorry, we didn't find an employee with that ID.");
+              
+
+            }
 
         }
 
@@ -220,40 +238,6 @@ namespace TechDistribution.GUI
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonSearchEmployee_Click_1(object sender, EventArgs e)
-        {
-            int employeeId = Convert.ToInt32(textBoxEmployeeId.Text);
-
-
-            try
-            {
-                Employee employee = new Employee();
-                employee = employee.SearchEmployee(employeeId);
-                textBoxFirstName.Text = employee.FirstName;
-                textBoxLastName.Text = employee.LastName;
-                textBoxEmail.Text = employee.Email;
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Sorry, we didn't find an employee with that ID.");
-
-
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form form = new Login();
-            form.Show();
         }
     }
 }
