@@ -45,7 +45,6 @@ namespace TechDistribution.GUI
 
             /*
 
-
             Author author3 = dbContext.Authors.Where(x => x.AuthorID == 1).First();
 
             Author author4 = dbContext.Authors.Where(x => x.AuthorID == 2).First();
@@ -83,14 +82,8 @@ namespace TechDistribution.GUI
 
             
             
+            */
 
-
-          */
-
-            
-
-
-            
         }
 
         private void clearFields()
@@ -111,7 +104,7 @@ namespace TechDistribution.GUI
 
             string id = textBoxSearchBy.Text.Trim();
 
-            if (!Validator.IsValidID(id))
+            if (!MyValidator.IsValidID(id))
             {
                 MessageBox.Show("The ID you wrote is not valid, try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -162,7 +155,7 @@ namespace TechDistribution.GUI
         private void SearchByFirstName()
         {
             string text = textBoxSearchBy.Text;
-            if (!Validator.IsValidText(text))
+            if (!MyValidator.IsValidText(text))
             {
                 MessageBox.Show("The input you wrote is an incorrect format, try again");
                 return;
@@ -199,7 +192,7 @@ namespace TechDistribution.GUI
         private void SearchByLastName()
         {
             string text = textBoxSearchBy.Text;
-            if (!Validator.IsValidText(text))
+            if (!MyValidator.IsValidText(text))
             {
                 MessageBox.Show("The input you wrote is an incorrect format, try again");
                 return;
@@ -233,7 +226,7 @@ namespace TechDistribution.GUI
         private void SearchByEmail()
         {
             string text = textBoxSearchBy.Text;
-            if (!Validator.IsValidEmail(text))
+            if (!MyValidator.IsValidEmail(text))
             {
                 MessageBox.Show("The input you wrote is an incorrect format, try again");
                 return;
@@ -267,7 +260,7 @@ namespace TechDistribution.GUI
         private void SearchByPhoneNumber()
         {
             string text = textBoxSearchBy.Text;
-            if (!Validator.IsValidPhoneNumber(text))
+            if (!MyValidator.IsValidPhoneNumber(text))
             {
                 MessageBox.Show("The input you wrote is an incorrect format, try again");
                 return;
@@ -325,7 +318,7 @@ namespace TechDistribution.GUI
         {
             string input = textBoxFirstName.Text.Trim();
 
-            if (!Validator.IsValidText(input))
+            if (!MyValidator.IsValidText(input))
             {
                 MessageBox.Show("The Firstname you wrote is not correct, try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -333,7 +326,7 @@ namespace TechDistribution.GUI
 
             input = textBoxLastName.Text.Trim();
 
-            if (!Validator.IsValidText(input))
+            if (!MyValidator.IsValidText(input))
             {
                 MessageBox.Show("The Lastname you wrote is not correct, try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -341,7 +334,7 @@ namespace TechDistribution.GUI
 
             input = textBoxEmail.Text.Trim();
 
-            if (!Validator.IsValidEmail(input))
+            if (!MyValidator.IsValidEmail(input))
             {
                 MessageBox.Show("The Email you wrote is not correct, try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -349,7 +342,7 @@ namespace TechDistribution.GUI
 
             input = textBoxPhoneNumber.Text.Trim();
 
-            if (!Validator.IsValidPhoneNumber(input))
+            if (!MyValidator.IsValidPhoneNumber(input))
             {
                 MessageBox.Show("The Phone number you wrote is not correct, try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -489,7 +482,7 @@ namespace TechDistribution.GUI
 
             text = textBoxSearchFirstName.Text.Trim();
 
-            if (!Validator.IsValidText(text))
+            if (!MyValidator.IsValidText(text))
             {
                 MessageBox.Show("The Firstname you wrote is an invalid format, try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBoxSearchFirstName.Clear();
@@ -499,7 +492,7 @@ namespace TechDistribution.GUI
 
             text = textBoxSearchLastName.Text.Trim();
 
-            if(!Validator.IsValidText(text))
+            if(!MyValidator.IsValidText(text))
             {
                 MessageBox.Show("The Last name you wrote is an invalid format, try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBoxSearchLastName.Clear();
@@ -509,7 +502,7 @@ namespace TechDistribution.GUI
 
             text = textBoxSearchEmail.Text.Trim();
 
-            if (!Validator.IsValidEmail(text))
+            if (!MyValidator.IsValidEmail(text))
             {
                 MessageBox.Show("The Email you wrote is an invalid format, try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBoxSearchEmail.Clear();
@@ -519,7 +512,7 @@ namespace TechDistribution.GUI
 
             text = textBoxSearchPhoneNumber.Text.Trim();
 
-            if (!Validator.IsValidPhoneNumber(text))
+            if (!MyValidator.IsValidPhoneNumber(text))
             {
                 MessageBox.Show("The Phone number you wrote is an invalid format, try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBoxSearchPhoneNumber.Clear();

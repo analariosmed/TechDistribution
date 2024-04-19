@@ -83,7 +83,7 @@ namespace TechDistribution.GUI
             user.Password = textBoxNewPassword.Text;
             if (!User.IsAnExistingUserAccount(user) == true)
             {
-                if (!Validator.IsValidPassword(user.Password))
+                if (!MyValidator.IsValidPassword(user.Password))
                 {
                     MessageBox.Show("Password must be at least 6 characters long. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -135,7 +135,7 @@ namespace TechDistribution.GUI
             //Search if an account was created already for this employee
             if (User.IsAnExistingUserAccount(user) == false)
             {
-                if (!Validator.IsValidPassword(password))
+                if (!MyValidator.IsValidPassword(password))
                 {
                     MessageBox.Show("Password must be at least 6 characters long. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;

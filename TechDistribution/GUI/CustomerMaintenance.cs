@@ -44,7 +44,7 @@ namespace TechDistribution.GUI
 
             input = textBoxPhoneNumberUpdate.Text.Trim();
 
-            if (!Validator.IsValidPhoneNumber(input))
+            if (!MyValidator.IsValidPhoneNumber(input))
             {
                 MessageBox.Show("The Phone number  is not correct, try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -52,7 +52,7 @@ namespace TechDistribution.GUI
 
             input = textBoxCreditLimitUpdate.Text.Trim();
                 
-            if(!Validator.IsValidNumber(input))
+            if(!MyValidator.IsValidNumber(input))
             {
                 MessageBox.Show("The Credit Limit  is not correct, try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -146,7 +146,7 @@ namespace TechDistribution.GUI
 
             input = textBoxName.Text.Trim();
 
-            if (!Validator.IsValidText(input))
+            if (!MyValidator.IsValidText(input))
             {
                 MessageBox.Show("The Name is not correct, try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -154,7 +154,7 @@ namespace TechDistribution.GUI
 
             input = textBoxPhoneNumber.Text.Trim();
 
-            if (!Validator.IsValidPhoneNumber(input))
+            if (!MyValidator.IsValidPhoneNumber(input))
             {
                 MessageBox.Show("The Phone number  is not correct, try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -162,7 +162,7 @@ namespace TechDistribution.GUI
 
             input = textBoxCreditLimit.Text.Trim();
 
-            if (!Validator.IsValidNumber(input))
+            if (!MyValidator.IsValidNumber(input))
             {
                 MessageBox.Show("The Credit Limit  is not correct, try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
