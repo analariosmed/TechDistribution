@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using TechDistribution.BLL;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace TechDistribution.VALIDATION
@@ -48,6 +49,27 @@ namespace TechDistribution.VALIDATION
         public static bool IsValidPassword(string password)
         { 
             if (!Regex.IsMatch(password, @"^.{6,}$"))
+                return false;
+            return true;
+        }
+        
+        public static bool IsValidISBN(string isbn)
+        {
+            if (!Regex.IsMatch(isbn, @"\b(?:ISBN(?:-1[03])?:? *)?((?:97[89])?\d{9}[\dx])\b"))
+                return false;
+            return true;
+        }
+        
+        public static bool IsValidPrice(string price)
+        {
+            if (!Regex.IsMatch(price, @"\\d+(?:\\.\\d{2})?"))
+                return false;
+            return true;
+        }
+
+        public static bool IsValidYear(string year)
+        {
+            if (!Regex.IsMatch(year, @"\b\d{4}\b"))
                 return false;
             return true;
         }

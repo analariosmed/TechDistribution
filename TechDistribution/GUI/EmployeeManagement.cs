@@ -26,7 +26,7 @@ namespace TechDistribution.GUI
             comboBoxJobTitle.SelectedIndex = 0;
             comboBoxSearchBy.SelectedIndex = 0;
 
-            BookRepository bookRepository = new BookRepository(dbContext);
+            //BookRepository bookRepository = new BookRepository(dbContext);
 
             /*
             Author author = new Author();
@@ -43,6 +43,7 @@ namespace TechDistribution.GUI
 
             */
 
+            /*
 
             Author author3 = dbContext.Authors.Where(x => x.AuthorID == 1).First();
 
@@ -81,14 +82,8 @@ namespace TechDistribution.GUI
 
             
             
+            */
 
-
-          
-
-            
-
-
-            
         }
 
         private void clearFields()
