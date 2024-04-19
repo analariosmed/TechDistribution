@@ -203,6 +203,47 @@ namespace TechDistribution.DAL
 
         }
 
+        public static User SearchUserByUserId(int userId)
+        {
+
+            SqlConnection conn = UtilityDB.GetDBConnection();
+
+            SqlCommand cmd = new SqlCommand("SELECT UserId, Password, EmployeeId " +
+                                "FROM UserAccounts " +
+                                 "WHERE UserId = @UserId;", conn);
+
+            cmd.Parameters.AddWithValue("@UserId", userId); // Add UserId parameter
+
+            try
+            {
+                conn.Close();
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    User user = new User
+                    {
+                        UserId = Convert.ToInt32(reader["UserId"]),
+                        Password = reader["Password"].ToString(),
+                        EmployeeId = Convert.ToInt32(reader["EmployeeId"]),
+                    };
+
+                    return user;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return null;
+
+        }
+
         public static User SearchUserByEmployeeId(int employeeId)
         {
 

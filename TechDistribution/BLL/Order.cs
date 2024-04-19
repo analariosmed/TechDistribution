@@ -25,7 +25,7 @@ namespace TechDistribution.BLL
         public System.DateTime OrderDate { get; set; }
         public string OrderType { get; set; }
         public string PaymentMethod { get; set; }
-        public int TotalPayment { get; set; }
+        public decimal TotalPayment { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public string Fax { get; set; }

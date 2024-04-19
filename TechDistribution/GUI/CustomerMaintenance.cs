@@ -244,21 +244,30 @@ namespace TechDistribution.GUI
         {
             listView1.Items.Clear();
 
-            //List<Customer> customersList = new Customer().GetCustomers();
-          
-            //foreach (Customer customer in customersList)
-            //{
-            //    ListViewItem item = new ListViewItem(customer.CustomerId.ToString());
-            //    item.SubItems.Add(customer.CustomerName);
-            //    item.SubItems.Add(customer.Street);
-            //    item.SubItems.Add(customer.City);
-            //    item.SubItems.Add(customer.PostalCode);
-            //    item.SubItems.Add(customer.PhoneNumber);
-            //    item.SubItems.Add(customer.FaxNumber);
-            //    item.SubItems.Add(customer.CreditLimit.ToString());
-            //    listView1.Items.Add(item);
-            //}
+            List<Customer> customersList = CustomerDB.GetAllRecords();
+
+            foreach (Customer customer in customersList)
+            {
+                ListViewItem item = new ListViewItem(customer.CustomerId.ToString());
+                item.SubItems.Add(customer.CustomerName);
+                item.SubItems.Add(customer.Street);
+                item.SubItems.Add(customer.City);
+                item.SubItems.Add(customer.PostalCode);
+                item.SubItems.Add(customer.PhoneNumber);
+                item.SubItems.Add(customer.FaxNumber);
+                item.SubItems.Add(customer.CreditLimit.ToString());
+                listView1.Items.Add(item);
+            }
         }
 
+        private void buttonExit2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonExit3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -88,7 +88,8 @@ namespace TechDistribution.DAL
             {
                 SqlCommand cmdSearch = new SqlCommand();
                 cmdSearch.Connection = conn;
-                cmdSearch.CommandText = "SELECT EmployeeId, FirstName, LastName, Email, PhoneNumber, StatusDesc, JobTitle FROM Employees e, Status s, Jobs j " +
+                cmdSearch.CommandText = "SELECT EmployeeId, FirstName, LastName, Email, PhoneNumber, StatusDesc, JobTitle, e.JobId" +
+                    " FROM Employees e, Status s, Jobs j " +
                                         "WHERE EmployeeId = @EmployeeId AND e.StatusId = s.StatusId AND e.JobId = j.JobId;";
                 cmdSearch.Parameters.AddWithValue("@EmployeeId", id);
                 SqlDataReader reader = cmdSearch.ExecuteReader();
@@ -102,6 +103,7 @@ namespace TechDistribution.DAL
                 emp.PhoneNumber = reader["PhoneNumber"].ToString();
                 emp.StatusDesc = reader["StatusDesc"].ToString();
                 emp.JobTitle = reader["JobTitle"].ToString();
+                emp.JobId = Convert.ToInt32(reader["JobId"]);
 
                 return emp;
             }

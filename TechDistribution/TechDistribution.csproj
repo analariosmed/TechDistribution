@@ -101,13 +101,13 @@
       <DependentUpon>TechDistributionEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="BLL\User.cs" />
-    <Compile Include="BLL\UserAccount.cs" />
     <Compile Include="DAL\AuthorRepository.cs" />
     <Compile Include="DAL\BaseRepository.cs" />
     <Compile Include="DAL\BookRepository.cs" />
     <Compile Include="DAL\CustomerDB.cs" />
     <Compile Include="DAL\OrderItemRepository.cs" />
     <Compile Include="DAL\OrderRepository.cs" />
+    <Compile Include="DAL\StatusRepository.cs" />
     <Compile Include="DAL\UserDB.cs" />
     <Compile Include="GUI\CustomerLogin.cs">
       <SubType>Form</SubType>
@@ -142,12 +142,6 @@
     <Compile Include="GUI\OrderManagement.Designer.cs">
       <DependentUpon>OrderManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserAccountManagament.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\UserAccountManagament.Designer.cs">
-      <DependentUpon>UserAccountManagament.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\UserAccountsManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,9 +171,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\OrderManagement.resx">
       <DependentUpon>OrderManagement.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserAccountManagament.resx">
-      <DependentUpon>UserAccountManagament.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserAccountsManagement.resx">
       <DependentUpon>UserAccountsManagement.cs</DependentUpon>

@@ -13,6 +13,17 @@ namespace TechDistribution.GUI
 {
     public partial class EmployeeLogin : Form
     {
+
+
+        private void buttonCreateAccount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+
+        }
         //public EmployeeLogin()
         //{
         //    InitializeComponent();

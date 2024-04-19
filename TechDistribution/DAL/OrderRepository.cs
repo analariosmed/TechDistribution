@@ -16,9 +16,8 @@ namespace TechDistribution.DAL
         public void AddOrder(Order nOrder)
         {
             dbContext.Orders.Add(nOrder);
-
-
             dbContext.SaveChanges();
+             
         }
 
         public List<Order> GetOrders()
@@ -40,6 +39,11 @@ namespace TechDistribution.DAL
 
 
             dbContext.SaveChanges();
+        }
+
+        public List<Order> GetOrderByCustomers(int customerId)
+        {
+            return dbContext.Orders.Where(o => o.CustomerID == customerId).ToList();
         }
 
         public Order GetOrderByID(int orderId)

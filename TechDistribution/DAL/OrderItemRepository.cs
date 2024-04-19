@@ -15,6 +15,11 @@ namespace TechDistribution.DAL
             dbContext = db;
         }
 
+        public void AddOrderItemWithoutSave(OrderItem nOrderItem)
+        {
+            dbContext.OrderItems.Add(nOrderItem);
+        }
+
         public void AddOrderItem(OrderItem nOrderItem)
         {
             dbContext.OrderItems.Add(nOrderItem);
@@ -26,6 +31,10 @@ namespace TechDistribution.DAL
             return dbContext.OrderItems.ToList();
         }
 
+        public List<OrderItem> GetOrderItemsByOrderId(int id)
+        {
+            return dbContext.OrderItems.Where(oi => oi.OrderID == id).ToList();
+        }
         public void UpdateOrderItem(OrderItem edOrderItem)
         {
             OrderItem oldOrderItem = dbContext.OrderItems.Where(oi => oi.OrderID == edOrderItem.OrderID).FirstOrDefault();

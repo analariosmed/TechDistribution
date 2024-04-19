@@ -102,6 +102,22 @@ namespace TechDistribution.BLL
 
         }
 
+        public static User CheckPassword(User user)
+        {
+            User userFound = UserDB.SearchUserByUserId(user.userId);
+            if (userFound == null)
+            {
+                return null;
+            }
+            else
+            {
+                if(user.password == userFound.password)
+                    return userFound;
+                else 
+                    return null;
+            }
+
+        }
 
     }
 }
