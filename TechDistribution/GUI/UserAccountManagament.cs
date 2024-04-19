@@ -26,5 +26,10 @@ namespace TechDistribution.GUI
         {
 
         }
+
+        private void listViewAllEmployees_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

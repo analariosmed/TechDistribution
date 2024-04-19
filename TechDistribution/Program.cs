@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TechDistribution.GUI;
+using TechDistribution.BLL;
 
 namespace TechDistribution
 {
@@ -15,9 +16,16 @@ namespace TechDistribution
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
+            //using (TechDistributionEntities db = new TechDistributionEntities())
+            //{
+            //   foreach (var item in db.Items.ToList())
+            //    {
+            //        Console.WriteLine(item.ToString());
+            //    }
+            //}
+                Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BookForm());
+            Application.Run(new OrderManagement());
         }
     }
 }

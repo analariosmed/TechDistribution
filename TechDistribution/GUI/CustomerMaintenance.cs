@@ -244,21 +244,20 @@ namespace TechDistribution.GUI
         {
             listView1.Items.Clear();
 
-            List<Customer> customersList = new Customer().GetCustomers();
-           // dataAdapter.SelectCommand = new SqlCommand("SELECT * FROM Customers", UtilityDB.GetDBConnection());
-            //dataAdapter.Fill(TechDistributionDB, "Customers");
-            foreach (Customer customer in customersList)
-            {
-                ListViewItem item = new ListViewItem(customer.CustomerId.ToString());
-                item.SubItems.Add(customer.Name);
-                item.SubItems.Add(customer.Street);
-                item.SubItems.Add(customer.City);
-                item.SubItems.Add(customer.PostalCode);
-                item.SubItems.Add(customer.PhoneNumber);
-                item.SubItems.Add(customer.FaxNumber);
-                item.SubItems.Add(customer.CreditLimit.ToString());
-                listView1.Items.Add(item);
-            }
+            //List<Customer> customersList = new Customer().GetCustomers();
+          
+            //foreach (Customer customer in customersList)
+            //{
+            //    ListViewItem item = new ListViewItem(customer.CustomerId.ToString());
+            //    item.SubItems.Add(customer.CustomerName);
+            //    item.SubItems.Add(customer.Street);
+            //    item.SubItems.Add(customer.City);
+            //    item.SubItems.Add(customer.PostalCode);
+            //    item.SubItems.Add(customer.PhoneNumber);
+            //    item.SubItems.Add(customer.FaxNumber);
+            //    item.SubItems.Add(customer.CreditLimit.ToString());
+            //    listView1.Items.Add(item);
+            //}
         }
 
     }

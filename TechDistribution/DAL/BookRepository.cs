@@ -37,7 +37,7 @@ namespace TechDistribution.DAL
             
         }
 
-        public List<Book> GetBooks() => dbContext.Books.ToList();
+        public  List<Book> GetBooks() => dbContext.Books.ToList();
 
         public void UpdateBook(Book edBook)
         {

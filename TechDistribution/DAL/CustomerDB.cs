@@ -22,7 +22,7 @@ namespace TechDistribution.DAL
             {
                 customer = new Customer();
                 customer.CustomerId = Convert.ToInt32(reader["CustomerID"]);
-                customer.Name = reader["CustomerName"].ToString();
+                customer.CustomerName = reader["CustomerName"].ToString();
                 customer.Street = reader["Street"].ToString();
                 customer.City = reader["City"].ToString();
                 customer.PostalCode = reader["PostalCode"].ToString();
