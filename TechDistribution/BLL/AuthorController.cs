@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,29 +8,26 @@ using TechDistribution.DAL;
 
 namespace TechDistribution.BLL
 {
-    public class AuthorController
+    public class AuthorController : AuthorRepository
     {
-        TechDistributionEntities dbContext;
-        AuthorRepository authorRep;
-        public AuthorController()
+        public AuthorController(TechDistributionEntities dbContext) : base(dbContext)
         {
-            dbContext = new TechDistributionEntities();
-            authorRep = new AuthorRepository(dbContext);
+            
         }
 
-        public List<Author> GetAuthors() => authorRep.GetAuthors();
+        public List<Author> GetAllAuthors() => GetAuthors();
 
-        public void AddAuthor(Author nAuthor) => authorRep.AddAuthor(nAuthor);
+        public void AddNewAuthor(Author nAuthor) => AddAuthor(nAuthor);
 
-        public Author GetAuthorById(int authorId) => authorRep.GetAuthorById(authorId);
+        public Author GetById(int authorId) => GetAuthorById(authorId);
 
-        public List<Author> GetAuthorByName(string name) => authorRep.GetAuthorsByName(name);
+        public List<Author> GetByName(string name) => GetAuthorsByName(name);
 
-        public List<Author> GetAuthorByEmail(string email) => authorRep.GetAuthorsByEmail(email);
+        public List<Author> GetByEmail(string email) => GetAuthorsByEmail(email);
 
-        public void UpdateAuthor(Author edAuthor) => authorRep.UpdateAuthor(edAuthor);
+        public void UpdateTheAuthor(Author edAuthor) => UpdateAuthor(edAuthor);
 
-        public bool IsAnExistingAuthor(int authorId) => authorRep.IsAnExistingAuthor(authorId);
+        public bool IsAnExistingOne(int authorId) => IsAnExistingAuthor(authorId);
 
 
     }

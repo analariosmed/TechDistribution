@@ -56,9 +56,11 @@ namespace TechDistribution.DAL
                 toEdit.Category = edBook.Category;
                 //toEdit.Authors = edBook.Authors; 
 
+                List<Author> listAuthors = edBook.Authors.ToList();
+
                 toEdit.Authors.Clear();
 
-                foreach(Author nAuthor in edBook.Authors)
+                foreach (Author nAuthor in listAuthors)
                 {
                     toEdit.Authors.Add(nAuthor); // This line update the list of author in given book
                 }
@@ -66,7 +68,7 @@ namespace TechDistribution.DAL
                 dbContext.SaveChanges();
                 dbContextTransaction.Commit();
 
-                MessageBox.Show($"The book {edBook.Title} was update Succesfully", "Succesufully Transaction", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show($"The book {edBook.Title} was update Succesfully", "Succesufully Transaction", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception e)
@@ -82,16 +84,27 @@ namespace TechDistribution.DAL
         public List<Book> GetBooksByTitle(string name) => dbContext.Books.Where(x => x.Title.Contains(name)).ToList();
         
 
-        public bool IsAnExistingBook(string isbn)
+        public static bool IsAnExistingBook(string isbn)
         {
+
+            TechDistributionEntities temp = new TechDistributionEntities();
+
             Book fBook = new Book();
 
-            fBook = GetBookByISBN(isbn);
+            fBook = temp.Books.Find(isbn);
 
             if (fBook == null)
                 return false;
             else
                 return true;
+        }
+
+        public void DeleteBook(string isbn)
+        {
+            Book bookToDelete = GetBookByISBN(isbn);
+
+            dbContext.Books.Remove(bookToDelete);
+            dbContext.SaveChanges();
         }
 
     }

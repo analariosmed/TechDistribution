@@ -14,8 +14,19 @@ namespace TechDistribution.DAL
 
         }
 
-        public List<Publisher> GetPublishers() => dbContext.Publishers.ToList();
+        public static List<Publisher> GetPublishers()
+        {
+            TechDistributionEntities temp = new TechDistributionEntities();
 
+            return temp.Publishers.ToList();
+        }
+
+        public static int GetPublisherIdByName(string name)
+        {
+            TechDistributionEntities temp = new TechDistributionEntities();
+
+            return temp.Publishers.Where(x => x.PublisherName == name).First().PublisherID;
+        }
 
     }
 }

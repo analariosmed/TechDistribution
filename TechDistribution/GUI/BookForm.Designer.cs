@@ -49,6 +49,7 @@
             this.UpdateBook = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.YearPublishedUpdate = new System.Windows.Forms.TextBox();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.comboBoxPublisherUpdate = new System.Windows.Forms.ComboBox();
@@ -67,13 +68,22 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.buttonSearch = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxSearchBy = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.buttonAssignDelete = new System.Windows.Forms.Button();
+            this.buttonAssignAdd = new System.Windows.Forms.Button();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.label18 = new System.Windows.Forms.Label();
+            this.comboBoxAuthors = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.comboBoxBooks = new System.Windows.Forms.ComboBox();
             this.ListBooks = new System.Windows.Forms.TabPage();
             this.buttonListAllBooks = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
+            this.buttonShowAuthors = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.AddBook.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -81,6 +91,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.ListBooks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -89,6 +101,7 @@
             // 
             this.tabControl1.Controls.Add(this.AddBook);
             this.tabControl1.Controls.Add(this.UpdateBook);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.ListBooks);
             this.tabControl1.Location = new System.Drawing.Point(-1, 4);
             this.tabControl1.Name = "tabControl1";
@@ -283,6 +296,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.buttonDelete);
             this.groupBox3.Controls.Add(this.YearPublishedUpdate);
             this.groupBox3.Controls.Add(this.buttonUpdate);
             this.groupBox3.Controls.Add(this.comboBoxPublisherUpdate);
@@ -303,7 +317,17 @@
             this.groupBox3.Size = new System.Drawing.Size(977, 157);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.groupBox3.Text = "Update";
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(765, 114);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(100, 37);
+            this.buttonDelete.TabIndex = 25;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // YearPublishedUpdate
             // 
@@ -435,7 +459,7 @@
             // 
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.buttonSearch);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.textBoxSearchBy);
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Location = new System.Drawing.Point(10, 7);
@@ -448,7 +472,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(484, 91);
+            this.label9.Location = new System.Drawing.Point(392, 86);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(44, 16);
             this.label9.TabIndex = 4;
@@ -462,22 +486,27 @@
             this.buttonSearch.TabIndex = 3;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
-            // textBox1
+            // textBoxSearchBy
             // 
-            this.textBox1.Location = new System.Drawing.Point(369, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 22);
-            this.textBox1.TabIndex = 2;
+            this.textBoxSearchBy.Location = new System.Drawing.Point(369, 61);
+            this.textBoxSearchBy.Name = "textBoxSearchBy";
+            this.textBoxSearchBy.Size = new System.Drawing.Size(179, 22);
+            this.textBoxSearchBy.TabIndex = 2;
             // 
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "ISBN",
+            "Title"});
             this.comboBox1.Location = new System.Drawing.Point(369, 19);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(179, 24);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -487,6 +516,89 @@
             this.label8.Size = new System.Drawing.Size(68, 16);
             this.label8.TabIndex = 0;
             this.label8.Text = "Search by";
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.buttonShowAuthors);
+            this.tabPage1.Controls.Add(this.buttonAssignDelete);
+            this.tabPage1.Controls.Add(this.buttonAssignAdd);
+            this.tabPage1.Controls.Add(this.dataGridView3);
+            this.tabPage1.Controls.Add(this.label18);
+            this.tabPage1.Controls.Add(this.comboBoxAuthors);
+            this.tabPage1.Controls.Add(this.label17);
+            this.tabPage1.Controls.Add(this.comboBoxBooks);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(993, 532);
+            this.tabPage1.TabIndex = 3;
+            this.tabPage1.Text = "Assign Authors";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // buttonAssignDelete
+            // 
+            this.buttonAssignDelete.Location = new System.Drawing.Point(697, 145);
+            this.buttonAssignDelete.Name = "buttonAssignDelete";
+            this.buttonAssignDelete.Size = new System.Drawing.Size(120, 47);
+            this.buttonAssignDelete.TabIndex = 7;
+            this.buttonAssignDelete.Text = "Delete";
+            this.buttonAssignDelete.UseVisualStyleBackColor = true;
+            this.buttonAssignDelete.Click += new System.EventHandler(this.buttonAssignDelete_Click);
+            // 
+            // buttonAssignAdd
+            // 
+            this.buttonAssignAdd.Location = new System.Drawing.Point(832, 145);
+            this.buttonAssignAdd.Name = "buttonAssignAdd";
+            this.buttonAssignAdd.Size = new System.Drawing.Size(123, 47);
+            this.buttonAssignAdd.TabIndex = 5;
+            this.buttonAssignAdd.Text = "Add";
+            this.buttonAssignAdd.UseVisualStyleBackColor = true;
+            this.buttonAssignAdd.Click += new System.EventHandler(this.buttonAssignAdd_Click);
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(9, 198);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 51;
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.Size = new System.Drawing.Size(946, 321);
+            this.dataGridView3.TabIndex = 4;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(903, 64);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(52, 16);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "Authors";
+            // 
+            // comboBoxAuthors
+            // 
+            this.comboBoxAuthors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxAuthors.FormattingEnabled = true;
+            this.comboBoxAuthors.Location = new System.Drawing.Point(534, 93);
+            this.comboBoxAuthors.Name = "comboBoxAuthors";
+            this.comboBoxAuthors.Size = new System.Drawing.Size(420, 24);
+            this.comboBoxAuthors.TabIndex = 2;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(22, 64);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(46, 16);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "Books";
+            // 
+            // comboBoxBooks
+            // 
+            this.comboBoxBooks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBooks.FormattingEnabled = true;
+            this.comboBoxBooks.Location = new System.Drawing.Point(25, 93);
+            this.comboBoxBooks.Name = "comboBoxBooks";
+            this.comboBoxBooks.Size = new System.Drawing.Size(408, 24);
+            this.comboBoxBooks.TabIndex = 0;
             // 
             // ListBooks
             // 
@@ -507,6 +619,7 @@
             this.buttonListAllBooks.TabIndex = 4;
             this.buttonListAllBooks.Text = "List All Books";
             this.buttonListAllBooks.UseVisualStyleBackColor = true;
+            this.buttonListAllBooks.Click += new System.EventHandler(this.buttonListAllBooks_Click);
             // 
             // dataGridView2
             // 
@@ -526,6 +639,16 @@
             this.entityCommand1.EnablePlanCaching = true;
             this.entityCommand1.Transaction = null;
             // 
+            // buttonShowAuthors
+            // 
+            this.buttonShowAuthors.Location = new System.Drawing.Point(25, 134);
+            this.buttonShowAuthors.Name = "buttonShowAuthors";
+            this.buttonShowAuthors.Size = new System.Drawing.Size(120, 47);
+            this.buttonShowAuthors.TabIndex = 8;
+            this.buttonShowAuthors.Text = "Show Authors";
+            this.buttonShowAuthors.UseVisualStyleBackColor = true;
+            this.buttonShowAuthors.Click += new System.EventHandler(this.buttonShowAuthors_Click);
+            // 
             // BookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -544,6 +667,9 @@
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ListBooks.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
@@ -581,7 +707,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button buttonSearch;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxSearchBy;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label13;
@@ -598,5 +724,15 @@
         private System.Windows.Forms.TextBox YearPublishedUpdate;
         private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
         private System.Windows.Forms.TextBox textBoxYear;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox comboBoxAuthors;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox comboBoxBooks;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Button buttonAssignDelete;
+        private System.Windows.Forms.Button buttonAssignAdd;
+        private System.Windows.Forms.Button buttonShowAuthors;
     }
 }

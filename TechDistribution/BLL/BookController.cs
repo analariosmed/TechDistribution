@@ -7,25 +7,27 @@ using TechDistribution.DAL;
 
 namespace TechDistribution.BLL
 {
-    public class BookController
+    public class BookController : BookRepository
     {
-        TechDistributionEntities dbContext = new TechDistributionEntities();
-        BookRepository bookRep;
-        public BookController()
+        
+        public BookController(TechDistributionEntities dbContext) : base(dbContext)
         {
-             bookRep = new BookRepository(dbContext);
+            
         }
 
-        public void AddBook(Book nBook) => bookRep.AddBook(nBook);
+        public void AddNewBook(Book nBook) => AddBook(nBook);
 
-        public List<Book> GetBooks() => bookRep.GetBooks();
+        public List<Book> GetAllBooks() => GetBooks();
 
-        public void UpdateBook(Book edBook) => bookRep.UpdateBook(edBook);
+        public void Update(Book edBook) => UpdateBook(edBook);
 
-        public Book GetBookByISBN(string isbn) => bookRep.GetBookByISBN(isbn);
+        public Book GetByISBN(string isbn) => GetBookByISBN(isbn);
 
-        public List<Book> GetBooksByTitle(string name) => bookRep.GetBooksByTitle(name);
+        public List<Book> GetByTitle(string name) => GetBooksByTitle(name);
 
-
+        public void RemoveBook(string isbn)
+        {
+            DeleteBook(isbn);
+        }
     }
 }
