@@ -12,24 +12,28 @@ namespace TechDistribution.BLL
     using System;
     using System.Collections.Generic;
     
-    public partial class Customer
+    public partial class Order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Customer()
+        public Order()
         {
-            this.Orders = new HashSet<Order>();
+            this.OrderItems = new HashSet<OrderItem>();
         }
     
-        public int CustomerId { get; set; }
-        public string CustomerName { get; set; }
-        public string Street { get; set; }
-        public string City { get; set; }
-        public string PostalCode { get; set; }
+        public int OrderID { get; set; }
+        public int CustomerID { get; set; }
+        public System.DateTime OrderDate { get; set; }
+        public string OrderType { get; set; }
+        public string PaymentMethod { get; set; }
+        public int TotalPayment { get; set; }
+        public string Email { get; set; }
         public string PhoneNumber { get; set; }
-        public string FaxNumber { get; set; }
-        public decimal CreditLimit { get; set; }
+        public string Fax { get; set; }
+        public int StatusId { get; set; }
     
+        public virtual Customer Customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<OrderItem> OrderItems { get; set; }
+        public virtual Status Status1 { get; set; }
     }
 }

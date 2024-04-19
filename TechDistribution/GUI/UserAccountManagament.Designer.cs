@@ -267,7 +267,7 @@
             this.label2.Location = new System.Drawing.Point(52, 88);
             this.label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(630, 111);
+            this.label2.Size = new System.Drawing.Size(210, 37);
             this.label2.TabIndex = 0;
             this.label2.Text = "Employee Id :";
             // 
@@ -624,6 +624,7 @@
             this.listViewAllEmployees.TabIndex = 1;
             this.listViewAllEmployees.UseCompatibleStateImageBehavior = false;
             this.listViewAllEmployees.View = System.Windows.Forms.View.Details;
+            this.listViewAllEmployees.SelectedIndexChanged += new System.EventHandler(this.listViewAllEmployees_SelectedIndexChanged);
             // 
             // EmployeeID
             // 
