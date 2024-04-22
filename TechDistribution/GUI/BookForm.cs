@@ -21,8 +21,14 @@ namespace TechDistribution.GUI
         AuthorController authorController;
         Form prevForm;
 
+        /// <summary>
+        /// Initializes the BookForm with necessary components and controllers.
+        /// </summary>
+
         public BookForm(Form prevForm)
         {
+            // Initialization code for form components and controllers.
+
             this.prevForm = prevForm;
             tech = new TechDistributionEntities();
             bookController = new BookController(tech);
@@ -75,8 +81,15 @@ namespace TechDistribution.GUI
 
         }
 
+        /// <summary>
+        /// Handles the button click event to add a new book, performing validation checks on input fields.
+        /// </summary>
+
         private void buttonAdd_Click(object sender, EventArgs e)
         {
+
+            // Validates ISBN, title, price, year, and quantity on hand before adding a new book.
+
             string toValidate = textBoxIsbn.Text;
 
             
@@ -139,8 +152,16 @@ namespace TechDistribution.GUI
 
         }
 
+
+
+        /// <summary>
+        /// Handles the button click event to list all books in the DataGridView.
+        /// </summary>
+
         private void buttonListAllBooks_Click(object sender, EventArgs e)
         {
+            // Clears and refreshes the DataGridView, then retrieves all books from the database and binds them to the DataGridView for display.
+
             dataGridView2.DataSource = null;
             dataGridView2.Refresh();
 
@@ -151,8 +172,17 @@ namespace TechDistribution.GUI
             dataGridView2.DataSource = books.GetBooks();
         }
 
+
+
+        /// <summary>
+        /// Handles the ComboBox selected index changed event to update a label's text based on the selected index.
+        /// </summary>
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            // Updates the label's text with a hint or description based on the selected index of the ComboBox.
+
             switch (comboBox1.SelectedIndex)
             {
                 case 0:
@@ -164,8 +194,15 @@ namespace TechDistribution.GUI
             }
         }
 
+
+
+
+        /// <summary>
+        /// Handles the button click event to search for books based on ISBN or title.
+        /// </summary>
         private void buttonSearch_Click(object sender, EventArgs e)
         {
+            // Checks the selected search criteria (ISBN or title) and performs the corresponding search operation.
             switch (comboBox1.SelectedIndex)
             {
                 case 0:
@@ -177,8 +214,16 @@ namespace TechDistribution.GUI
             }
         }
 
+
+
+        /// <summary>
+        /// Searches for a book by ISBN and displays its details.
+        /// </summary>
+
         private void SearchByISBN()
         {
+            // Validates the ISBN input and retrieves the book details if the ISBN is valid.
+
             BookController ctrl = new BookController(tech);
 
             string text = textBoxSearchBy.Text;
@@ -219,9 +264,16 @@ namespace TechDistribution.GUI
 
         }
 
+
+
+        /// <summary>
+        /// Searches for books by title and displays the search results.
+        /// </summary>
+
         private void SearchByName()
         {
-            //BookController ctrl = new BookController(tech);
+            // Validates the title input and displays books matching the given title.
+
 
             string text = textBoxSearchBy.Text.Trim();
             if (!MyValidator.IsValidText(text))
@@ -237,8 +289,16 @@ namespace TechDistribution.GUI
 
         }
 
+
+
+        /// <summary>
+        /// Handles the button click event to delete a book by ISBN.
+        /// </summary>
+
         private void buttonDelete_Click(object sender, EventArgs e)
         {
+            // Validates the ISBN input, checks if the book exists, and deletes it if found.
+
             string text = textBoxIsbnUpdate.Text;
 
             TechDistributionEntities temp = new TechDistributionEntities();
@@ -268,8 +328,12 @@ namespace TechDistribution.GUI
 
         }
 
+        /// <summary>
+        /// Handles the button click event to delete an author assignment from a book.
+        /// </summary>
         private void buttonAssignDelete_Click(object sender, EventArgs e)
         {
+            // Deletes an author assignment from a book based on the selected row in the authors list.
 
             int idx = 0;
 
@@ -326,8 +390,16 @@ namespace TechDistribution.GUI
             dataGridView3.DataSource = bookToUpdate.Authors.ToList();
         }
 
+
+
+        /// <summary>
+        /// Handles the button click event to assign an author to a book.
+        /// </summary>
+
+
         private void buttonAssignAdd_Click(object sender, EventArgs e)
         {
+            // Adds an author to a book and updates the book's author list.
 
             string author = comboBoxAuthors.Text;
             var array = author.Split(',');
@@ -373,8 +445,16 @@ namespace TechDistribution.GUI
 
         }
 
+       
+
+        /// <summary>
+        /// Handles the button click event to show authors assigned to a specific book.
+        /// </summary>
+
         private void buttonShowAuthors_Click(object sender, EventArgs e)
         {
+            // Retrieves and displays authors assigned to a specific book based on ISBN.
+
             string bookText = comboBoxBooks.Text;
             var array = bookText.Split(',');
 
@@ -388,8 +468,16 @@ namespace TechDistribution.GUI
             dataGridView3.DataSource = authorsBook;
         }
 
+
+        /// <summary>
+        /// Handles the button click event to exit the BookForm, showing a confirmation dialog.
+        /// </summary>
+
         private void buttonExit_Click(object sender, EventArgs e)
         {
+
+            // Displays a confirmation dialog before closing the BookForm and returning to the previous form.
+
             DialogResult result = MessageBox.Show("Do you want to close this window?", "Close", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
 

@@ -20,6 +20,13 @@ namespace TechDistribution.GUI
         TechDistributionEntities dbContext;
         AuthorController auCtrl;
         Form prevForm;
+
+
+        /// <summary>
+        /// Initializes a new instance of the AuthorForm class.
+        /// </summary>
+        /// <param name="prevForm">The previous form.</param>
+
         public AuthorForm(Form prevForm)
         {
             this.prevForm = prevForm;
@@ -30,6 +37,10 @@ namespace TechDistribution.GUI
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
+
+            // Implementation for adding a new author.
+
+
             string text = textBoxFirstName.Text.Trim();
 
             if (!MyValidator.IsValidName(text))
@@ -67,6 +78,9 @@ namespace TechDistribution.GUI
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
+
+            // Implementation for searching authors based on selected criteria.
+
             switch (comboBoxSearchBy.SelectedIndex)
             {
                 case 0: // ID
@@ -83,6 +97,10 @@ namespace TechDistribution.GUI
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
+
+            // Implementation for updating an existing author's information.
+
+
             string text = textBoxIDUpdate.Text;
 
             if (string.IsNullOrEmpty(text))
@@ -126,8 +144,8 @@ namespace TechDistribution.GUI
 
         private void buttonListAllAuthors_Click(object sender, EventArgs e)
         {
-            
 
+            // Implementation for listing all authors.
 
             dataGridView2.DataSource = null;
             dataGridView2.Refresh();
@@ -137,6 +155,9 @@ namespace TechDistribution.GUI
 
         private void comboBoxSearchBy_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Implementation for handling changes in the search criteria dropdown.
+
+
             switch (comboBoxSearchBy.SelectedIndex)
             {
                 case 0: // ID
@@ -156,7 +177,9 @@ namespace TechDistribution.GUI
             string text = textBoxSearchBy.Text;
             int id;
 
-            if(!int.TryParse(text, out id))
+            // Implementation for searching an author by ID.
+
+            if (!int.TryParse(text, out id))
             {
                 MessageBox.Show("The ID is invalid");
                 return;
@@ -185,6 +208,10 @@ namespace TechDistribution.GUI
 
         private void SearchByName()
         {
+
+            // Implementation for searching authors by name.
+
+
             string text = textBoxSearchBy.Text;
             if (!MyValidator.IsValidText(text))
             {
@@ -203,6 +230,10 @@ namespace TechDistribution.GUI
         }
         private void SearchByEmail()
         {
+
+            // Implementation for searching authors by email.
+
+
             string text = textBoxSearchBy.Text;
             if (!MyValidator.IsValidEmail(text))
             {
@@ -220,6 +251,9 @@ namespace TechDistribution.GUI
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
+
+            // Implementation for closing the form.
+
             DialogResult result = MessageBox.Show("Do you want to close this window?", "Close", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (result == DialogResult.Yes)

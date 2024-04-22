@@ -115,30 +115,30 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(51, 37);
+            this.tabControl1.Location = new System.Drawing.Point(10, 10);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1238, 785);
+            this.tabControl1.Size = new System.Drawing.Size(1078, 715);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.LightBlue;
             this.tabPage2.Controls.Add(this.buttonExit);
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(1);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(1);
-            this.tabPage2.Size = new System.Drawing.Size(1230, 756);
+            this.tabPage2.Size = new System.Drawing.Size(1070, 686);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Add Customer";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // buttonExit
             // 
             this.buttonExit.BackColor = System.Drawing.Color.DarkGray;
-            this.buttonExit.Location = new System.Drawing.Point(605, 570);
+            this.buttonExit.Location = new System.Drawing.Point(911, 635);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(146, 35);
             this.buttonExit.TabIndex = 6;
@@ -148,7 +148,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.buttonUpdateDB);
             this.groupBox1.Controls.Add(this.textBoxCreditLimit);
@@ -169,9 +169,9 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(271, 36);
+            this.groupBox1.Location = new System.Drawing.Point(294, 63);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(447, 513);
+            this.groupBox1.Size = new System.Drawing.Size(447, 524);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Customer";
@@ -342,15 +342,15 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.Color.LightBlue;
             this.tabPage3.Controls.Add(this.groupBox4);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(1);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(1);
-            this.tabPage3.Size = new System.Drawing.Size(1230, 756);
+            this.tabPage3.Size = new System.Drawing.Size(1070, 686);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Search/Update/Delete";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
@@ -359,11 +359,11 @@
             this.groupBox4.Controls.Add(this.buttonExit2);
             this.groupBox4.Controls.Add(this.groupBox3);
             this.groupBox4.Controls.Add(this.groupBox2);
-            this.groupBox4.Location = new System.Drawing.Point(18, 20);
+            this.groupBox4.Location = new System.Drawing.Point(4, 4);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(1);
-            this.groupBox4.Size = new System.Drawing.Size(1115, 724);
+            this.groupBox4.Size = new System.Drawing.Size(1066, 682);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             // 
@@ -686,6 +686,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.LightBlue;
             this.tabPage1.Controls.Add(this.listView1);
             this.tabPage1.Controls.Add(this.buttonExit3);
             this.tabPage1.Controls.Add(this.buttonListAll);
@@ -693,10 +694,9 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(1);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(1);
-            this.tabPage1.Size = new System.Drawing.Size(1230, 756);
+            this.tabPage1.Size = new System.Drawing.Size(1070, 686);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Customers List";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // listView1
             // 
@@ -710,9 +710,9 @@
             this.columnHeader17,
             this.columnHeader18});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(24, 90);
+            this.listView1.Location = new System.Drawing.Point(24, 83);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1074, 585);
+            this.listView1.Size = new System.Drawing.Size(1026, 587);
             this.listView1.TabIndex = 7;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -783,11 +783,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1295, 822);
+            this.ClientSize = new System.Drawing.Size(1093, 730);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "CustomerMaintenance";
-            this.Text = "CustomerMaintenance";
+            this.Text = "Customer Maintenance";
             this.Load += new System.EventHandler(this.CustomerMaintenance_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);

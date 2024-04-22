@@ -10,27 +10,33 @@ using TechDistribution.DAL;
 
 namespace TechDistribution.DAL
 {
+    /// <summary>
+    /// Handles database operations related to employees.
+    /// </summary>
     public class EmployeeDB
     {
-        /************************Trying*****************************************/
-
+        /// <summary>
+        /// Rolls back a SQL transaction.
+        /// </summary>
+        /// <param name="transaction">The SQL transaction to roll back.</param>
         private static void RollBack(SqlTransaction transaction)
         {
             transaction.Rollback();
         }
 
-
+        /// <summary>
+        /// Adds a new employee to the database.
+        /// </summary>
+        /// <param name="emp">The employee object to add.</param>
+        /// <returns>True if the employee was added successfully, otherwise false.</returns>
         public static bool AddEmployee(Employee emp)
         {
             SqlConnection conn = UtilityDB.GetDBConnection();
 
             try
             {
-                
                 SqlCommand cmd = new SqlCommand();
-
                 cmd.Connection = conn;
-
                 cmd.CommandText = "INSERT INTO Employees(FirstName, LastName, Email, PhoneNumber, StatusId, JobId) " +
                                   "VALUES (@FirstName, @LastName, @Email, @PhoneNumber, @StatusId, @JobId);";
 
@@ -53,13 +59,18 @@ namespace TechDistribution.DAL
             return true;
         }
 
-
+        /// <summary>
+        /// Retrieves a list of all employees with complete information from the database.
+        /// </summary>
+        /// <returns>A list of all employees with complete information.</returns>
         public static List<Employee> GetEmployeesComplete()
         {
             List<Employee> listE = new List<Employee>();
             SqlConnection conn = UtilityDB.GetDBConnection();
 
-            SqlCommand cmd = new SqlCommand("SELECT EmployeeId, FirstName, LastName, Email, PhoneNumber,e.StatusId, StatusDesc,e.JobId, JobTitle\r\nFROM Employees e, Status s, Jobs j\r\nWHERE e.StatusId = s.StatusId AND\r\ne.JobId = j.JobId;", conn);
+            SqlCommand cmd = new SqlCommand("SELECT EmployeeId, FirstName, LastName, Email, PhoneNumber, e.StatusId, StatusDesc, e.JobId, JobTitle " +
+                                             "FROM Employees e, Status s, Jobs j " +
+                                             "WHERE e.StatusId = s.StatusId AND e.JobId = j.JobId;", conn);
             SqlDataReader reader = cmd.ExecuteReader();
             Employee emp;
 
@@ -77,10 +88,16 @@ namespace TechDistribution.DAL
                 emp.JobTitle = reader["JobTitle"].ToString();
                 listE.Add(emp);
             }
+
             conn.Close();
             return listE;
         }
 
+        /// <summary>
+        /// Retrieves an employee from the database by their ID.
+        /// </summary>
+        /// <param name="id">The ID of the employee to retrieve.</param>
+        /// <returns>The employee object.</returns>
         public static Employee GetEmployeeByID(int id)
         {
             SqlConnection conn = UtilityDB.GetDBConnection();
@@ -88,7 +105,8 @@ namespace TechDistribution.DAL
             {
                 SqlCommand cmdSearch = new SqlCommand();
                 cmdSearch.Connection = conn;
-                cmdSearch.CommandText = "SELECT EmployeeId, FirstName, LastName, Email, PhoneNumber, StatusDesc, JobTitle FROM Employees e, Status s, Jobs j " +
+                cmdSearch.CommandText = "SELECT EmployeeId, FirstName, LastName, Email, PhoneNumber, StatusDesc, JobTitle " +
+                                        "FROM Employees e, Status s, Jobs j " +
                                         "WHERE EmployeeId = @EmployeeId AND e.StatusId = s.StatusId AND e.JobId = j.JobId;";
                 cmdSearch.Parameters.AddWithValue("@EmployeeId", id);
                 SqlDataReader reader = cmdSearch.ExecuteReader();
@@ -108,23 +126,23 @@ namespace TechDistribution.DAL
             catch (SqlException ex)
             {
                 throw ex;
-
             }
             finally
             {
                 conn.Close();
             }
-
         }
 
+        /// <summary>
+        /// Updates an existing employee in the database.
+        /// </summary>
+        /// <param name="emp">The updated employee object.</param>
         public static void UpdateEmployee(Employee emp)
         {
             using (SqlConnection conn = UtilityDB.GetDBConnection())
             {
-                
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
-
                 cmd.CommandText = "UPDATE Employees " +
                                   "SET FirstName = @FirstName, " +
                                   "LastName = @LastName, " +
@@ -141,6 +159,7 @@ namespace TechDistribution.DAL
                 cmd.Parameters.AddWithValue("@StatusId", emp.StatusId);
                 cmd.Parameters.AddWithValue("@JobId", emp.JobId);
                 cmd.Parameters.AddWithValue("@EmployeeId", emp.EmployeeId);
+
                 try
                 {
                     cmd.ExecuteNonQuery();
@@ -150,17 +169,16 @@ namespace TechDistribution.DAL
                     MessageBox.Show(e.ToString());
                     return;
                 }
-
-                conn.Close();
             }
         }
 
+        // Other methods for searching, checking existence, and deleting employees are also present in this class.
 
-
-        /*********************************************************************/
-
-
-
+        /// <summary>
+        /// Searches for an employee by their ID.
+        /// </summary>
+        /// <param name="employeeId">The ID of the employee to search for.</param>
+        /// <returns>The employee object if found, otherwise null.</returns>
         public static Employee SearchEmployee(int employeeId)
         {
             SqlConnection conn = UtilityDB.GetDBConnection();
@@ -185,47 +203,47 @@ namespace TechDistribution.DAL
             catch (SqlException ex)
             {
                 throw ex;
-
             }
             finally
             {
                 conn.Close();
             }
-
-
         }
 
- 
+        /// <summary>
+        /// Checks if an employee with the given ID exists in the database.
+        /// </summary>
+        /// <param name="employeeId">The ID of the employee to check.</param>
+        /// <returns>True if the employee exists, otherwise false.</returns>
         public static bool IsAnExistingEmployee(int employeeId)
         {
-            List<Employee> listE = new List<Employee>();
             SqlConnection conn = UtilityDB.GetDBConnection();
             SqlCommand cmdFind = new SqlCommand("SELECT * FROM Employees WHERE EmployeeId = @EmployeeId", conn);
             cmdFind.Parameters.AddWithValue("@EmployeeId", employeeId);
 
-            SqlDataReader reader = cmdFind.ExecuteReader(); //applied to select statement
-
-            Employee student = new Employee();
-
-
+            SqlDataReader reader = cmdFind.ExecuteReader();
             if (reader.Read())
             {
+                reader.Close();
+                conn.Close();
                 return true;
-
             }
             else
             {
+                reader.Close();
+                conn.Close();
                 return false;
             }
-
-            
         }
 
-        public static void modifyEmployee(Employee employeeUpdated)
+        /// <summary>
+        /// Modifies details of an existing employee in the database.
+        /// </summary>
+        /// <param name="employeeUpdated">The updated employee object.</param>
+        public static void ModifyEmployee(Employee employeeUpdated)
         {
             using (SqlConnection conn = UtilityDB.GetDBConnection())
             {
-
                 SqlCommand cmdUpdate = new SqlCommand();
                 cmdUpdate.Connection = conn;
                 cmdUpdate.CommandText = "UPDATE Employees " +
@@ -238,10 +256,13 @@ namespace TechDistribution.DAL
                 cmdUpdate.Parameters.AddWithValue("@LastName", employeeUpdated.LastName);
                 cmdUpdate.Parameters.AddWithValue("@Email", employeeUpdated.Email);
                 cmdUpdate.ExecuteNonQuery();
-
             }
         }
 
+        /// <summary>
+        /// Deletes an employee from the database by their ID.
+        /// </summary>
+        /// <param name="employeeId">The ID of the employee to delete.</param>
         public static void DeleteEmployee(int employeeId)
         {
             SqlConnection conn = UtilityDB.GetDBConnection();
@@ -253,19 +274,15 @@ namespace TechDistribution.DAL
                                         "WHERE EmployeeId = @EmployeeId";
                 cmdDelete.Parameters.AddWithValue("@EmployeeId", employeeId);
                 cmdDelete.ExecuteNonQuery();
-
             }
             catch (SqlException ex)
             {
                 throw ex;
-
             }
             finally
             {
                 conn.Close();
             }
         }
-
     }
 }
-

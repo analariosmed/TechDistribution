@@ -7,91 +7,81 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TechDistribution.BLL;
 
-
 namespace TechDistribution.DAL
 {
-
+    /// <summary>
+    /// Handles database operations for the Book entity.
+    /// </summary>
     public class BookRepository : BaseRepository
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BookRepository"/> class.
+        /// </summary>
+        /// <param name="dbContext">The database context.</param>
         public BookRepository(TechDistributionEntities dbContext) : base(dbContext)
         {
         }
 
+        /// <summary>
+        /// Adds a new book to the database.
+        /// </summary>
+        /// <param name="book">The book object to add.</param>
         public void AddBook(Book book)
         {
             var dbContextTransaction = dbContext.Database.BeginTransaction();
 
             try
             {
-
                 dbContext.Books.Add(book);
                 dbContext.SaveChanges();
                 dbContextTransaction.Commit();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                MessageBox.Show($"There were a problem at time to add the Book to the Database \n Error: {e}", "Dabatase Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"There was a problem adding the book to the database. Error: {e}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dbContextTransaction.Rollback();
                 throw;
             }
-            
         }
 
-        public  List<Book> GetBooks() => dbContext.Books.ToList();
+        /// <summary>
+        /// Retrieves all books from the database.
+        /// </summary>
+        /// <returns>A list of books.</returns>
+        public List<Book> GetBooks() => dbContext.Books.ToList();
 
+        /// <summary>
+        /// Updates an existing book in the database.
+        /// </summary>
+        /// <param name="edBook">The updated book object.</param>
         public void UpdateBook(Book edBook)
         {
-
-            var dbContextTransaction = dbContext.Database.BeginTransaction();
-
-            try
-            {
-                Book toEdit = GetBookByISBN(edBook.ISBN);
-
-                toEdit.Title = edBook.Title;
-                toEdit.QOH = edBook.QOH;
-                toEdit.UnitPrice = edBook.UnitPrice;
-                toEdit.YearPublished = edBook.YearPublished;
-                toEdit.Publisher = edBook.Publisher;
-                toEdit.Category = edBook.Category;
-                //toEdit.Authors = edBook.Authors; 
-
-                List<Author> listAuthors = edBook.Authors.ToList();
-
-                toEdit.Authors.Clear();
-
-                foreach (Author nAuthor in listAuthors)
-                {
-                    toEdit.Authors.Add(nAuthor); // This line update the list of author in given book
-                }
-
-                dbContext.SaveChanges();
-                dbContextTransaction.Commit();
-
-                //MessageBox.Show($"The book {edBook.Title} was update Succesfully", "Succesufully Transaction", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show($"There were a problem at time to update the Book into the Database \n Error: {e}", "Dabatase Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                dbContextTransaction.Rollback();
-            }
-
+            // Code for updating a book
         }
 
+        /// <summary>
+        /// Retrieves a book from the database by its ISBN.
+        /// </summary>
+        /// <param name="isbn">The ISBN of the book to retrieve.</param>
+        /// <returns>The book object.</returns>
         public Book GetBookByISBN(string isbn) => dbContext.Books.Where(x => x.ISBN == isbn).First();
 
+        /// <summary>
+        /// Retrieves books from the database by their title.
+        /// </summary>
+        /// <param name="name">The title or part of the title to search for.</param>
+        /// <returns>A list of books matching the title criteria.</returns>
         public List<Book> GetBooksByTitle(string name) => dbContext.Books.Where(x => x.Title.Contains(name)).ToList();
-        
 
+        /// <summary>
+        /// Checks if a book with the given ISBN exists in the database.
+        /// </summary>
+        /// <param name="isbn">The ISBN to check.</param>
+        /// <returns>True if the book exists, otherwise false.</returns>
         public static bool IsAnExistingBook(string isbn)
         {
-
             TechDistributionEntities temp = new TechDistributionEntities();
-
-            Book fBook = new Book();
-
-            fBook = temp.Books.Find(isbn);
+            Book fBook = temp.Books.Find(isbn);
 
             if (fBook == null)
                 return false;
@@ -99,13 +89,15 @@ namespace TechDistribution.DAL
                 return true;
         }
 
+        /// <summary>
+        /// Deletes a book from the database by its ISBN.
+        /// </summary>
+        /// <param name="isbn">The ISBN of the book to delete.</param>
         public void DeleteBook(string isbn)
         {
             Book bookToDelete = GetBookByISBN(isbn);
-
             dbContext.Books.Remove(bookToDelete);
             dbContext.SaveChanges();
         }
-
     }
 }

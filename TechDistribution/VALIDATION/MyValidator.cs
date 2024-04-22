@@ -10,88 +10,110 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace TechDistribution.VALIDATION
 {
+    /// <summary>
+    /// Provides validation methods using regular expressions.
+    /// </summary>
     public class MyValidator
     {
-
         public MyValidator() { }
-        
+
+        /// <summary>
+        /// Validates an ID consisting of 5 digits.
+        /// </summary>
         public static bool IsValidID(string id)
         {
-            if (!Regex.IsMatch(id, @"^\d{5}$"))
-                return false;
-            return true;
+            // Example: "12345" is a valid ID.
+            return Regex.IsMatch(id, @"^\d{5}$");
         }
 
-        public static bool IsValidNumber(string id)
+        /// <summary>
+        /// Validates a number with at least 3 digits.
+        /// </summary>
+        public static bool IsValidNumber(string number)
         {
-            if (!Regex.IsMatch(id, @"^[1-9]\d{2,}$"))
-                return false;
-            return true;
+            // Example: "123" is a valid number.
+            return Regex.IsMatch(number, @"^[1-9]\d{2,}$");
         }
+
+        /// <summary>
+        /// Validates a phone number in the format (XXX)XXX-XXXX.
+        /// </summary>
         public static bool IsValidPhoneNumber(string phoneNumber)
         {
-            if (!Regex.IsMatch(phoneNumber, @"^\(\d{3}\)\d{3}-\d{4}$"))
-                return false;
-            return true;
+            // Example: "(123)456-7890" is a valid phone number.
+            return Regex.IsMatch(phoneNumber, @"^\(\d{3}\)\d{3}-\d{4}$");
         }
+
+        /// <summary>
+        /// Validates text containing only alphabetic characters.
+        /// </summary>
         public static bool IsValidText(string text)
         {
-            if (text.Length == 0)
-                return false;
-            else
-                if (!Regex.IsMatch(text, @"^[A-Za-z]+$"))
-                return false;
-            return true;
+            // Example: "HelloWorld" is a valid text.
+            return Regex.IsMatch(text, @"^[A-Za-z]+$");
         }
+
+        /// <summary>
+        /// Validates an email address.
+        /// </summary>
         public static bool IsValidEmail(string email)
         {
-            if (!Regex.IsMatch(email, @"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"))
-                return false;
-            return true;
+            // Example: "example@email.com" is a valid email address.
+            return Regex.IsMatch(email, @"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
         }
+
+        /// <summary>
+        /// Validates a password with at least 6 characters.
+        /// </summary>
         public static bool IsValidPassword(string password)
-        { 
-            if (!Regex.IsMatch(password, @"^.{6,}$"))
-                return false;
-            return true;
+        {
+            // Example: "Pass1234" is a valid password.
+            return Regex.IsMatch(password, @"^.{6,}$");
         }
-        
+
+        /// <summary>
+        /// Validates an ISBN number.
+        /// </summary>
         public static bool IsValidISBN(string isbn)
         {
-            if (!Regex.IsMatch(isbn, @"\b(?:ISBN(?:-1[03])?:? *)?((?:97[89])?\d{9}[\dx])\b"))
-                return false;
-            return true;
+            // Example: "ISBN-1234567890" is a valid ISBN number.
+            return Regex.IsMatch(isbn, @"\b(?:ISBN(?:-1[03])?:? *)?((?:97[89])?\d{9}[\dx])\b");
         }
-        
+
+        /// <summary>
+        /// Validates a price with optional decimal places.
+        /// </summary>
         public static bool IsValidPrice(string price)
         {
-            if (!Regex.IsMatch(price, @"\\d+(?:\\.\\d{2})?"))
-                return false;
-            return true;
+            // Example: "10.99" is a valid price.
+            return Regex.IsMatch(price, @"\d+(?:\.\d{2})?");
         }
 
+        /// <summary>
+        /// Validates a year in 4-digit format.
+        /// </summary>
         public static bool IsValidYear(string year)
         {
-            if (!Regex.IsMatch(year, @"\b\d{4}\b"))
-                return false;
-            return true;
+            // Example: "2024" is a valid year.
+            return Regex.IsMatch(year, @"\b\d{4}\b");
         }
 
+        /// <summary>
+        /// Validates a title containing alphanumeric characters.
+        /// </summary>
         public static bool IsValidTitle(string title)
         {
-            if (title.Length == 0)
-                return false;
-            else if (!Regex.IsMatch(title, @"^[A-Za-z0-9]+$"))
-                return false;
-
-            return true;
+            // Example: "Book123" is a valid title.
+            return Regex.IsMatch(title, @"^[A-Za-z0-9]+$");
         }
 
+        /// <summary>
+        /// Validates a name with optional middle initials.
+        /// </summary>
         public static bool IsValidName(string name)
         {
-            if (!Regex.IsMatch(name, @"^[A-Za-z]+(?: [A-Za-z]\.?)*$"))
-                return false;
-            return true;
+            // Example: "John D. Doe" is a valid name.
+            return Regex.IsMatch(name, @"^[A-Za-z]+(?: [A-Za-z]\.?)*$");
         }
     }
 }

@@ -14,11 +14,15 @@ using System.Windows.Forms;
 
 namespace TechDistribution.GUI
 {
+
+    /// <summary>
+    /// Represents a form for managing employees in the Tech Distribution system.
+    /// </summary>
     public partial class EmployeeManagement : Form
     {
-        TechDistributionEntities dbContext = new TechDistributionEntities();
+        
         Form prevForm;
-
+        // Constructor
         public EmployeeManagement(Form previousForm)
         {
             InitializeComponent();
@@ -28,68 +32,16 @@ namespace TechDistribution.GUI
 
              prevForm = previousForm;
 
-            //BookRepository bookRepository = new BookRepository(dbContext);
-
-            /*
-            Author author = new Author();
-            author.FirstName = "JK";
-            author.LastName = "Rowling";
-            author.Email = "sergioaqs17@gmail.com";
-
-
-            
-            Author author1 = new Author();
-            author1.FirstName = "Sergio";
-            author1.LastName = "Quiroz";
-            author1.Email = "cpp@gmail.com";
-
-            */
-
-            /*
-
-            Author author3 = dbContext.Authors.Where(x => x.AuthorID == 1).First();
-
-            Author author4 = dbContext.Authors.Where(x => x.AuthorID == 2).First();
-
-            List<Author> listOfAuthors = new List<Author>
-            {
-                author4
-            };
-
-            Book book = new Book();
-
-            book.ISBN = "23df23d";
-            book.Title = "Harry potter";
-
-            //bookRepository.addBook(book);
-
-
-            book.Authors = listOfAuthors;
-
-            //dbContext.Books.Add(book);
-           
-
-
-            Book booktoEdit = dbContext.Books.Where(x => x.ISBN == "1234dfsd23").First();
-
-            //Author authorToDelete = dbContext.Authors.Where(x => x.AuthorID == 1).First();
-
-            var author = booktoEdit.Authors.Where(x => x.AuthorID == 1);
-
-
-           
-            
-
-            //foreach(Author au in )
-
-            
-            
-            */
 
         }
 
+
+        /// <summary>
+        /// Clears all input fields and selection in the search section of the form.
+        /// </summary>
         private void clearFields()
         {
+            // Clears all textboxes and resets combobox selections in the search section.
             textBoxSearchEmployeeID.Clear();
             textBoxSearchFirstName.Clear();
             textBoxSearchLastName.Clear();
@@ -99,8 +51,13 @@ namespace TechDistribution.GUI
             comboBoxSearchJobTitle.SelectedIndex = -1;
         }
 
+
+        /// <summary>
+        /// Handles searching for an employee by ID.
+        /// </summary>
         private void SearchByID()
         {
+            // Clears the search fields, validates the input ID, retrieves the employee details, and displays them in the search list view.
 
             clearFields();
 
@@ -149,13 +106,18 @@ namespace TechDistribution.GUI
 
             comboBoxSearchJobTitle.SelectedIndex = idx;
 
-            //comboBoxSearchStatus.SelectedText = emp.StatusDesc;
-            //comboBoxSearchJobTitle.SelectedText = emp.JobTitle;
-
         }
+
+
+        /// <summary>
+        /// Handles searching for employees by first name.
+        /// </summary>
+
 
         private void SearchByFirstName()
         {
+            // Validates the input first name, searches for employees matching the first name, and displays them in the search list view.
+
             string text = textBoxSearchBy.Text;
             if (!MyValidator.IsValidText(text))
             {
@@ -191,8 +153,13 @@ namespace TechDistribution.GUI
 
         }
 
+        /// <summary>
+        /// Handles searching for employees by last name.
+        /// </summary>
         private void SearchByLastName()
         {
+            // Validates the input last name, searches for employees matching the last name, and displays them in the search list view.
+
             string text = textBoxSearchBy.Text;
             if (!MyValidator.IsValidText(text))
             {
@@ -225,8 +192,14 @@ namespace TechDistribution.GUI
             }
         }
 
+        /// <summary>
+        /// Handles searching for employees by email.
+        /// </summary>
+
         private void SearchByEmail()
         {
+            // Validates the input email, searches for employees matching the email, and displays them in the search list view.
+
             string text = textBoxSearchBy.Text;
             if (!MyValidator.IsValidEmail(text))
             {
@@ -259,8 +232,15 @@ namespace TechDistribution.GUI
             }
         }
 
+
+        /// <summary>
+        /// Handles searching for employees by phone number.
+        /// </summary>
+
         private void SearchByPhoneNumber()
         {
+            // Validates the input phone number, searches for employees matching the phone number, and displays them in the search list view.
+
             string text = textBoxSearchBy.Text;
             if (!MyValidator.IsValidPhoneNumber(text))
             {
@@ -293,8 +273,15 @@ namespace TechDistribution.GUI
             }
         }
 
+
+        /// <summary>
+        /// Handles listing all employees in the list view.
+        /// </summary>
+
         private void buttonListAll_Click(object sender, EventArgs e)
         {
+            // Retrieves all employees from the database and displays them in the list view.
+
             List<Employee> employees = new List<Employee>();
 
             employees = Employee.GetEmployees();
@@ -316,8 +303,15 @@ namespace TechDistribution.GUI
 
         }
 
+
+
+        /// <summary>
+        /// Handles adding a new employee.
+        /// </summary>
         private void buttonAdd_Click(object sender, EventArgs e)
         {
+            // Validates the input fields for adding a new employee, adds the employee to the database, and displays a success message.
+
             string input = textBoxFirstName.Text.Trim();
 
             if (!MyValidator.IsValidText(input))
@@ -393,8 +387,15 @@ namespace TechDistribution.GUI
         }
 
 
+
+        /// <summary>
+        /// Converts the combobox selected index for status to its corresponding primary key.
+        /// </summary>
+
         private int statusPK(int idx)
         {
+            // Returns the primary key based on the selected index for status.
+
             switch (idx)
             {
                 case 0:
@@ -408,13 +409,26 @@ namespace TechDistribution.GUI
             }
         }
 
+
+        /// <summary>
+        /// Converts the combobox selected index for job title to its corresponding primary key.
+        /// </summary>
+
         private int jobTitlePK(int idx)
         {
+            // Returns the primary key based on the selected index for job title.
+
             return idx + 1;
         }
 
+        /// <summary>
+        /// Handles the search button click event to initiate different search operations based on the selected search criteria.
+        /// </summary>
+        
         private void ButtonSearch_Click(object sender, EventArgs e)
         {
+            // Initiates search based on the selected search criteria (ID, First Name, Last Name, Email, Phone Number).
+
             int idx = comboBoxSearchBy.SelectedIndex;
 
             switch (idx)
@@ -437,6 +451,10 @@ namespace TechDistribution.GUI
             }
         }
 
+        /// <summary>
+        /// Handles the combobox selected index changed event to update a label's text based on the selected search criteria.
+        /// </summary>
+
         private void comboBoxSearchBy_SelectedIndexChanged(object sender, EventArgs e)
         {
             /*  ID
@@ -445,7 +463,8 @@ namespace TechDistribution.GUI
                 Email
                 Phone Number
             */
-            
+
+            // Updates the label's text with a hint or description based on the selected search criteria.
 
             switch (comboBoxSearchBy.SelectedIndex)
             {
@@ -473,8 +492,15 @@ namespace TechDistribution.GUI
             
         }
 
+
+        /// <summary>
+        /// Handles the button click event to update an employee's details.
+        /// </summary>
+
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
+            // Validates and updates an employee's details in the database based on the provided input.
+
             string text = textBoxSearchEmployeeID.Text;
             if (String.IsNullOrEmpty(text))
             {
@@ -546,9 +572,15 @@ namespace TechDistribution.GUI
 
         }
 
+        /// <summary>
+        /// Handles the button click event to delete an employee.
+        /// </summary>
+
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            if(textBoxSearchEmployeeID.Text.Length == 0)
+            // Validates and confirms deletion of an employee from the database.
+
+            if (textBoxSearchEmployeeID.Text.Length == 0)
             {
                 MessageBox.Show("Please, Search by ID the Employee you want to Delete");
                 return;
@@ -577,8 +609,14 @@ namespace TechDistribution.GUI
 
         }
 
+        /// <summary>
+        /// Handles the button click event to exit the form.
+        /// </summary>
+
         private void buttonExit_Click(object sender, EventArgs e)
         {
+            // Prompts the user to confirm closing the form and returns to the previous form upon confirmation.
+
             DialogResult result = MessageBox.Show("Do you want to close this window?", "Close", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (result == DialogResult.Yes)

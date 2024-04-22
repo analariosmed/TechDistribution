@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.AddBook = new System.Windows.Forms.TabPage();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxYear = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
@@ -66,12 +67,14 @@
             this.textBoxIsbnUpdate = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.textBoxSearchBy = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.buttonShowAuthors = new System.Windows.Forms.Button();
             this.buttonAssignDelete = new System.Windows.Forms.Button();
             this.buttonAssignAdd = new System.Windows.Forms.Button();
@@ -81,13 +84,10 @@
             this.label17 = new System.Windows.Forms.Label();
             this.comboBoxBooks = new System.Windows.Forms.ComboBox();
             this.ListBooks = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
             this.buttonListAllBooks = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
-            this.buttonExit = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.AddBook.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -115,6 +115,7 @@
             // 
             // AddBook
             // 
+            this.AddBook.BackColor = System.Drawing.Color.LightBlue;
             this.AddBook.Controls.Add(this.buttonExit);
             this.AddBook.Controls.Add(this.groupBox1);
             this.AddBook.Location = new System.Drawing.Point(4, 25);
@@ -123,10 +124,20 @@
             this.AddBook.Size = new System.Drawing.Size(993, 532);
             this.AddBook.TabIndex = 0;
             this.AddBook.Text = "Create Book";
-            this.AddBook.UseVisualStyleBackColor = true;
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.Location = new System.Drawing.Point(876, 480);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(110, 46);
+            this.buttonExit.TabIndex = 1;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox1.Controls.Add(this.textBoxYear);
             this.groupBox1.Controls.Add(this.buttonAdd);
             this.groupBox1.Controls.Add(this.comboBoxPublisher);
@@ -278,6 +289,7 @@
             // 
             // UpdateBook
             // 
+            this.UpdateBook.BackColor = System.Drawing.Color.LightBlue;
             this.UpdateBook.Controls.Add(this.dataGridView1);
             this.UpdateBook.Controls.Add(this.groupBox3);
             this.UpdateBook.Controls.Add(this.groupBox2);
@@ -287,7 +299,6 @@
             this.UpdateBook.Size = new System.Drawing.Size(993, 532);
             this.UpdateBook.TabIndex = 1;
             this.UpdateBook.Text = "Search/Update/Delete";
-            this.UpdateBook.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -301,6 +312,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.groupBox3.Controls.Add(this.buttonDelete);
             this.groupBox3.Controls.Add(this.YearPublishedUpdate);
             this.groupBox3.Controls.Add(this.buttonUpdate);
@@ -462,6 +474,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.buttonSearch);
@@ -474,6 +487,16 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(871, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 43);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Exit";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // label9
             // 
@@ -525,6 +548,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.LightBlue;
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.buttonShowAuthors);
             this.tabPage1.Controls.Add(this.buttonAssignDelete);
@@ -539,7 +563,16 @@
             this.tabPage1.Size = new System.Drawing.Size(993, 532);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Assign Authors";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(906, 13);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(80, 36);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Exit";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // buttonShowAuthors
             // 
@@ -619,6 +652,7 @@
             // 
             // ListBooks
             // 
+            this.ListBooks.BackColor = System.Drawing.Color.LightBlue;
             this.ListBooks.Controls.Add(this.button3);
             this.ListBooks.Controls.Add(this.buttonListAllBooks);
             this.ListBooks.Controls.Add(this.dataGridView2);
@@ -627,7 +661,16 @@
             this.ListBooks.Size = new System.Drawing.Size(993, 532);
             this.ListBooks.TabIndex = 2;
             this.ListBooks.Text = "List Books";
-            this.ListBooks.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(890, 16);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(98, 34);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Exit";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // buttonListAllBooks
             // 
@@ -642,7 +685,7 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(9, 69);
+            this.dataGridView2.Location = new System.Drawing.Point(7, 66);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
@@ -657,46 +700,6 @@
             this.entityCommand1.EnablePlanCaching = true;
             this.entityCommand1.Transaction = null;
             // 
-            // buttonExit
-            // 
-            this.buttonExit.Location = new System.Drawing.Point(876, 480);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(110, 46);
-            this.buttonExit.TabIndex = 1;
-            this.buttonExit.Text = "Exit";
-            this.buttonExit.UseVisualStyleBackColor = true;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(871, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 43);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Exit";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.buttonExit_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(906, 13);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 36);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Exit";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.buttonExit_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(890, 16);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(98, 34);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Exit";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.buttonExit_Click);
-            // 
             // BookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -704,7 +707,7 @@
             this.ClientSize = new System.Drawing.Size(1001, 565);
             this.Controls.Add(this.tabControl1);
             this.Name = "BookForm";
-            this.Text = "BookForm";
+            this.Text = "Book Managament";
             this.tabControl1.ResumeLayout(false);
             this.AddBook.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
