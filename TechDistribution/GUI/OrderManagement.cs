@@ -73,20 +73,7 @@ namespace TechDistribution.GUI
 
         private void buttonCreateOrder_Click(object sender, EventArgs e)
         {
-
-
-            //string input = comboBoxCustomer.Text.Trim();
-            //string[] field = input.Split(',');
-            //int customerId = Convert.ToInt32(field[0]);
-
-            //string input2 = comboBoxBook.Text.Trim();
-            //string[] field2 = input2.Split(',');
-            //int bookId = Convert.ToInt32(field2[0]);
-
-            //Order order = new Order();
-            //order.CustomerId = customerId;
-            //order.BookId = bookId;
-            //order.OrderDate = Convert.ToDateTime(maskedTextBoxDate);
+            
 
             OrderRepository orderRepo = new OrderRepository(context);
             StatusRepository statusRepository = new StatusRepository(context);
@@ -305,7 +292,7 @@ namespace TechDistribution.GUI
                     row.SubItems.Add(orderIt.Email.ToString());
                     row.SubItems.Add(orderIt.PhoneNumber.ToString());
                     row.SubItems.Add(orderIt.Fax.ToString());
-                    row.SubItems.Add(orderIt.StatusId.ToString());
+                    row.SubItems.Add(orderIt.Status1.StatusDesc.ToString());
 
                     listViewDS.Items.Add(row);
                 }
@@ -531,7 +518,7 @@ namespace TechDistribution.GUI
                     ListViewItem row = new ListViewItem(orderIt.OrderID.ToString());
                     row.SubItems.Add(orderIt.OrderType.ToString());
                     row.SubItems.Add(orderIt.Email.ToString());
-                    row.SubItems.Add(orderIt.CustomerID.ToString());
+                    row.SubItems.Add(orderIt.Customer.CustomerName.ToString());
                     row.SubItems.Add(orderIt.Fax.ToString());
                     row.SubItems.Add(orderIt.PhoneNumber.ToString());
                     row.SubItems.Add(orderIt.Status1.StatusDesc.ToString());
@@ -563,6 +550,16 @@ namespace TechDistribution.GUI
         {
             Form form = new Login();
             form.Show();
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

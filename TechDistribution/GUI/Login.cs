@@ -22,6 +22,13 @@ namespace TechDistribution
         DataSet TechDistributionDB;
         DataTable dtCustomers;
         SqlCommandBuilder sqlCommandBuilder;
+
+        MISController misControllerForm;
+        CustomerMaintenance customerMaintenanceForm;
+        InventoryController inventoryControllerForm;
+        OrderManagement orderManagementForm;
+        UserAccountsManagement userAccountManagementForm;
+
         public Login()
         {
             InitializeComponent();
@@ -50,22 +57,25 @@ namespace TechDistribution
                     }
                     if (employee.JobId == 1)
                     {
-                        Form form = new EmployeeManagement();
+                        this.Hide();
+                        Form form = new MISController();
                         form.Show();
                     }
                     else if (employee.JobId == 2)
                     {
+                        this.Hide();
                         Form form = new CustomerMaintenance();
                         form.Show();
                     }
                     else if (employee.JobId == 3)
                     {
-                        //Form form = new ();
-                        //form.Show();
-                        MessageBox.Show("Under Construction");
+                        this.Hide();
+                        Form form = new InventoryController();
+                        form.Show();
                     }
                     else if (employee.JobId == 4)
                     {
+                        this.Hide();
                         Form form = new OrderManagement();
                         form.Show();
                     }
@@ -93,10 +103,7 @@ namespace TechDistribution
             Form form = new UserAccountsManagement();
             form.Show();
         }
-
-        private void textBoxUserID_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
-}
+    
+

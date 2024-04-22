@@ -7,12 +7,10 @@ using TechDistribution.BLL;
 
 namespace TechDistribution.DAL
 {
-    public class OrderItemRepository
+    public class OrderItemRepository: BaseRepository
     {
-        TechDistributionEntities dbContext;
-        public OrderItemRepository(TechDistributionEntities db)
-        {
-            dbContext = db;
+        public OrderItemRepository(TechDistributionEntities dbContext) : base(dbContext)
+        {        
         }
 
         public void AddOrderItemWithoutSave(OrderItem nOrderItem)

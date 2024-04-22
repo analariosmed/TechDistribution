@@ -64,12 +64,14 @@ namespace TechDistribution.GUI
             //comboBoxAuthors
             //comboBoxBooks
 
-            comboBoxCategory.SelectedIndex = 0;
-            comboBoxPublisher.SelectedIndex = 0;
-            comboBox1.SelectedIndex = 0;
-            comboBoxAuthors.SelectedIndex = 0;
-            comboBoxBooks.SelectedIndex = 0;
-
+            if (comboBoxAuthors.Items.Count > 0)
+            {
+                comboBoxCategory.SelectedIndex = 0;
+                comboBoxPublisher.SelectedIndex = 0;
+                comboBox1.SelectedIndex = 0;
+                comboBoxAuthors.SelectedIndex = 0;
+                comboBoxBooks.SelectedIndex = 0;
+            }
 
         }
 
@@ -384,6 +386,18 @@ namespace TechDistribution.GUI
             dataGridView3.Refresh();
 
             dataGridView3.DataSource = authorsBook;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form form = new InventoryController();
+            form.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

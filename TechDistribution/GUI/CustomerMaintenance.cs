@@ -152,12 +152,6 @@ namespace TechDistribution.GUI
 
             input = textBoxName.Text.Trim();
 
-            //if (!MyValidator.IsValidText(input))
-            //{
-            //    MessageBox.Show("The Name is not correct, try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
-
             input = textBoxPhoneNumber.Text.Trim();
 
             if (!MyValidator.IsValidPhoneNumber(input))
@@ -173,8 +167,6 @@ namespace TechDistribution.GUI
                 MessageBox.Show("The Credit Limit  is not correct, try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-
 
             DataRow dr = dtCustomers.NewRow();
             dr["CustomerName"] = textBoxName.Text.Trim();
@@ -303,7 +295,7 @@ namespace TechDistribution.GUI
 
         private void buttonExit2_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void buttonExit3_Click(object sender, EventArgs e)
@@ -313,6 +305,21 @@ namespace TechDistribution.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Form form = new Login();
+            form.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form form = new Login();
+            form.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
             Form form = new Login();
             form.Show();
         }

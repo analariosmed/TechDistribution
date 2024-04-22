@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.buttonDS = new System.Windows.Forms.Button();
             this.listViewDS = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -89,6 +91,7 @@
             this.textBoxCustomerId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -100,7 +103,6 @@
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonExit3 = new System.Windows.Forms.Button();
             this.buttonListAll = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -116,11 +118,10 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(38, 30);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(1);
+            this.tabControl1.Location = new System.Drawing.Point(120, 85);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(928, 638);
+            this.tabControl1.Size = new System.Drawing.Size(2939, 1816);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage2
@@ -128,22 +129,33 @@
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.buttonExit);
             this.tabPage2.Controls.Add(this.groupBox1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(1);
+            this.tabPage2.Location = new System.Drawing.Point(12, 58);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(1);
-            this.tabPage2.Size = new System.Drawing.Size(920, 612);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(2915, 1746);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Add Customer";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DarkGray;
+            this.button1.Location = new System.Drawing.Point(1029, 1312);
+            this.button1.Margin = new System.Windows.Forms.Padding(6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(370, 94);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "Sign out";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // buttonExit
             // 
             this.buttonExit.BackColor = System.Drawing.Color.DarkGray;
-            this.buttonExit.Location = new System.Drawing.Point(454, 463);
-            this.buttonExit.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonExit.Location = new System.Drawing.Point(1438, 1318);
+            this.buttonExit.Margin = new System.Windows.Forms.Padding(6);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(109, 28);
+            this.buttonExit.Size = new System.Drawing.Size(345, 80);
             this.buttonExit.TabIndex = 6;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = false;
@@ -172,11 +184,11 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(203, 30);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Location = new System.Drawing.Point(643, 85);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(335, 417);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
+            this.groupBox1.Size = new System.Drawing.Size(1061, 1187);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Customer";
@@ -185,85 +197,85 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(111, 347);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Location = new System.Drawing.Point(352, 988);
+            this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(72, 13);
+            this.label12.Size = new System.Drawing.Size(191, 32);
             this.label12.TabIndex = 30;
             this.label12.Text = "Minimum 100 ";
             // 
             // buttonUpdateDB
             // 
             this.buttonUpdateDB.BackColor = System.Drawing.Color.DarkGray;
-            this.buttonUpdateDB.Location = new System.Drawing.Point(221, 378);
-            this.buttonUpdateDB.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonUpdateDB.Location = new System.Drawing.Point(700, 1076);
+            this.buttonUpdateDB.Margin = new System.Windows.Forms.Padding(6);
             this.buttonUpdateDB.Name = "buttonUpdateDB";
-            this.buttonUpdateDB.Size = new System.Drawing.Size(100, 25);
+            this.buttonUpdateDB.Size = new System.Drawing.Size(317, 71);
             this.buttonUpdateDB.TabIndex = 25;
-            this.buttonUpdateDB.Text = "Update Data Base";
+            this.buttonUpdateDB.Text = "Save";
             this.buttonUpdateDB.UseVisualStyleBackColor = false;
             this.buttonUpdateDB.Click += new System.EventHandler(this.buttonUpdateDB_Click);
             // 
             // textBoxCreditLimit
             // 
-            this.textBoxCreditLimit.Location = new System.Drawing.Point(110, 326);
-            this.textBoxCreditLimit.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxCreditLimit.Location = new System.Drawing.Point(348, 928);
+            this.textBoxCreditLimit.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxCreditLimit.Name = "textBoxCreditLimit";
-            this.textBoxCreditLimit.Size = new System.Drawing.Size(129, 19);
+            this.textBoxCreditLimit.Size = new System.Drawing.Size(400, 43);
             this.textBoxCreditLimit.TabIndex = 24;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(107, 303);
-            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label26.Location = new System.Drawing.Point(339, 862);
+            this.label26.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(46, 13);
+            this.label26.Size = new System.Drawing.Size(122, 32);
             this.label26.TabIndex = 23;
             this.label26.Text = "Optional";
             // 
             // textBoxFaxNumber
             // 
-            this.textBoxFaxNumber.Location = new System.Drawing.Point(110, 280);
-            this.textBoxFaxNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxFaxNumber.Location = new System.Drawing.Point(348, 797);
+            this.textBoxFaxNumber.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxFaxNumber.Name = "textBoxFaxNumber";
-            this.textBoxFaxNumber.Size = new System.Drawing.Size(129, 19);
+            this.textBoxFaxNumber.Size = new System.Drawing.Size(400, 43);
             this.textBoxFaxNumber.TabIndex = 22;
             // 
             // textBoxCity
             // 
-            this.textBoxCity.Location = new System.Drawing.Point(110, 142);
-            this.textBoxCity.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxCity.Location = new System.Drawing.Point(358, 404);
+            this.textBoxCity.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxCity.Name = "textBoxCity";
-            this.textBoxCity.Size = new System.Drawing.Size(129, 19);
+            this.textBoxCity.Size = new System.Drawing.Size(400, 43);
             this.textBoxCity.TabIndex = 21;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(24, 144);
-            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label25.Location = new System.Drawing.Point(76, 410);
+            this.label25.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(24, 13);
+            this.label25.Size = new System.Drawing.Size(71, 37);
             this.label25.TabIndex = 20;
             this.label25.Text = "City";
             // 
             // textBoxStreet
             // 
-            this.textBoxStreet.Location = new System.Drawing.Point(110, 109);
-            this.textBoxStreet.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxStreet.Location = new System.Drawing.Point(358, 292);
+            this.textBoxStreet.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxStreet.Name = "textBoxStreet";
-            this.textBoxStreet.Size = new System.Drawing.Size(129, 19);
+            this.textBoxStreet.Size = new System.Drawing.Size(400, 43);
             this.textBoxStreet.TabIndex = 19;
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(20, 110);
-            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label24.Location = new System.Drawing.Point(76, 292);
+            this.label24.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(35, 13);
+            this.label24.Size = new System.Drawing.Size(101, 37);
             this.label24.TabIndex = 18;
             this.label24.Text = "Street";
             // 
@@ -271,20 +283,20 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(107, 257);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Location = new System.Drawing.Point(368, 731);
+            this.label18.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(76, 13);
+            this.label18.Size = new System.Drawing.Size(201, 32);
             this.label18.TabIndex = 17;
             this.label18.Text = "(777)777-7777";
             // 
             // buttonAdd
             // 
             this.buttonAdd.BackColor = System.Drawing.Color.DarkGray;
-            this.buttonAdd.Location = new System.Drawing.Point(126, 378);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAdd.Location = new System.Drawing.Point(399, 1076);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(6);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(76, 25);
+            this.buttonAdd.Size = new System.Drawing.Size(241, 71);
             this.buttonAdd.TabIndex = 12;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = false;
@@ -292,115 +304,126 @@
             // 
             // textBoxPhoneNumber
             // 
-            this.textBoxPhoneNumber.Location = new System.Drawing.Point(110, 233);
-            this.textBoxPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPhoneNumber.Location = new System.Drawing.Point(358, 663);
+            this.textBoxPhoneNumber.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
-            this.textBoxPhoneNumber.Size = new System.Drawing.Size(129, 19);
+            this.textBoxPhoneNumber.Size = new System.Drawing.Size(400, 43);
             this.textBoxPhoneNumber.TabIndex = 9;
             // 
             // textBoxPostalCode
             // 
-            this.textBoxPostalCode.Location = new System.Drawing.Point(110, 184);
-            this.textBoxPostalCode.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPostalCode.Location = new System.Drawing.Point(358, 529);
+            this.textBoxPostalCode.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxPostalCode.Name = "textBoxPostalCode";
-            this.textBoxPostalCode.Size = new System.Drawing.Size(129, 19);
+            this.textBoxPostalCode.Size = new System.Drawing.Size(400, 43);
             this.textBoxPostalCode.TabIndex = 8;
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(110, 65);
-            this.textBoxName.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxName.Location = new System.Drawing.Point(358, 185);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(129, 19);
+            this.textBoxName.Size = new System.Drawing.Size(400, 43);
             this.textBoxName.TabIndex = 6;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 327);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(61, 928);
+            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 13);
+            this.label7.Size = new System.Drawing.Size(179, 37);
             this.label7.TabIndex = 5;
             this.label7.Text = "Credit Limit";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 283);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(61, 803);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 13);
+            this.label6.Size = new System.Drawing.Size(194, 37);
             this.label6.TabIndex = 4;
             this.label6.Text = "Fax Number";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 233);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(63, 663);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 13);
+            this.label5.Size = new System.Drawing.Size(233, 37);
             this.label5.TabIndex = 3;
             this.label5.Text = "Phone Number";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 188);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(73, 535);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.Size = new System.Drawing.Size(191, 37);
             this.label4.TabIndex = 2;
             this.label4.Text = "Postal Code";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 66);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(63, 188);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(103, 37);
             this.label2.TabIndex = 0;
             this.label2.Text = "Name";
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.groupBox4);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(1);
+            this.tabPage3.Location = new System.Drawing.Point(12, 58);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(1);
-            this.tabPage3.Size = new System.Drawing.Size(920, 612);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(2915, 1746);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Search/Update/Delete";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.button2);
             this.groupBox4.Controls.Add(this.buttonDS);
             this.groupBox4.Controls.Add(this.listViewDS);
             this.groupBox4.Controls.Add(this.buttonExit2);
             this.groupBox4.Controls.Add(this.groupBox3);
             this.groupBox4.Controls.Add(this.groupBox2);
-            this.groupBox4.Location = new System.Drawing.Point(13, 16);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(1);
+            this.groupBox4.Controls.Add(this.buttonUpdate);
+            this.groupBox4.Location = new System.Drawing.Point(41, 46);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(1);
-            this.groupBox4.Size = new System.Drawing.Size(836, 588);
+            this.groupBox4.Size = new System.Drawing.Size(2647, 1674);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.DarkGray;
+            this.button2.Location = new System.Drawing.Point(1795, 1571);
+            this.button2.Margin = new System.Windows.Forms.Padding(6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(370, 94);
+            this.button2.TabIndex = 32;
+            this.button2.Text = "Sign out";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // buttonDS
             // 
             this.buttonDS.BackColor = System.Drawing.Color.Silver;
             this.buttonDS.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonDS.Location = new System.Drawing.Point(25, 352);
-            this.buttonDS.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonDS.Location = new System.Drawing.Point(79, 1002);
+            this.buttonDS.Margin = new System.Windows.Forms.Padding(6);
             this.buttonDS.Name = "buttonDS";
-            this.buttonDS.Size = new System.Drawing.Size(150, 28);
+            this.buttonDS.Size = new System.Drawing.Size(475, 80);
             this.buttonDS.TabIndex = 29;
-            this.buttonDS.Text = "Show Modifications in DS";
+            this.buttonDS.Text = "Show Modifications ";
             this.buttonDS.UseVisualStyleBackColor = false;
             this.buttonDS.Click += new System.EventHandler(this.buttonDS_Click);
             // 
@@ -416,10 +439,10 @@
             this.columnHeader7,
             this.columnHeader8});
             this.listViewDS.HideSelection = false;
-            this.listViewDS.Location = new System.Drawing.Point(25, 391);
-            this.listViewDS.Margin = new System.Windows.Forms.Padding(2);
+            this.listViewDS.Location = new System.Drawing.Point(79, 1113);
+            this.listViewDS.Margin = new System.Windows.Forms.Padding(6);
             this.listViewDS.Name = "listViewDS";
-            this.listViewDS.Size = new System.Drawing.Size(743, 147);
+            this.listViewDS.Size = new System.Drawing.Size(2344, 411);
             this.listViewDS.TabIndex = 12;
             this.listViewDS.UseCompatibleStateImageBehavior = false;
             this.listViewDS.View = System.Windows.Forms.View.Details;
@@ -467,10 +490,10 @@
             // buttonExit2
             // 
             this.buttonExit2.BackColor = System.Drawing.Color.DarkGray;
-            this.buttonExit2.Location = new System.Drawing.Point(703, 552);
-            this.buttonExit2.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonExit2.Location = new System.Drawing.Point(2226, 1571);
+            this.buttonExit2.Margin = new System.Windows.Forms.Padding(6);
             this.buttonExit2.Name = "buttonExit2";
-            this.buttonExit2.Size = new System.Drawing.Size(117, 33);
+            this.buttonExit2.Size = new System.Drawing.Size(370, 94);
             this.buttonExit2.TabIndex = 11;
             this.buttonExit2.Text = "Exit";
             this.buttonExit2.UseVisualStyleBackColor = false;
@@ -489,7 +512,6 @@
             this.groupBox3.Controls.Add(this.textBoxFaxNumberUpdate);
             this.groupBox3.Controls.Add(this.label20);
             this.groupBox3.Controls.Add(this.buttonDelete);
-            this.groupBox3.Controls.Add(this.buttonUpdate);
             this.groupBox3.Controls.Add(this.textBoxPhoneNumberUpdate);
             this.groupBox3.Controls.Add(this.textBoxPostalCodeUpdate);
             this.groupBox3.Controls.Add(this.textBoxNameUpdate);
@@ -498,11 +520,11 @@
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Location = new System.Drawing.Point(25, 130);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Location = new System.Drawing.Point(79, 370);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(780, 208);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(6);
+            this.groupBox3.Size = new System.Drawing.Size(2470, 592);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Update - Delete";
@@ -511,20 +533,20 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(393, 119);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(1244, 339);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 13);
+            this.label3.Size = new System.Drawing.Size(191, 32);
             this.label3.TabIndex = 29;
             this.label3.Text = "Minimum 100 ";
             // 
             // buttonModify
             // 
             this.buttonModify.BackColor = System.Drawing.Color.DarkGray;
-            this.buttonModify.Location = new System.Drawing.Point(665, 30);
-            this.buttonModify.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonModify.Location = new System.Drawing.Point(2106, 85);
+            this.buttonModify.Margin = new System.Windows.Forms.Padding(6);
             this.buttonModify.Name = "buttonModify";
-            this.buttonModify.Size = new System.Drawing.Size(107, 28);
+            this.buttonModify.Size = new System.Drawing.Size(339, 80);
             this.buttonModify.TabIndex = 28;
             this.buttonModify.Text = "Modify";
             this.buttonModify.UseVisualStyleBackColor = false;
@@ -532,74 +554,74 @@
             // 
             // textBoxCityUpdate
             // 
-            this.textBoxCityUpdate.Location = new System.Drawing.Point(112, 104);
-            this.textBoxCityUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxCityUpdate.Location = new System.Drawing.Point(355, 296);
+            this.textBoxCityUpdate.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxCityUpdate.Name = "textBoxCityUpdate";
-            this.textBoxCityUpdate.Size = new System.Drawing.Size(129, 20);
+            this.textBoxCityUpdate.Size = new System.Drawing.Size(400, 44);
             this.textBoxCityUpdate.TabIndex = 27;
             // 
             // textBoxStreetUpdate
             // 
-            this.textBoxStreetUpdate.Location = new System.Drawing.Point(112, 65);
-            this.textBoxStreetUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxStreetUpdate.Location = new System.Drawing.Point(355, 185);
+            this.textBoxStreetUpdate.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxStreetUpdate.Name = "textBoxStreetUpdate";
-            this.textBoxStreetUpdate.Size = new System.Drawing.Size(129, 20);
+            this.textBoxStreetUpdate.Size = new System.Drawing.Size(400, 44);
             this.textBoxStreetUpdate.TabIndex = 26;
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(40, 102);
-            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label27.Location = new System.Drawing.Point(127, 290);
+            this.label27.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(24, 13);
+            this.label27.Size = new System.Drawing.Size(71, 37);
             this.label27.TabIndex = 25;
             this.label27.Text = "City";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(40, 65);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Location = new System.Drawing.Point(127, 185);
+            this.label19.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(35, 13);
+            this.label19.Size = new System.Drawing.Size(101, 37);
             this.label19.TabIndex = 24;
             this.label19.Text = "Street";
             // 
             // textBoxCreditLimitUpdate
             // 
-            this.textBoxCreditLimitUpdate.Location = new System.Drawing.Point(392, 101);
-            this.textBoxCreditLimitUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxCreditLimitUpdate.Location = new System.Drawing.Point(1241, 287);
+            this.textBoxCreditLimitUpdate.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxCreditLimitUpdate.Name = "textBoxCreditLimitUpdate";
-            this.textBoxCreditLimitUpdate.Size = new System.Drawing.Size(129, 20);
+            this.textBoxCreditLimitUpdate.Size = new System.Drawing.Size(400, 44);
             this.textBoxCreditLimitUpdate.TabIndex = 23;
             // 
             // textBoxFaxNumberUpdate
             // 
-            this.textBoxFaxNumberUpdate.Location = new System.Drawing.Point(392, 63);
-            this.textBoxFaxNumberUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxFaxNumberUpdate.Location = new System.Drawing.Point(1241, 179);
+            this.textBoxFaxNumberUpdate.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxFaxNumberUpdate.Name = "textBoxFaxNumberUpdate";
-            this.textBoxFaxNumberUpdate.Size = new System.Drawing.Size(129, 20);
+            this.textBoxFaxNumberUpdate.Size = new System.Drawing.Size(400, 44);
             this.textBoxFaxNumberUpdate.TabIndex = 22;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(389, 38);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Location = new System.Drawing.Point(1232, 108);
+            this.label20.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(76, 13);
+            this.label20.Size = new System.Drawing.Size(201, 32);
             this.label20.TabIndex = 21;
             this.label20.Text = "(777)777-7777";
             // 
             // buttonDelete
             // 
             this.buttonDelete.BackColor = System.Drawing.Color.DarkGray;
-            this.buttonDelete.Location = new System.Drawing.Point(667, 87);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonDelete.Location = new System.Drawing.Point(2112, 248);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(6);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(108, 28);
+            this.buttonDelete.Size = new System.Drawing.Size(342, 80);
             this.buttonDelete.TabIndex = 16;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = false;
@@ -608,86 +630,86 @@
             // buttonUpdate
             // 
             this.buttonUpdate.BackColor = System.Drawing.Color.DarkGray;
-            this.buttonUpdate.Location = new System.Drawing.Point(668, 149);
-            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonUpdate.Location = new System.Drawing.Point(1418, 1571);
+            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(6);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(107, 28);
+            this.buttonUpdate.Size = new System.Drawing.Size(339, 94);
             this.buttonUpdate.TabIndex = 12;
-            this.buttonUpdate.Text = "Update Data Base";
+            this.buttonUpdate.Text = "Save Modifications";
             this.buttonUpdate.UseVisualStyleBackColor = false;
             this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // textBoxPhoneNumberUpdate
             // 
-            this.textBoxPhoneNumberUpdate.Location = new System.Drawing.Point(390, 20);
-            this.textBoxPhoneNumberUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPhoneNumberUpdate.Location = new System.Drawing.Point(1235, 57);
+            this.textBoxPhoneNumberUpdate.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxPhoneNumberUpdate.Name = "textBoxPhoneNumberUpdate";
-            this.textBoxPhoneNumberUpdate.Size = new System.Drawing.Size(129, 20);
+            this.textBoxPhoneNumberUpdate.Size = new System.Drawing.Size(400, 44);
             this.textBoxPhoneNumberUpdate.TabIndex = 9;
             // 
             // textBoxPostalCodeUpdate
             // 
-            this.textBoxPostalCodeUpdate.Location = new System.Drawing.Point(112, 142);
-            this.textBoxPostalCodeUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPostalCodeUpdate.Location = new System.Drawing.Point(355, 404);
+            this.textBoxPostalCodeUpdate.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxPostalCodeUpdate.Name = "textBoxPostalCodeUpdate";
-            this.textBoxPostalCodeUpdate.Size = new System.Drawing.Size(129, 20);
+            this.textBoxPostalCodeUpdate.Size = new System.Drawing.Size(400, 44);
             this.textBoxPostalCodeUpdate.TabIndex = 8;
             // 
             // textBoxNameUpdate
             // 
-            this.textBoxNameUpdate.Location = new System.Drawing.Point(112, 30);
-            this.textBoxNameUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxNameUpdate.Location = new System.Drawing.Point(355, 85);
+            this.textBoxNameUpdate.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxNameUpdate.Name = "textBoxNameUpdate";
-            this.textBoxNameUpdate.Size = new System.Drawing.Size(129, 20);
+            this.textBoxNameUpdate.Size = new System.Drawing.Size(400, 44);
             this.textBoxNameUpdate.TabIndex = 6;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(310, 105);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(982, 299);
+            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 13);
+            this.label8.Size = new System.Drawing.Size(179, 37);
             this.label8.TabIndex = 5;
             this.label8.Text = "Credit Limit";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(310, 65);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(982, 185);
+            this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(64, 13);
+            this.label9.Size = new System.Drawing.Size(194, 37);
             this.label9.TabIndex = 4;
             this.label9.Text = "Fax Number";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(306, 23);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(969, 65);
+            this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(78, 13);
+            this.label10.Size = new System.Drawing.Size(233, 37);
             this.label10.TabIndex = 3;
             this.label10.Text = "Phone Number";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(40, 142);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Location = new System.Drawing.Point(127, 404);
+            this.label11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(61, 13);
+            this.label11.Size = new System.Drawing.Size(182, 37);
             this.label11.TabIndex = 2;
             this.label11.Text = "PostalCode";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(40, 33);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Location = new System.Drawing.Point(127, 94);
+            this.label13.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(35, 13);
+            this.label13.Size = new System.Drawing.Size(103, 37);
             this.label13.TabIndex = 0;
             this.label13.Text = "Name";
             // 
@@ -697,11 +719,11 @@
             this.groupBox2.Controls.Add(this.ButtonSearch);
             this.groupBox2.Controls.Add(this.textBoxCustomerId);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(25, 22);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Location = new System.Drawing.Point(79, 63);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(780, 103);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(6);
+            this.groupBox2.Size = new System.Drawing.Size(2470, 293);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search";
@@ -709,10 +731,10 @@
             // ButtonSearch
             // 
             this.ButtonSearch.BackColor = System.Drawing.Color.DarkGray;
-            this.ButtonSearch.Location = new System.Drawing.Point(669, 43);
-            this.ButtonSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonSearch.Location = new System.Drawing.Point(2118, 122);
+            this.ButtonSearch.Margin = new System.Windows.Forms.Padding(6);
             this.ButtonSearch.Name = "ButtonSearch";
-            this.ButtonSearch.Size = new System.Drawing.Size(98, 28);
+            this.ButtonSearch.Size = new System.Drawing.Size(310, 80);
             this.ButtonSearch.TabIndex = 8;
             this.ButtonSearch.Text = "Search";
             this.ButtonSearch.UseVisualStyleBackColor = false;
@@ -720,36 +742,48 @@
             // 
             // textBoxCustomerId
             // 
-            this.textBoxCustomerId.Location = new System.Drawing.Point(276, 61);
-            this.textBoxCustomerId.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxCustomerId.Location = new System.Drawing.Point(874, 174);
+            this.textBoxCustomerId.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxCustomerId.Name = "textBoxCustomerId";
-            this.textBoxCustomerId.Size = new System.Drawing.Size(125, 20);
+            this.textBoxCustomerId.Size = new System.Drawing.Size(387, 44);
             this.textBoxCustomerId.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(166, 61);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(526, 174);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 18);
+            this.label1.Size = new System.Drawing.Size(280, 52);
             this.label1.TabIndex = 6;
             this.label1.Text = "Customer ID:";
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.listView1);
             this.tabPage1.Controls.Add(this.buttonExit3);
             this.tabPage1.Controls.Add(this.buttonListAll);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(1);
+            this.tabPage1.Location = new System.Drawing.Point(12, 58);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(1);
-            this.tabPage1.Size = new System.Drawing.Size(920, 612);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(2915, 1746);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Customers List";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.DarkGray;
+            this.button3.Location = new System.Drawing.Point(2062, 1608);
+            this.button3.Margin = new System.Windows.Forms.Padding(6);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(278, 91);
+            this.button3.TabIndex = 32;
+            this.button3.Text = "Sign out";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // listView1
             // 
@@ -763,10 +797,10 @@
             this.columnHeader17,
             this.columnHeader18});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(18, 73);
-            this.listView1.Margin = new System.Windows.Forms.Padding(2);
+            this.listView1.Location = new System.Drawing.Point(57, 208);
+            this.listView1.Margin = new System.Windows.Forms.Padding(6);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(806, 476);
+            this.listView1.Size = new System.Drawing.Size(2544, 1347);
             this.listView1.TabIndex = 7;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -814,10 +848,10 @@
             // buttonExit3
             // 
             this.buttonExit3.BackColor = System.Drawing.Color.DarkGray;
-            this.buttonExit3.Location = new System.Drawing.Point(752, 565);
-            this.buttonExit3.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonExit3.Location = new System.Drawing.Point(2381, 1608);
+            this.buttonExit3.Margin = new System.Windows.Forms.Padding(6);
             this.buttonExit3.Name = "buttonExit3";
-            this.buttonExit3.Size = new System.Drawing.Size(88, 32);
+            this.buttonExit3.Size = new System.Drawing.Size(279, 91);
             this.buttonExit3.TabIndex = 6;
             this.buttonExit3.Text = "Exit";
             this.buttonExit3.UseVisualStyleBackColor = false;
@@ -826,34 +860,21 @@
             // buttonListAll
             // 
             this.buttonListAll.BackColor = System.Drawing.Color.DarkGray;
-            this.buttonListAll.Location = new System.Drawing.Point(18, 19);
-            this.buttonListAll.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonListAll.Location = new System.Drawing.Point(57, 54);
+            this.buttonListAll.Margin = new System.Windows.Forms.Padding(6);
             this.buttonListAll.Name = "buttonListAll";
-            this.buttonListAll.Size = new System.Drawing.Size(157, 33);
+            this.buttonListAll.Size = new System.Drawing.Size(497, 94);
             this.buttonListAll.TabIndex = 5;
             this.buttonListAll.Text = "List All Customers from DB";
             this.buttonListAll.UseVisualStyleBackColor = false;
             this.buttonListAll.Click += new System.EventHandler(this.buttonListAll_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DarkGray;
-            this.button1.Location = new System.Drawing.Point(325, 461);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 33);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "Sign out";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // CustomerMaintenance
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(932, 692);
+            this.ClientSize = new System.Drawing.Size(2951, 1970);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "CustomerMaintenance";
             this.Text = "CustomerMaintenance";
             this.Load += new System.EventHandler(this.CustomerMaintenance_Load);
@@ -947,5 +968,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

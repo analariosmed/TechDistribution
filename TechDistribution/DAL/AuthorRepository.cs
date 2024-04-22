@@ -43,19 +43,6 @@ namespace TechDistribution.DAL
         public void UpdateAuthor(Author edAuthor)
         {
             var dbContextTransacition = dbContext.Database.BeginTransaction();
-
-            /*
-            try
-            {
-                Author toEdit = GetAuthorById(edAuthor.AuthorID);
-
-                toEdit.FirstName = edAuthor.FirstName;
-                toEdit.LastName = edAuthor.LastName;
-                toEdit.Email = edAuthor.Email;
-            }
-
-
-            */
         }
 
         public bool IsAnExistingAuthor(int authorId)

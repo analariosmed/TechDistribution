@@ -252,7 +252,8 @@ namespace TechDistribution.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form form = new Login();
+            this.Hide();
+            Form form = new MISController();
             form.Show();
         }
     }

@@ -8,11 +8,10 @@ using TechDistribution.DAL;
 
 namespace TechDistribution.BLL
 {
-    public class AuthorController : AuthorRepository
+    public class AuthorController: AuthorRepository
     {
         public AuthorController(TechDistributionEntities dbContext) : base(dbContext)
         {
-            
         }
 
         public List<Author> GetAllAuthors() => GetAuthors();

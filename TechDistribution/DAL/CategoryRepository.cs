@@ -7,9 +7,9 @@ using TechDistribution.BLL;
 
 namespace TechDistribution.DAL
 {
-    public class CategoryRepository
+    public class CategoryRepository : BaseRepository
     {
-        public CategoryRepository()
+        public CategoryRepository(TechDistributionEntities dbContext) : base(dbContext)
         {
         }
 

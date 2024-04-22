@@ -585,17 +585,38 @@ namespace TechDistribution.GUI
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    this.Hide();
+        //    Form form = new UserAccountsManagement();
+        //    form.Show();
+        //}
+
+        //private void button1_Click_1(object sender, EventArgs e)
+        //{
+        //    this.Hide();
+        //    Form form = new UserAccountsManagement();
+        //    form.Show();
+        //}
+
+        private void button1_Click_2(object sender, EventArgs e)
         {
             this.Hide();
-            Form form = new UserAccountsManagement();
+            Form form = new MISController();
             form.Show();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void buttonOut_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form form = new UserAccountsManagement();
+            Form form = new MISController();
+            form.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form form = new MISController();
             form.Show();
         }
     }

@@ -20,6 +20,7 @@ namespace TechDistribution.BLL
         private int statusId;
         private string statusDesc;
         private int employeeId;
+        private Employee employee;
         private int jobId;
         private string jobTitle;
 
