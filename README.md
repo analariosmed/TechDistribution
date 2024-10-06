@@ -1,11 +1,12 @@
-Module	Responsible
-Login              	   Ana Larios
-Module 1 Employee	     Anthony Orlando
-Module 1 User Account	 Ana Larios
-Module 2             	 Ana Larios
-Module 3	             Anthony Orlando
-Module 4	             Ana Larios
-Documentation	         Ana Larios
+| Module              | Responsible        |
+|---------------------|--------------------|
+| Login               | Ana Larios         |
+| Module 1 Employee   | Anthony Orlando    |
+| Module 1 User Account | Ana Larios       |
+| Module 2            | Ana Larios         |
+| Module 3            | Anthony Orlando    |
+| Module 4            | Ana Larios         |
+| Documentation       | Ana Larios         |
 
 
 Project Description
